@@ -1,0 +1,53 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::group(['as' => 'auth::', 'namespace' => 'Auth'], function() {
+// Authentication Routes...
+    Route::get('login', 'AuthController@showLoginForm');
+    Route::post('login', 'AuthController@login');
+    Route::get('logout', 'AuthController@logout');
+
+// Registration Routes...
+    Route::get('register', 'AuthController@showRegistrationForm');
+    Route::get('/merchantAuth','AuthController@showAuth');
+
+    Route::post('register', 'AuthController@register');
+    Route::post('/getRegisterCode','AuthController@getCode');
+
+// Password Reset Routes...
+    Route::get('password/reset', 'PasswordController@showResetView');
+    Route::post('/getResetCode','PasswordController@getResetCode');
+    Route::post('password/reset','PasswordController@reset');
+});
+
+Route::group(['as' => 'index::' , 'namespace' => 'Index'],function(){
+    Route::get('/','IndexController@showIndex')->name('home');
+    Route::get('/search','IndexController@search');
+});
+
+Route::group(['as' => 'product::' , 'namespace' => 'Product'],function(){
+    Route::get('/product','ProductController@prolist')->name('home');
+    Route::get('/product/item','ProductController@prodetail');
+});
+
+Route::group(['as' => 'order::' , 'namespace' => 'Order'],function(){
+    Route::get('/myOrder','OrderController@myOrder');
+    Route::get('/cart','OrderController@myCart');
+});
+
+Route::group(['as' => 'user::' , 'namespace' => 'User'],function(){
+    Route::get('/user','UserController@index');
+});
+
+
+Route::get('/home', 'HomeController@index');

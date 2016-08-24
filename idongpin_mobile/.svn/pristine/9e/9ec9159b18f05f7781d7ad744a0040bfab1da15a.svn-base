@@ -1,0 +1,8 @@
+.font-family {
+  font-family: "Microsoft YaHei";
+}
+.header {
+  width: 100%;
+  height: 1.12rem;
+  background: #e02341;
+}

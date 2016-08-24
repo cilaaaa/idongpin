@@ -1,0 +1,175 @@
+.font-size(@font-size){
+    [data-dpr="1"] & {
+        font-size: @font-size;
+    }
+    [data-dpr="2"] & {
+        font-size:@font-size*2;
+    }  
+    [data-dpr="3"] & {
+        font-size:@font-size*3;
+    }
+}
+
+.header{
+    height: 1.18rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #e02341;
+    .header_content {
+        height: 100%;
+        width: 2rem;
+        margin: 0 auto;
+        line-height: 1.18rem;
+        text-align: center;
+        .font-size(15px);
+        color: #ffffff;
+        font-family: "Microsoft YaHei";
+    }
+    .back {
+        position: absolute;
+        left: 0.46rem;
+        top: 0.4rem;
+    }
+}
+
+.content{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    font-family: "Microsoft YaHei";
+    .orderStatus {
+        width: 100%;
+        margin: 0 auto;
+        height: 1.13rem;
+        border-bottom: solid #e8e8e8 2px;
+        li#first {
+            color: #e02341;
+            border-bottom: solid #e02341 3px;
+        }
+        li {
+            float: left;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            width: 21%;
+            text-align: center;
+            .font-size(15px);
+            color: #4d4d4d;
+            font-family: "Microsoft YaHei";
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+    .Line {
+        width: 100%;
+        height: 0.23rem;
+        background: #f5f5f5;
+    }
+    span.status1 {
+        float: right;
+        .font-size(14px);
+        color: #ff6c00;
+    }
+    .orderDetail {
+        width: 100%;
+        margin: 0 auto;
+        li{
+            border-bottom: solid #e8e8e8 2px;
+        }
+        li#first_item {
+            width: 100%;
+            margin: 0 auto;
+            height: 1.13rem;
+            line-height: 1.13rem;
+            color: #4d4d4d;
+            //border-bottom: solid #e8e8e8 2px;
+            .company {
+                padding-left: 0.4rem;
+                padding-right: 0.4rem;
+                .font-size(14px);
+                img.companyIcon {
+                    //padding-left: 0.4rem;
+                }
+                span.conpanyName {
+                    //.font-size(14px);
+                    //color: #4d4d4d;
+                    margin-left: 0.3rem;
+                }
+                span.status {
+                    float: right;
+                    //.font-size(14px);
+                    //color: #e02341;
+                }
+            }            
+        }
+        li.orderItem {
+            width: 100%;
+            height: 3.5rem;
+            .orderBox {
+                height: 2.7rem;
+                padding: 0.4rem;
+                padding-top: 0.2rem;
+                .goodsImg {
+                    width: 2.93rem;
+                    height: 2.9rem;
+                    float: left;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .goodsExp {
+                    height: 2.5rem;
+                    width: 6rem;
+                    float: left;
+                    margin-left: 0.27rem;
+                    a{
+                        color: #1a1a1a;
+                        .font-size(14px);
+                    }
+                    span{
+                        display: block;
+                    }
+                    span.ChanDi {
+                        display: block;
+                        margin-top: 0.1rem;
+                        color: #999999;
+                        .font-size(12px);
+                    }
+                    span.price {
+                        margin-top: 0.3rem;
+                        .font-size(14px);
+                        color: #e02341;
+                    }
+                    span.ShuLiang {
+                        color: #999999;
+                        margin-top: 0.1rem;
+                        .font-size(12px);
+                    }
+                }
+            }
+        }
+        li.last_li {
+            height: 1.13rem;
+            line-height: 1.13rem;
+            span.ShiFuKuan {
+                color: #4d4d4d;
+                .font-size(14px);
+            }
+            .submit {
+                padding-left: 0.4rem;
+                padding-right: 0.4rem;
+                button.submitBtn {
+                    height: 0.61rem;
+                    width: 1.92rem;
+                    float: right;
+                    margin-top: 0.27rem;
+                    border: solid #ff6c00;
+                    color: #ff6c00;
+                    .font-size(12px);
+                    background: none;
+                    border-radius: 5px;
+                }
+            }   
+        }
+    }
+}

@@ -1,0 +1,194 @@
+.font-family {
+  font-family: "Microsoft YaHei";
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+}
+.content {
+  width: 9.15rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 0.53rem;
+}
+.go_register {
+  width: 9.15rem;
+  height: 0.94rem;
+  line-height: 0.94rem;
+  text-align: right;
+}
+.go_register a {
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .go_register a {
+  font-size: 15px;
+}
+[data-dpr="2"] .go_register a {
+  font-size: 30px;
+}
+[data-dpr="3"] .go_register a {
+  font-size: 45px;
+}
+.company_logo {
+  width: 3.98rem;
+  margin: 0 auto;
+}
+.company_logo img {
+  width: 3.98rem;
+}
+.form_control {
+  margin-top: 1.52rem;
+}
+.form_control .user_name {
+  width: 9.15rem;
+  height: 1.02rem;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  line-height: 1.02rem;
+}
+.form_control .user_name .user_icon {
+  display: block;
+  width: 2.4rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  float: left;
+  text-align: left;
+}
+[data-dpr="1"] .form_control .user_name .user_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .form_control .user_name .user_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .form_control .user_name .user_icon {
+  font-size: 45px;
+}
+.form_control .user_name .user_input {
+  width: 6.75rem;
+  height: 1rem;
+  border: none;
+  background: none;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  float: left;
+}
+[data-dpr="1"] .form_control .user_name .user_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .form_control .user_name .user_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .form_control .user_name .user_input {
+  font-size: 45px;
+}
+.form_control .user_name .user_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.form_control .user_pwd {
+  width: 9.15rem;
+  height: 1.04rem;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  line-height: 1.04rem;
+}
+.form_control .user_pwd .pwd_icon {
+  display: block;
+  width: 2.4rem;
+  height: 1.04rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  float: left;
+  text-align: left;
+}
+[data-dpr="1"] .form_control .user_pwd .pwd_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .form_control .user_pwd .pwd_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .form_control .user_pwd .pwd_icon {
+  font-size: 45px;
+}
+.form_control .user_pwd .pwd_input {
+  width: 5.95rem;
+  height: 1.04rem;
+  line-height: 1.04rem;
+  border: none;
+  background: none;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  float: left;
+}
+[data-dpr="1"] .form_control .user_pwd .pwd_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .form_control .user_pwd .pwd_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .form_control .user_pwd .pwd_input {
+  font-size: 45px;
+}
+.form_control .user_pwd .pwd_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.form_control .user_pwd .showPwd {
+  display: block;
+  width: 0.8rem;
+  height: 1.04rem;
+  line-height: 1.04rem;
+  float: left;
+  text-align: center;
+}
+.form_control .forget_pwd {
+  width: 9.15rem;
+  height: 0.72rem;
+  line-height: 0.72rem;
+  text-align: right;
+  margin-top: 0.2rem;
+}
+.form_control .forget_pwd a {
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .forget_pwd a {
+  font-size: 12px;
+}
+[data-dpr="2"] .form_control .forget_pwd a {
+  font-size: 24px;
+}
+[data-dpr="3"] .form_control .forget_pwd a {
+  font-size: 36px;
+}
+.form_control .login {
+  width: 9.15rem;
+  height: 1.15rem;
+  margin-top: 0.11rem;
+}
+.form_control .login .login_btn {
+  display: block;
+  width: 9.15rem;
+  height: 1.15rem;
+  margin: 0 auto;
+  line-height: 1.25rem;
+  text-align: center;
+  border-radius: 0.08rem;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+  border: none;
+  background: #e31e3c;
+}
+[data-dpr="1"] .form_control .login .login_btn {
+  font-size: 18px;
+}
+[data-dpr="2"] .form_control .login .login_btn {
+  font-size: 36px;
+}
+[data-dpr="3"] .form_control .login .login_btn {
+  font-size: 54px;
+}

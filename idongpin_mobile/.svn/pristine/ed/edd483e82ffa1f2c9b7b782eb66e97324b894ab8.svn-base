@@ -1,0 +1,28 @@
+body,div,ul,li,input,textarea{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:visited,a:link,a:hover,a:active{
+	color: #ffffff;
+}
+
+ul,li{
+	list-style: none;
+}
+
+input,button,select,textarea{
+	outline: none;
+}
+
+textarea{
+	resize: none;
+}
+
+.clear{
+	clear: both;
+}

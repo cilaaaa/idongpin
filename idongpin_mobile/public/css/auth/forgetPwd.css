@@ -1,0 +1,310 @@
+.font-family {
+  font-family: "Microsoft YaHei";
+}
+@font-face {
+  font-family: 'arrowsleft';
+  src: url('../../fonts/auth/arrowsleft.eot');
+  src: url('../../fonts/auth/arrowsleft.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../../fonts/auth/arrowsleft.woff') format('woff'), /* chrome、firefox */
+   url('../../fonts/auth/arrowsleft.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../../fonts/auth/arrowsleft.svg#iconfont') format('svg');/* IE9*/
+  /* iOS 4.1- */
+}
+body {
+  background: #fafafa;
+}
+.header {
+  width: 100%;
+  height: 1.31rem;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid #bcbcbc;
+  box-sizing: border-box;
+  padding-top: 0.24rem;
+  background: #fafafa;
+}
+.header div {
+  width: 9.15rem;
+  margin: 0 auto;
+  height: 1.07rem;
+  line-height: 1.07rem;
+  text-align: center;
+  position: relative;
+}
+.header div .back {
+  color: #4d4d4d;
+  font-family: "arrowsleft";
+  position: absolute;
+  left: 0px;
+}
+[data-dpr="1"] .header div .back {
+  font-size: 18px;
+}
+[data-dpr="2"] .header div .back {
+  font-size: 36px;
+}
+[data-dpr="3"] .header div .back {
+  font-size: 54px;
+}
+.header div .page_ttl {
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header div .page_ttl {
+  font-size: 18px;
+}
+[data-dpr="2"] .header div .page_ttl {
+  font-size: 36px;
+}
+[data-dpr="3"] .header div .page_ttl {
+  font-size: 54px;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.25rem;
+}
+.content ul {
+  width: 100%;
+  border-bottom: 1px solid #bcbcbc;
+}
+.content ul .phone_number {
+  width: 9.15rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #bcbcbc;
+}
+.content ul .phone_number .user_icon {
+  font-family: "Microsoft YaHei";
+  width: 2.36rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+  color: #4d4d4d;
+}
+[data-dpr="1"] .content ul .phone_number .user_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .phone_number .user_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .phone_number .user_icon {
+  font-size: 45px;
+}
+.content ul .phone_number .user_input {
+  color: #4d4d4d;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  pdding: 0px 20px;
+  font-family: "Microsoft YaHei";
+  width: 6.79rem;
+  height: 1.12rem;
+  float: left;
+  line-height: 1.12rem;
+}
+[data-dpr="1"] .content ul .phone_number .user_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .phone_number .user_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .phone_number .user_input {
+  font-size: 45px;
+}
+.content ul .phone_number .user_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.content ul .verification_code {
+  width: 9.15rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #bcbcbc;
+}
+.content ul .verification_code .code_icon {
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  width: 2.36rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+}
+[data-dpr="1"] .content ul .verification_code .code_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .verification_code .code_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .verification_code .code_icon {
+  font-size: 45px;
+}
+.content ul .verification_code .code_input {
+  color: #4d4d4d;
+  border: none;
+  background: none;
+  width: 3.92rem;
+  font-family: "Microsoft YaHei";
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+}
+[data-dpr="1"] .content ul .verification_code .code_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .verification_code .code_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .verification_code .code_input {
+  font-size: 45px;
+}
+.content ul .verification_code .code_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.content ul .verification_code .get_code_btn {
+  border: none;
+  display: inline-block;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  text-align: center;
+  width: 2.87rem;
+  color: #999999;
+  font-family: "Microsoft YaHei";
+  float: right;
+  background: #dadada;
+}
+[data-dpr="1"] .content ul .verification_code .get_code_btn {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .verification_code .get_code_btn {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .verification_code .get_code_btn {
+  font-size: 45px;
+}
+.content ul .pwd {
+  width: 9.15rem;
+  height: 1.12rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #bcbcbc;
+}
+.content ul .pwd .pwd_icon {
+  font-family: "Microsoft YaHei";
+  width: 2.36rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+  color: #4d4d4d;
+}
+[data-dpr="1"] .content ul .pwd .pwd_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .pwd .pwd_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .pwd .pwd_icon {
+  font-size: 45px;
+}
+.content ul .pwd .pwd_input {
+  color: #4d4d4d;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  pdding: 0px 20px;
+  font-family: "Microsoft YaHei";
+  width: 5.69rem;
+  height: 1.12rem;
+  float: left;
+  line-height: 1.12rem;
+}
+[data-dpr="1"] .content ul .pwd .pwd_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .pwd .pwd_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .pwd .pwd_input {
+  font-size: 45px;
+}
+.content ul .pwd .pwd_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.content ul .pwd .showPwd {
+  display: block;
+  width: 1.1rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+  text-align: center;
+}
+.content ul .pwd_again {
+  width: 9.15rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  margin: 0 auto;
+}
+.content ul .pwd_again .pwd_again_icon {
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+  width: 2.36rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  float: left;
+}
+[data-dpr="1"] .content ul .pwd_again .pwd_again_icon {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .pwd_again .pwd_again_icon {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .pwd_again .pwd_again_icon {
+  font-size: 45px;
+}
+.content ul .pwd_again .pwd_again_input {
+  color: #4d4d4d;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  pdding: 0px 20px;
+  font-family: "Microsoft YaHei";
+  width: 6.79rem;
+  height: 1.12rem;
+  float: left;
+  line-height: 1.12rem;
+}
+[data-dpr="1"] .content ul .pwd_again .pwd_again_input {
+  font-size: 15px;
+}
+[data-dpr="2"] .content ul .pwd_again .pwd_again_input {
+  font-size: 30px;
+}
+[data-dpr="3"] .content ul .pwd_again .pwd_again_input {
+  font-size: 45px;
+}
+.content ul .pwd_again .pwd_again_input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.content .confirm {
+  display: block;
+  width: 9.15rem;
+  height: 1.18rem;
+  line-height: 1.18rem;
+  margin: 0 auto;
+  margin-top: 0.75rem;
+  border: none;
+  background: #e31e3c;
+  border-radius: 0.08rem;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .confirm {
+  font-size: 16px;
+}
+[data-dpr="2"] .content .confirm {
+  font-size: 32px;
+}
+[data-dpr="3"] .content .confirm {
+  font-size: 48px;
+}

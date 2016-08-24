@@ -1,0 +1,57 @@
+.header {
+  height: 1.18rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e02341;
+}
+.header .header_content {
+  height: 100%;
+  width: 2rem;
+  margin: 0 auto;
+  line-height: 1.18rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .header_content {
+  font-size: 15px;
+}
+[data-dpr="2"] .header .header_content {
+  font-size: 30px;
+}
+[data-dpr="3"] .header .header_content {
+  font-size: 45px;
+}
+.header .back {
+  position: absolute;
+  left: 0.46rem;
+  top: 0.4rem;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.content .orderStatus {
+  width: 100%;
+  margin: 0 auto;
+  height: 1.18rem;
+  border-bottom: solid #e8e8e8 2px;
+}
+.content .orderStatus li {
+  float: left;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  width: 25%;
+  text-align: center;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .orderStatus li {
+  font-size: 15px;
+}
+[data-dpr="2"] .content .orderStatus li {
+  font-size: 30px;
+}
+[data-dpr="3"] .content .orderStatus li {
+  font-size: 45px;
+}

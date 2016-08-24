@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<script type="text/javascript" src="{{url('js/lib/flexible.js')}}"></script>
+    	<title>i冻品</title>
+    	<link rel="stylesheet" type="text/css" href="{{url('css/public/common.css')}}">
+    	<link rel="stylesheet" type="text/css" href="{{url('css/product/classify.css')}}">
+	</head>
+	<body>
+		<header class="header">
+		<div class="header_content">分类
+			<div class="clear"></div>
+		</div>				
+	</header>	
+	<div class="content">
+		<div class="kinds">
+			<ul class="kind_data">
+				<li><a href="">鸡</a></li>
+				<li><a href="">鸭</a></li>
+				<li><a href="">鹅</a></li>
+				<li><a href="">牛</a></li>
+				<li><a href="">羊</a></li>
+				<li><a href="">猪</a></li>
+			</ul>
+		</div>
+	</div>
+	</body>
+</html>

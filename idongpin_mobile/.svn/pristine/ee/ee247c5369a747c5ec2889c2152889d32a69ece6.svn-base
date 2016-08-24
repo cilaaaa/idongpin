@@ -1,0 +1,296 @@
+@bodyBgColor:#f5f5f5;
+@themeColor: #e02341;
+@baseColor: #4d4d4d;
+@contentColor: #ffffff;
+@textColor: #999999;
+@borderColor: #e8e8e8;
+@infoColor: #1a1a1a;
+.font-size(@font-size){
+	[data-dpr="1"] & {
+		font-size: @font-size;
+	}
+	[data-dpr="2"] & {
+		font-size:@font-size*2;
+	}
+	[data-dpr="3"] & {
+		font-size:@font-size*3;
+	}
+}
+.font-family{
+	font-family: "Microsoft YaHei";
+}
+
+body{
+	background: @bodyBgColor;
+}
+.header{
+	width: 100%;
+	background: @themeColor;
+	.header_ttl{
+		height: 1.18rem;
+		line-height: 1.18rem;
+		text-align: center;
+		position: relative;
+		.page_ttl{
+			color: #ffffff;
+			.font-size(18px);
+			.font-family;
+		}
+		.setting{
+			position: absolute;
+			right: 0.43rem;
+			img{
+				width: 0.46rem;
+				height: 0.46rem;
+			}
+		}
+	}
+	
+	.user_info{
+		width: 10rem;
+		height: 2.48rem;
+		box-sizing: border-box;
+		padding: 0 0.43rem;
+		.user_avatar{
+			width: 1.6rem;
+			height: 2.48rem;
+			float: left;
+			img{
+				width: 1.6rem;
+				height: 1.6rem;
+				border-radius: 0.8rem;
+			}
+		}
+		.user_about{
+			width: 7.34rem;
+			height: 2.48rem;
+			float: right;
+			.user_name{
+				width: 7.34rem;
+				height: 0.71rem;
+				line-height: 0.71rem;
+				margin-top: 0.49rem;
+				.name{
+					color: @contentColor;
+					.font-size(15px);
+					.font-family;
+				}
+				.user_kind{
+					color: @contentColor;
+					.font-size(12px);
+					.font-family;
+				}
+			}
+			.approve{
+				display: inline-block;
+				height: 0.4rem;
+				line-height: 0.4rem;
+				box-sizing: border-box;
+				padding: 0 0.2rem;
+				background: #ffbb45;
+				border-radius: 0.2rem;
+				img{
+					width: 0.24rem;
+					margin-left: 0.07rem;
+				}
+			}
+		}
+		.clear{
+			clear: both;
+		}
+	}
+}
+.content{
+	width: 100%;
+	margin-bottom: 1.53rem;
+	.container{
+		width: 10rem;
+		margin: 0 auto;
+		box-sizing: border-box;
+		padding-top: 0.21rem;
+		.my_order{
+			width: 10rem;
+			height: 1.12rem;
+			line-height: 1.12rem;
+			background: @contentColor;
+			box-sizing: border-box;
+			padding: 0 0.43rem;
+			.icon{
+				float: left;
+				height: 0.38rem;
+				margin-top: 0.37rem;
+			}
+			.text{
+				float: left;
+				margin-left: 0.43rem;
+				color: @baseColor;
+				.font-size(15px);
+				.font-family;
+			}
+			.more{
+				float: right;
+				height: 0.38rem;
+				margin-top: 0.37rem;
+			}
+		}
+		.order_status{
+			width: 10rem;
+			height: 1.64rem;
+			border-top: 0.02rem solid @borderColor;
+			box-sizing: border-box;
+			padding: 0 0.43rem;
+			background: @contentColor;
+			.not_pay{
+				width: 1.12rem;
+				height: 1.62rem;
+				margin: 0 0.86rem;
+				margin-top: 0.2rem;
+				float: left;
+				.order_icon{
+					width: 1.12rem;
+					height: 0.63rem;
+					text-align: center;
+					position: relative;
+					img{
+						height: 0.49rem;
+						margin-top: 0.14rem;
+					}
+					div{
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						width: 0.43rem;
+						height: 0.43rem;
+						border-radius: 0.22rem;
+						background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+						background-size: 0.43rem 0.43rem;
+						text-align: center;
+						line-height: 0.43rem;
+						color: @themeColor;
+						.font-size(12px);
+						.font-family;
+					}
+				}
+				.status{
+					width: 1.12rem;
+					height: 0.52rem;
+					text-align: center;
+					line-height: 0.52rem;
+					color: @baseColor;
+					.font-size(12px);
+					.font-family;
+				}
+			}
+			.paied{
+				width: 1.12rem;
+				height: 1.62rem;
+				margin-right: 0.86rem;
+				margin-top: 0.2rem;
+				margin-left: 1.17rem;
+				float: left;
+				.order_icon{
+					width: 1.12rem;
+					height: 0.63rem;
+					text-align: center;
+					position: relative;
+					img{
+						height: 0.49rem;
+						margin-top: 0.14rem;
+					}
+					div{
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						width: 0.43rem;
+						height: 0.43rem;
+						border-radius: 0.22rem;
+						background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+						background-size: 0.43rem 0.43rem;
+						text-align: center;
+						line-height: 0.43rem;
+						color: @themeColor;
+						.font-size(12px);
+						.font-family;
+					}
+				}
+				.status{
+					width: 1.12rem;
+					height: 0.52rem;
+					text-align: center;
+					line-height: 0.52rem;
+					color: @baseColor;
+					.font-size(12px);
+					.font-family;
+				}
+			}
+			.finish{
+				width: 1.12rem;
+				height: 1.62rem;
+				margin-right: 0.86rem;
+				margin-top: 0.2rem;
+				margin-left: 1.17rem;
+				float: left;
+				.order_icon{
+					width: 1.12rem;
+					height: 0.63rem;
+					text-align: center;
+					position: relative;
+					img{
+						height: 0.49rem;
+						margin-top: 0.14rem;
+					}
+					div{
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						width: 0.43rem;
+						height: 0.43rem;
+						border-radius: 0.22rem;
+						background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+						background-size: 0.43rem 0.43rem;
+						text-align: center;
+						line-height: 0.43rem;
+						color: @themeColor;
+						.font-size(12px);
+						.font-family;
+					}
+				}
+				.status{
+					width: 1.12rem;
+					height: 0.52rem;
+					text-align: center;
+					line-height: 0.52rem;
+					color: @baseColor;
+					.font-size(12px);
+					.font-family;
+				}
+			}
+		}
+		.customer_services,.receive_address,.after_sale{
+			margin-top: 0.21rem;
+			width: 10rem;
+			height: 1.12rem;
+			line-height: 1.12rem;
+			background: @contentColor;
+			box-sizing: border-box;
+			padding: 0 0.43rem;
+			.icon{
+				float: left;
+				height: 0.38rem;
+				margin-top: 0.37rem;
+			}
+			.text{
+				float: left;
+				margin-left: 0.43rem;
+				color: @baseColor;
+				.font-size(15px);
+				.font-family;
+			}
+			.more{
+				float: right;
+				height: 0.38rem;
+				margin-top: 0.37rem;
+			}
+		}
+	}
+}

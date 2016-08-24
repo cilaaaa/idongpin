@@ -1,0 +1,176 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use App\User;
+use Validator;
+use App\Http\Models\PhoneMessage;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
+class AuthController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Registration & Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
+    |
+    */
+
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins,PhoneMessage;
+
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+
+    //验证手机号
+    protected function validatorPhone(array $data)
+    {
+        return Validator::make($data, [
+            'user_phone' => array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,
+            8]{1}\d{8}$|^18[\d]{9}$/'),
+        ]);
+    }
+
+    //发送注册验证码
+    public function getCode(Request $request){
+        $validator = $this->validatorPhone($request->all());
+        if ($validator->fails()) {
+            $errors['msg'] = '手机号不符合规则';
+            return new JsonResponse($errors, 422);
+        }
+        if(User::where('user_phone',$request->user_phone)->count()==0){
+            $code = rand(100000,999999);
+            User::create([
+                'user_phone' => $request->user_phone,
+                'code' => $code,
+                'code_create_time' => date("Y-m-d H:i:s"),
+                'code_type'  => '注册'
+            ]);
+        }else{
+            $user = User::where('user_phone',$request->user_phone)->first();
+            if ($user->code ==""&&$user->code_type==""){
+                $errors['msg'] = '该用户名已注册';
+                return new JsonResponse($errors, 422);
+            }else{
+                if(time()<(strtotime($user->code_create_time)+60)){
+                    $time = strtotime($user->code_create_time)-time()+60;
+                    $errors['msg'] = '请在'.$time.'秒后重新获取验证码';
+                    return new JsonResponse($errors, 422);
+                }else{
+                    $code = rand(100000,999999);
+                    User::where('user_phone',$request->user_phone)->update([
+                        'code' => $code,
+                        'code_create_time' => date("Y-m-d H:i:s"),
+                        'code_type'  => '注册'
+                    ]);
+                }
+            }
+        }
+
+        $result = $this->sendPhoneMessageByModule($request->user_phone,1449757,$code);
+        if($result['code']==0){
+            $success['status'] = 200;
+            return new JsonResponse($success, 200);
+        }else{
+            $errors['msg'] = $result['msg'];
+            return new JsonResponse($errors, 422);
+        }
+
+    }
+
+    //重写注册逻辑
+    public function register(Request $request){
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        if(User::where('user_phone',$request->user_phone)->count()==1){
+            $user = User::where('user_phone',$request->user_phone)->first();
+            if(time()<(strtotime($user->code_create_time)+1800)){
+                if($user->code==$request->code && $user->code_type=='注册'){
+                    Auth::guard($this->getGuard())->login($this->update($request->all()));
+
+                    return redirect($this->redirectPath());
+                }
+            }else{
+                return redirect()->back()
+                    ->withInput($request->input())
+                    ->withErrors([
+                        'code' => "验证码超时,请重新获取",
+                    ]);
+            }
+        }
+        return redirect()->back()
+            ->withInput($request->input())
+            ->withErrors([
+                'code' => "验证码错误",
+            ]);
+    }
+
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'user_phone' => array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,
+            8]{1}\d{8}$|^18[\d]{9}$/'),
+            'password' => 'required|min:6|confirmed',
+            'code' => 'required|min:6',
+        ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    protected function create(array $data)
+    {
+        return User::create([
+            'user_name' => $data['user_name'],
+            'user_phone' => $data['user_phone'],
+            'password' => bcrypt($data['password']),
+            'code' => '',
+            'code_type' => '',
+            'recommend_code' => $data['recommend_code'],
+            'user_type' => 'user',
+            'group_id' => 'user',
+        ]);
+    }
+
+    public function merchantAuth(Request $request){
+        return view('auth/authentication');
+    }
+}

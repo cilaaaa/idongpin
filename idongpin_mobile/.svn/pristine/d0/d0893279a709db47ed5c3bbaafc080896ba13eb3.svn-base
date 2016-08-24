@@ -1,0 +1,309 @@
+@font-face {
+  font-family: 'verification_code';
+  src: url('../../fonts/auth/verification_code.eot');
+  src: url('../../fonts/auth/verification_code.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../../fonts/auth/verification_code.woff') format('woff'), /* chrome、firefox */
+   url('../../fonts/auth/verification_code.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../../fonts/auth/verification_code.svg#iconfont') format('svg');/* IE9*/
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: 'user';
+  src: url('../../fonts/auth/user.eot');
+  src: url('../../fonts/auth/user.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../../fonts/auth/user.woff') format('woff'), /* chrome、firefox */
+   url('../../fonts/auth/user.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../../fonts/auth/user.svg#iconfont') format('svg');/* IE9*/
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: 'pwd';
+  src: url('../../fonts/auth/pwd.eot');
+  src: url('../../fonts/auth/pwd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../../fonts/auth/pwd.woff') format('woff'), /* chrome、firefox */
+   url('../../fonts/auth/pwd.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../../fonts/auth/pwd.svg#iconfont') format('svg');/* IE9*/
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: 'goto';
+  src: url('../../fonts/auth/goto.eot');
+  src: url('../../fonts/auth/goto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../../fonts/auth/goto.woff') format('woff'), /* chrome、firefox */
+   url('../../fonts/auth/goto.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../../fonts/auth/goto.svg#iconfont') format('svg');/* IE9*/
+  /* iOS 4.1- */
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: url('../../images/auth/bg_pic.png') top center no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.registe_content {
+  width: 9rem;
+  height: 14rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 3rem;
+}
+.go_login {
+  width: 9rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: right;
+  position: absolute;
+  top: 0.2rem;
+}
+.go_login a {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .go_login a {
+  font-size: 14px;
+}
+[data-dpr="2"] .go_login a {
+  font-size: 28px;
+}
+[data-dpr="3"] .go_login a {
+  font-size: 42px;
+}
+.go_login a .goto {
+  font-family: "goto";
+}
+.company_logo {
+  width: 6rem;
+  margin: 0 auto;
+}
+.company_logo img {
+  width: 6rem;
+}
+.form_control {
+  margin-top: 1.5rem;
+}
+.form_control .verification_code {
+  width: 5rem;
+  height: 1.25rem;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+  line-height: 1.25rem;
+  float: left;
+}
+.form_control .verification_code .code_icon {
+  color: #ffffff;
+  font-family: "verification_code";
+  margin-left: 1rem;
+}
+[data-dpr="1"] .form_control .verification_code .code_icon {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .verification_code .code_icon {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .verification_code .code_icon {
+  font-size: 42px;
+}
+.form_control .verification_code .code_input {
+  width: 3rem;
+  height: 1rem;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .verification_code .code_input {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .verification_code .code_input {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .verification_code .code_input {
+  font-size: 42px;
+}
+.form_control .verification_code .code_input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+.form_control .phone_number,
+.form_control .user_pwd,
+.form_control .user_pwd_confirm {
+  width: 9rem;
+  height: 1.25rem;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+  line-height: 1.25rem;
+}
+.form_control .phone_number .user_con,
+.form_control .user_pwd .user_con,
+.form_control .user_pwd_confirm .user_con {
+  color: #ffffff;
+  font-family: "user";
+}
+[data-dpr="1"] .form_control .phone_number .user_con,
+[data-dpr="1"] .form_control .user_pwd .user_con,
+[data-dpr="1"] .form_control .user_pwd_confirm .user_con {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .phone_number .user_con,
+[data-dpr="2"] .form_control .user_pwd .user_con,
+[data-dpr="2"] .form_control .user_pwd_confirm .user_con {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .phone_number .user_con,
+[data-dpr="3"] .form_control .user_pwd .user_con,
+[data-dpr="3"] .form_control .user_pwd_confirm .user_con {
+  font-size: 42px;
+}
+.form_control .phone_number .pwd_icon,
+.form_control .user_pwd .pwd_icon,
+.form_control .user_pwd_confirm .pwd_icon {
+  color: #ffffff;
+  font-family: "pwd";
+}
+[data-dpr="1"] .form_control .phone_number .pwd_icon,
+[data-dpr="1"] .form_control .user_pwd .pwd_icon,
+[data-dpr="1"] .form_control .user_pwd_confirm .pwd_icon {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .phone_number .pwd_icon,
+[data-dpr="2"] .form_control .user_pwd .pwd_icon,
+[data-dpr="2"] .form_control .user_pwd_confirm .pwd_icon {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .phone_number .pwd_icon,
+[data-dpr="3"] .form_control .user_pwd .pwd_icon,
+[data-dpr="3"] .form_control .user_pwd_confirm .pwd_icon {
+  font-size: 42px;
+}
+.form_control .phone_number .number_input,
+.form_control .user_pwd .number_input,
+.form_control .user_pwd_confirm .number_input,
+.form_control .phone_number .pwd_input,
+.form_control .user_pwd .pwd_input,
+.form_control .user_pwd_confirm .pwd_input,
+.form_control .phone_number .pwd_confirm_input,
+.form_control .user_pwd .pwd_confirm_input,
+.form_control .user_pwd_confirm .pwd_confirm_input {
+  width: 6rem;
+  height: 1rem;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .phone_number .number_input,
+[data-dpr="1"] .form_control .user_pwd .number_input,
+[data-dpr="1"] .form_control .user_pwd_confirm .number_input,
+[data-dpr="1"] .form_control .phone_number .pwd_input,
+[data-dpr="1"] .form_control .user_pwd .pwd_input,
+[data-dpr="1"] .form_control .user_pwd_confirm .pwd_input,
+[data-dpr="1"] .form_control .phone_number .pwd_confirm_input,
+[data-dpr="1"] .form_control .user_pwd .pwd_confirm_input,
+[data-dpr="1"] .form_control .user_pwd_confirm .pwd_confirm_input {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .phone_number .number_input,
+[data-dpr="2"] .form_control .user_pwd .number_input,
+[data-dpr="2"] .form_control .user_pwd_confirm .number_input,
+[data-dpr="2"] .form_control .phone_number .pwd_input,
+[data-dpr="2"] .form_control .user_pwd .pwd_input,
+[data-dpr="2"] .form_control .user_pwd_confirm .pwd_input,
+[data-dpr="2"] .form_control .phone_number .pwd_confirm_input,
+[data-dpr="2"] .form_control .user_pwd .pwd_confirm_input,
+[data-dpr="2"] .form_control .user_pwd_confirm .pwd_confirm_input {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .phone_number .number_input,
+[data-dpr="3"] .form_control .user_pwd .number_input,
+[data-dpr="3"] .form_control .user_pwd_confirm .number_input,
+[data-dpr="3"] .form_control .phone_number .pwd_input,
+[data-dpr="3"] .form_control .user_pwd .pwd_input,
+[data-dpr="3"] .form_control .user_pwd_confirm .pwd_input,
+[data-dpr="3"] .form_control .phone_number .pwd_confirm_input,
+[data-dpr="3"] .form_control .user_pwd .pwd_confirm_input,
+[data-dpr="3"] .form_control .user_pwd_confirm .pwd_confirm_input {
+  font-size: 42px;
+}
+.form_control .phone_number .number_input::-webkit-input-placeholder,
+.form_control .user_pwd .number_input::-webkit-input-placeholder,
+.form_control .user_pwd_confirm .number_input::-webkit-input-placeholder,
+.form_control .phone_number .pwd_input::-webkit-input-placeholder,
+.form_control .user_pwd .pwd_input::-webkit-input-placeholder,
+.form_control .user_pwd_confirm .pwd_input::-webkit-input-placeholder,
+.form_control .phone_number .pwd_confirm_input::-webkit-input-placeholder,
+.form_control .user_pwd .pwd_confirm_input::-webkit-input-placeholder,
+.form_control .user_pwd_confirm .pwd_confirm_input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+.form_control .get_code {
+  width: 4rem;
+  height: 2rem;
+  line-height: 1.5rem;
+  float: right;
+  text-align: center;
+  color: #fff;
+}
+[data-dpr="1"] .form_control .get_code {
+  font-size: 16px;
+}
+[data-dpr="2"] .form_control .get_code {
+  font-size: 32px;
+}
+[data-dpr="3"] .form_control .get_code {
+  font-size: 48px;
+}
+.form_control .register {
+  width: 9rem;
+  height: 1.25rem;
+  margin-top: 2rem;
+}
+.form_control .register .register_btn {
+  display: block;
+  width: 7rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  line-height: 1.25rem;
+  text-align: center;
+  border-radius: 0.625rem;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+  background: none;
+  border: none;
+  background: #64bfc4;
+}
+[data-dpr="1"] .form_control .register .register_btn {
+  font-size: 16px;
+}
+[data-dpr="2"] .form_control .register .register_btn {
+  font-size: 32px;
+}
+[data-dpr="3"] .form_control .register .register_btn {
+  font-size: 48px;
+}
+.form_control .user_agreement {
+  margin: 0 auto;
+  width: 3.5rem;
+  padding-top: 0.5rem;
+  color: #ffffff;
+}
+[data-dpr="1"] .form_control .user_agreement {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .user_agreement {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .user_agreement {
+  font-size: 42px;
+}
+.form_control .user_agreement input[type="checkbox"] {
+  width: 3vw;
+  height: 3vw;
+}

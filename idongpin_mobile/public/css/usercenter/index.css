@@ -1,0 +1,378 @@
+.font-family {
+  font-family: "Microsoft YaHei";
+}
+body {
+  background: #f5f5f5;
+}
+.header {
+  width: 100%;
+  background: #e02341;
+}
+.header .header_ttl {
+  height: 1.18rem;
+  line-height: 1.18rem;
+  text-align: center;
+  position: relative;
+}
+.header .header_ttl .page_ttl {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .header_ttl .page_ttl {
+  font-size: 18px;
+}
+[data-dpr="2"] .header .header_ttl .page_ttl {
+  font-size: 36px;
+}
+[data-dpr="3"] .header .header_ttl .page_ttl {
+  font-size: 54px;
+}
+.header .header_ttl .setting {
+  position: absolute;
+  right: 0.43rem;
+}
+.header .header_ttl .setting img {
+  width: 0.46rem;
+  height: 0.46rem;
+}
+.header .user_info {
+  width: 10rem;
+  height: 2.48rem;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+}
+.header .user_info .user_avatar {
+  width: 1.6rem;
+  height: 2.48rem;
+  float: left;
+}
+.header .user_info .user_avatar img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.8rem;
+}
+.header .user_info .user_about {
+  width: 7.34rem;
+  height: 2.48rem;
+  float: right;
+}
+.header .user_info .user_about .user_name {
+  width: 7.34rem;
+  height: 0.71rem;
+  line-height: 0.71rem;
+  margin-top: 0.49rem;
+}
+.header .user_info .user_about .user_name .name {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .user_info .user_about .user_name .name {
+  font-size: 15px;
+}
+[data-dpr="2"] .header .user_info .user_about .user_name .name {
+  font-size: 30px;
+}
+[data-dpr="3"] .header .user_info .user_about .user_name .name {
+  font-size: 45px;
+}
+.header .user_info .user_about .user_name .user_kind {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .user_info .user_about .user_name .user_kind {
+  font-size: 12px;
+}
+[data-dpr="2"] .header .user_info .user_about .user_name .user_kind {
+  font-size: 24px;
+}
+[data-dpr="3"] .header .user_info .user_about .user_name .user_kind {
+  font-size: 36px;
+}
+.header .user_info .user_about .approve {
+  display: inline-block;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  box-sizing: border-box;
+  padding: 0 0.2rem;
+  background: #ffbb45;
+  border-radius: 0.2rem;
+}
+.header .user_info .user_about .approve img {
+  width: 0.24rem;
+  margin-left: 0.07rem;
+}
+.header .user_info .clear {
+  clear: both;
+}
+.content {
+  width: 100%;
+  margin-bottom: 1.53rem;
+}
+.content .container {
+  width: 10rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 0.21rem;
+}
+.content .container .my_order {
+  width: 10rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+}
+.content .container .my_order .icon {
+  float: left;
+  height: 0.38rem;
+  margin-top: 0.37rem;
+}
+.content .container .my_order .text {
+  float: left;
+  margin-left: 0.43rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .my_order .text {
+  font-size: 15px;
+}
+[data-dpr="2"] .content .container .my_order .text {
+  font-size: 30px;
+}
+[data-dpr="3"] .content .container .my_order .text {
+  font-size: 45px;
+}
+.content .container .my_order .more {
+  float: right;
+  height: 0.38rem;
+  margin-top: 0.37rem;
+}
+.content .container .order_status {
+  width: 10rem;
+  height: 1.64rem;
+  border-top: 0.02rem solid #e8e8e8;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+  background: #ffffff;
+}
+.content .container .order_status .not_pay {
+  width: 1.12rem;
+  height: 1.62rem;
+  margin: 0 0.86rem;
+  margin-top: 0.2rem;
+  float: left;
+}
+.content .container .order_status .not_pay .order_icon {
+  width: 1.12rem;
+  height: 0.63rem;
+  text-align: center;
+  position: relative;
+}
+.content .container .order_status .not_pay .order_icon img {
+  height: 0.49rem;
+  margin-top: 0.14rem;
+}
+.content .container .order_status .not_pay .order_icon div {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0.43rem;
+  height: 0.43rem;
+  border-radius: 0.22rem;
+  background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+  background-size: 0.43rem 0.43rem;
+  text-align: center;
+  line-height: 0.43rem;
+  color: #e02341;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .not_pay .order_icon div {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .not_pay .order_icon div {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .not_pay .order_icon div {
+  font-size: 36px;
+}
+.content .container .order_status .not_pay .status {
+  width: 1.12rem;
+  height: 0.52rem;
+  text-align: center;
+  line-height: 0.52rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .not_pay .status {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .not_pay .status {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .not_pay .status {
+  font-size: 36px;
+}
+.content .container .order_status .paied {
+  width: 1.12rem;
+  height: 1.62rem;
+  margin-right: 0.86rem;
+  margin-top: 0.2rem;
+  margin-left: 1.17rem;
+  float: left;
+}
+.content .container .order_status .paied .order_icon {
+  width: 1.12rem;
+  height: 0.63rem;
+  text-align: center;
+  position: relative;
+}
+.content .container .order_status .paied .order_icon img {
+  height: 0.49rem;
+  margin-top: 0.14rem;
+}
+.content .container .order_status .paied .order_icon div {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0.43rem;
+  height: 0.43rem;
+  border-radius: 0.22rem;
+  background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+  background-size: 0.43rem 0.43rem;
+  text-align: center;
+  line-height: 0.43rem;
+  color: #e02341;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .paied .order_icon div {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .paied .order_icon div {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .paied .order_icon div {
+  font-size: 36px;
+}
+.content .container .order_status .paied .status {
+  width: 1.12rem;
+  height: 0.52rem;
+  text-align: center;
+  line-height: 0.52rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .paied .status {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .paied .status {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .paied .status {
+  font-size: 36px;
+}
+.content .container .order_status .finish {
+  width: 1.12rem;
+  height: 1.62rem;
+  margin-right: 0.86rem;
+  margin-top: 0.2rem;
+  margin-left: 1.17rem;
+  float: left;
+}
+.content .container .order_status .finish .order_icon {
+  width: 1.12rem;
+  height: 0.63rem;
+  text-align: center;
+  position: relative;
+}
+.content .container .order_status .finish .order_icon img {
+  height: 0.49rem;
+  margin-top: 0.14rem;
+}
+.content .container .order_status .finish .order_icon div {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0.43rem;
+  height: 0.43rem;
+  border-radius: 0.22rem;
+  background: url(../../images/usercenter/news_bg.png) top center no-repeat;
+  background-size: 0.43rem 0.43rem;
+  text-align: center;
+  line-height: 0.43rem;
+  color: #e02341;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .finish .order_icon div {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .finish .order_icon div {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .finish .order_icon div {
+  font-size: 36px;
+}
+.content .container .order_status .finish .status {
+  width: 1.12rem;
+  height: 0.52rem;
+  text-align: center;
+  line-height: 0.52rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .order_status .finish .status {
+  font-size: 12px;
+}
+[data-dpr="2"] .content .container .order_status .finish .status {
+  font-size: 24px;
+}
+[data-dpr="3"] .content .container .order_status .finish .status {
+  font-size: 36px;
+}
+.content .container .customer_services,
+.content .container .receive_address,
+.content .container .after_sale {
+  margin-top: 0.21rem;
+  width: 10rem;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+}
+.content .container .customer_services .icon,
+.content .container .receive_address .icon,
+.content .container .after_sale .icon {
+  float: left;
+  height: 0.38rem;
+  margin-top: 0.37rem;
+}
+.content .container .customer_services .text,
+.content .container .receive_address .text,
+.content .container .after_sale .text {
+  float: left;
+  margin-left: 0.43rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .customer_services .text,
+[data-dpr="1"] .content .container .receive_address .text,
+[data-dpr="1"] .content .container .after_sale .text {
+  font-size: 15px;
+}
+[data-dpr="2"] .content .container .customer_services .text,
+[data-dpr="2"] .content .container .receive_address .text,
+[data-dpr="2"] .content .container .after_sale .text {
+  font-size: 30px;
+}
+[data-dpr="3"] .content .container .customer_services .text,
+[data-dpr="3"] .content .container .receive_address .text,
+[data-dpr="3"] .content .container .after_sale .text {
+  font-size: 45px;
+}
+.content .container .customer_services .more,
+.content .container .receive_address .more,
+.content .container .after_sale .more {
+  float: right;
+  height: 0.38rem;
+  margin-top: 0.37rem;
+}

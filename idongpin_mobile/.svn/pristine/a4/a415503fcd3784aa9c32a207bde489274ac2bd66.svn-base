@@ -1,0 +1,38 @@
+
+$(document).ready(function(){
+	var content = $(".content");
+	setModecenterY(content);
+});
+
+//该方法是给登录显示模块设置垂直居中
+function setModecenterY(obj){
+	var bodyHeight = $("body").height();
+	var objHeihgt = $(obj).height();
+	$(obj).css({
+		top : (bodyHeight - objHeihgt)/2 + "px"
+	});
+};
+
+//账号密码验证
+function accountAndPwdVerification(){
+	var reg_account = /^1[3|4|5|7|8]\d{9}$/;
+	var reg_pwd = /^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){5,17}$/;
+
+	var account = $(".user_input").val();
+	var pwd = $(".pwd_input").val();
+	if(account != "" && pwd !=""){
+		var account_flag;
+		var pwd_flag;
+		reg_account.test($.trim(account))? account_flag = true : account_flag = false;
+		reg_pwd.test($.trim(pwd))? pwd_flag = true : pwd_flag = false;
+		if( account_flag && pwd_flag){
+			return true;
+		}else{
+			alert("用户名或密码错误");
+			return false;
+		}
+	}else{
+		alert("用户名或密码不能为空");
+		return false;
+	}
+}

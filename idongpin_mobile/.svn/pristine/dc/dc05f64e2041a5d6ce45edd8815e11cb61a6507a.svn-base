@@ -1,0 +1,121 @@
+.font-family {
+  font-family: "Microsoft YaHei";
+}
+body {
+  background: #f5f5f5;
+}
+.header {
+  width: 100%;
+  height: 1.18rem;
+  line-height: 1.18rem;
+  text-align: center;
+  background: #e02341;
+  position: relative;
+}
+.header .back {
+  position: absolute;
+  left: 0.43rem;
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.56rem;
+  margin-top: 0.31rem;
+}
+.header .back img {
+  width: 0.32rem;
+  height: 0.56rem;
+  float: left;
+}
+.header .page_ttl {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .page_ttl {
+  font-size: 18px;
+}
+[data-dpr="2"] .header .page_ttl {
+  font-size: 36px;
+}
+[data-dpr="3"] .header .page_ttl {
+  font-size: 54px;
+}
+.content {
+  width: 100%;
+}
+.content .container {
+  width: 10rem;
+  margin: 0 auto;
+}
+.content .container .goods_picture {
+  width: 10rem;
+}
+.content .container .goods_picture img {
+  width: 10rem;
+}
+.content .container .goods_info {
+  width: 10rem;
+  margin-top: 0.02rem;
+  background: #ffffff;
+}
+.content .container .goods_info .goods_name {
+  width: 10rem;
+  box-sizing: border-box;
+  padding: 0.26rem 0.43rem;
+  line-height: 0.62rem;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .goods_info .goods_name {
+  font-size: 15px;
+}
+[data-dpr="2"] .content .container .goods_info .goods_name {
+  font-size: 30px;
+}
+[data-dpr="3"] .content .container .goods_info .goods_name {
+  font-size: 45px;
+}
+.content .container .goods_info .goods_price {
+  width: 10rem;
+  height: 0.46rem;
+  line-height: 0.46rem;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+  color: #e02341;
+  font-weight: bold;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .goods_info .goods_price {
+  font-size: 17px;
+}
+[data-dpr="2"] .content .container .goods_info .goods_price {
+  font-size: 34px;
+}
+[data-dpr="3"] .content .container .goods_info .goods_price {
+  font-size: 51px;
+}
+.content .container .goods_info .goods_origin {
+  width: 10rem;
+  height: 0.65rem;
+  line-height: 0.62rem;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+  color: #999999;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .container .goods_info .goods_origin {
+  font-size: 11px;
+}
+[data-dpr="2"] .content .container .goods_info .goods_origin {
+  font-size: 22px;
+}
+[data-dpr="3"] .content .container .goods_info .goods_origin {
+  font-size: 33px;
+}
+.content .container .purcher_count {
+  width: 10rem;
+  height: 1.34rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 0.43rem;
+  border-top: 0.02rem solid #e8e8e8;
+  border-bottom: 0.02rem solid #e8e8e8;
+}

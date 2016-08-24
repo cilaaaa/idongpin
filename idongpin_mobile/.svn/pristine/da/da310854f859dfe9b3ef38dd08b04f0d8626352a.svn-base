@@ -1,0 +1,61 @@
+.font-size(@font-size){
+    [data-dpr="1"] & {
+        font-size: @font-size;
+    }
+    [data-dpr="2"] & {
+        font-size:@font-size*2;
+    }  
+    [data-dpr="3"] & {
+        font-size:@font-size*3;
+    }
+}
+.header{
+    height: 1.12rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #e02341;
+    .header_content{
+        width: 91%;
+        height: inherit;
+        margin: 0 auto;
+        padding-top: 0.2rem;
+        .back_icon {
+            float: left;
+            height: 0.77rem;
+            line-height: 0.77rem;
+            width: 1.73rem;
+            img#back {
+                width: 0.3rem;
+                height: 0.5rem;
+                
+            }
+        }
+        .search_box {
+            width: 5.72rem;
+            height: 0.77rem;
+            line-height: 0.77rem;
+            float: left;
+            background: #b31c34;
+            input.search_bar {
+                background: none;
+                border: none;
+                .font-size(15px);
+                margin: 0 auto;
+                text-align: left;
+                &::-webkit-input-placeholder{
+                color: #ffffff;
+                }
+            }
+        }
+        .cancel_box {
+            width: 1.6rem;
+            .font-size(14px);
+            height: 0.77rem;
+            line-height: 0.77rem;
+            color: #ffffff;
+            float: right;
+            text-align: right;
+            
+        }         
+    }
+}

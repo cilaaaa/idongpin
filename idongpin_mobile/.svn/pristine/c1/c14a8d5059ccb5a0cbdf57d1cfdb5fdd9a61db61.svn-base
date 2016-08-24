@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="{{url('js/lib/flexible.js')}}"></script>
+    <title>i冻品</title>
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/common.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/footer.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/index/index.css')}}">
+</head>
+<body>
+	<header class="header"></header>
+	<div class="content"></div>
+	<footer class="footer">
+		<ul>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/homePage.png')}}">
+					<span class="spanActive">首页</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/kind.png')}}">
+					<span>分类</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/purcherCar.png')}}">
+					<span>购物车</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/userCenter.png')}}">
+					<span>我的</span>
+				</a>
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</footer>
+</body>
+<script type="text/javascript" src="{{url('js/lib/jquery-1.11.3.min.js')}}"></script>
+<script type="text/javascript" src="{{url('js/index/index.js')}}"></script>
+</html>

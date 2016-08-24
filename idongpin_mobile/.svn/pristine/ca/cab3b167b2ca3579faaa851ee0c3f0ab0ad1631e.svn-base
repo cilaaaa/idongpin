@@ -1,0 +1,22 @@
+@themeColor: #e02341;
+.font-size(@font-size){
+	[data-dpr="1"] & {
+		font-size: @font-size;
+	}
+	[data-dpr="2"] & {
+		font-size:@font-size*2;
+	}
+	[data-dpr="3"] & {
+		font-size:@font-size*3;
+	}
+}
+.font-family{
+	font-family: "Microsoft YaHei";
+}
+
+.header{
+	width: 100%;
+	height: 1.12rem;
+	background: @themeColor;
+}
+
