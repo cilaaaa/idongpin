@@ -1,0 +1,340 @@
+@extends('layouts.app')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{url('css/index/index.css')}}">
+@endsection
+<!-- viwepager start -->
+@section('viwepager')
+    <div class="viwepager">
+        <div class="banner">
+            <ul class="image">
+                @foreach($slidePics as $key => $value)
+                    <li data-color="{{$value->bg_color}}">
+                        <a href="javascript:void(0)">
+                            <img src="{{url($value->pic_url)}}">
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+            <div  class="shu">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('content')
+    <div class="carte" id="carte">
+        @foreach($types as $key => $value)
+            <div class="firstCarte" id="" data-type="{{$value['type_id']}}">
+                <img class="itemImg" src="{{url('images/index/itemActive.png')}}">
+                <div class="menuItem {{' '.$value['type_id'] =="1" ? 'activeItem':' ' }}" data-type="{{$value['type_id']}}">
+                    <div class="bigClass">{{$value['type_name']}}</div>
+                    <div class="smallClass">
+                        @foreach($value['subtypes'] as $k=>$v)
+                            <span>{{$v['type_name']}}</span>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        <div class="firstCarte"  data-type="4">
+            <img class="itemImg" src="{{url('images/index/itemActive.png')}}">
+            <div class="menuItem" data-type="4">
+                <div class="bigClass">找物流</div>
+                <div class="smallClass">
+                    <span>门到门配送服务</span>
+                </div>
+            </div>
+        </div>
+        <div class="firstCarte" data-type="5">
+            <img class="itemImg" src="{{url('images/index/itemActive.png')}}">
+            <div class="menuItem" data-type="5">
+                <div class="bigClass">找仓储</div>
+                <div class="smallClass">
+                    <span>实时监控保障安全</span>
+                </div>
+            </div>
+        </div>
+        <div class="firstCarte" data-type="6">
+            <img class="itemImg" src="{{url('images/index/itemActive.png')}}">
+            <div class="menuItem" data-type="6">
+                <div class="bigClass">找资金</div>
+                <div class="smallClass">
+                    <span>白条在手买货不愁</span>
+                </div>
+            </div>
+        </div>
+        <div id="secondCarte" style="position:absolute;">
+            @foreach($types as $key => $value)
+                <div class="secondCarte {{' '.$value['type_id'] == 1 ? 'secondCarteActive':' '}}" data-type ='{{$value['type_id']}}'>
+                    <div class="topCarte">
+                        @foreach($value['subtypes'] as $k => $v)
+                            <div data-type="{{$v['type_id']}}" class="{{$k==0 ? 'secondActive':' '}}">
+                                <span>{{$v['type_name']}}</span>
+                                <img class="{{$k==0 ? 'imgActive':' '}}" src="{{url('images/point.png')}}">
+                            </div>
+                        @endforeach
+                    </div>
+                    @foreach($value['subtypes'] as $k => $v)
+                        <div class="bottomCarte bottomCarte_{{$v['type_id']}} {{''.$k==0 ? 'bottomCarteActive':''}}">
+                            @foreach($v['subtypes'] as $k_1 => $v_1)
+                                <a href="{{url('search?searchType=product&page=1&protype='.$v['type_id'].'&subtype='.$v_1['type_id'])}}" class="thirdCarte">{{$v_1['type_name']}}</a>
+                            @endforeach
+                        </div>
+                    @endforeach
+                    <div class="strength">
+                        <div>
+                            <img src="{{url('images/index/stock.png')}}">
+                            <span>海量现货库存</span>
+                        </div>
+                        <div>
+                            <img src="{{url('images/index/supply.png')}}">
+                            <span>供求精准匹配</span>
+                        </div>
+                        <div>
+                            <img src="{{url('images/index/userCount.png')}}">
+                            <span>每天20000+使用</span>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <div class="secondCarte" data-type ='4'>
+                <img src="{{url('images/transport.png')}}">
+            </div>
+            <div class="secondCarte" data-type ='5'>
+                <img src="{{url('images/stock.png')}}">
+                <a class="learnMore" href="#">了解更多</a>
+            </div>
+            <div class="secondCarte" data-type ='6'>
+                <img src="{{url('images/fund.png')}}">
+            </div>
+        </div>
+    </div>
+    <div class="goods">
+        <div class="customerService">
+            <img src="{{url('images/index/customerService.png')}}">
+        </div>
+        <div class="brandPromise">
+            <div class="brandPromise1">
+				<img src="{{url('images/brandpromise1.png')}}" />
+			</div>
+			<div class="brandPromise2">
+				<img src="{{url('images/index/brandpromise2.png')}}">
+			</div>
+			<div class="brandPromise3">
+				<img src="{{url('images/index/brandpromise3.png')}}">
+			</div>
+			<div class="brandPromise4">
+				<img src="{{url('images/index/brandpromise4.png')}}">
+			</div>
+        </div>
+        <div class="goodsTeme">
+            <div class="recomend">
+                <span class="hostGoods">推荐热品</span>
+                <span class="spot">.</span>
+                <span class="purpose">我们只选对的不选贵的</span>
+            </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- 推荐热门产品 -->
+    <div class="content">
+        @foreach($types as $k => $v)
+            @foreach($v['subtypes'] as $k_1=>$v_1)
+                <ul class="goodsMode" id="goodsMode{{$v_1['type_id']}}" data-type="{{$v_1['type_id']}}">
+                    <?php $count = 0;?>
+                    @foreach($products as $key => $value)
+                        @if($count>9)
+                            @break
+                        @endif
+                        @if($v_1['type_id'] == $value["product_info"]['type_par_id']||$v_1['type_id'] == $value["product_info"]['pro_type_id'])
+                            <?php $count++;?>
+                            <li onclick="window.location.href='{{url('product/item?companyid='.$value['company_id']."&proid=".$value['pro_id'])}}'">
+                                <div class="hotGoodsSign" >
+                                    <img  src="images/host.png">
+                                </div>
+                                <div class="goodsImg">
+                                    <img src="{{url($value['product_info']['pro_img'])}}">
+                                </div>
+                                <div class="goodsIntroduce">
+                                    <div class="goodsName">{{isset($value['product_info']['pro_name'])?$value['product_info']['pro_name']:""}}</div>
+                                    <div class="goodsKind">
+                                        <span>{{$value['product_info']['type_name']}}</span>
+                                        <span>{{isset($value['product_info']['pro_mode'])?$value['product_info']['pro_mode']:""}}</span>
+                                        <span>{{$value['product_info']['type_name']}}</span>
+                                        <span>{{$value['product_info']['pro_mode']}}</span>
+                                        <span>{{isset($value['product_info']['type_name'])?$value['product_info']['type_name']:""}}</span>
+                                        <span>{{isset($value['product_info']['pro_mode'])?$value['product_info']['pro_mode']:""}}</span>
+                                    </div>
+                                    <div class="goodsInfo">
+                                        <div class="priceNow">
+                                            <span class="now">￥<span>{{isset($value['product_info']['price'])?$value['product_info']['price']:""}}</span></span></span>
+                                        </div>
+                                        <div class="regularPrice ">
+                                            <span class="oldPrice">￥<span>{{isset($value['product_info']['pro_regularPrice'])?$value['product_info']['pro_regularPrice']:""}}</span></span>
+                                            <span class="proUnitPrice"><span>{{isset($value['product_info']['price_extend'])?$value['product_info']['price_extend']:""}}</span><span>{{isset($value['product_info']['unit'])?'/'.$value['product_info']['unit']:""}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="belong">
+                                        <img class="icon" src="images/goodsIcon.png">
+                                        <span class="company">{{isset($value['product_info']['pro_provider'])?$value['product_info']['pro_provider']:""}}</span>
+                                        <span class="address">{{isset($value['product_info']['pro_place'])?$value['product_info']['pro_place']:""}}</span>
+                                    </div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+            @endforeach
+        @endforeach
+    </div>
+    <!-- 产商 -->
+    <div class="productionBusiness">
+        <div class="topTtlBar">
+            <div class="topTtlBarLeft">
+                <span class="superior">优品产商</span>
+                <span  class="spot">.</span>
+                <span class="purpose">大牌产商，品质保证</span>
+            </div>
+            <div class="topTtlBarRight">
+                <span class="superiorRight">战略合作伙伴</span>
+                <span  class="spot">.</span>
+                <span class="purpose">实力买家，优质客户</span>
+            </div>
+        </div>
+        <div class="showBusiness">
+            <ul class="showBusinessLeft">
+                <li class="business business_1" onclick="window.location.href='{{url('/company?companyid=10001')}}'">
+                    <img src="{{url('images/index/yurun.png')}}">
+                    <div>中国顶级的肉类供应厂商</div>
+                </li>
+                <li class="business business_2" onclick="window.location.href='{{url('/company?companyid=10000')}}'">
+                    <img src="{{url('images/index/shuanghui.png')}}">
+                    <div>中国顶级的肉类供应厂商</div>
+                </li>
+            </ul>
+            <ul class="showBusinessRight">
+                <li class="business business_1">
+                    <img src="{{url('images/index/ziyan.png')}}">
+                    <div>在本平台年采购量30＋亿人民币</div>
+                </li>
+                <li class="business business_2">
+                    <img src="{{url('images/index/wufangzhai.png')}}">
+                    <div>在本平台年采购量20＋亿人民币</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="advantage">
+        <span class="superior">品牌优势</span>
+        <span  class="spot">.</span>
+        <span class="purpose">我们不仅仅只提供好的商品</span>
+    </div>
+
+    <div class="promise">
+        <div class="pInitAll pInitTop">
+            <div class="pInitAllTitle" >
+                <img src="{{url('images/index/promiseReturn.png')}}"><span>退换货保证</span>
+            </div>
+            <div class="pInitAllValue">
+                所有商家均支持两天内无条件退货，并且平台补贴运费
+            </div>
+        </div>
+        <div class="pInitCenter">
+            <div class="pInitAll  pInitCenterL">
+                <div class="pInitAllTitle" >
+                    <img src="{{url('images/index/promisePrice.png')}}"><span>价格保证</span>
+                </div>
+                <div class="pInitAllValue">
+                    所有价格均是厂家和一级代理经销商价格，无中间环节，所以价格低于市场20%以上。
+                </div>
+            </div>
+            <div class="pInitCenterC">
+                <img src="{{url('images/index/promiseOnline.png')}}">
+            </div>
+            <div class="pInitAll pInitCenterL">
+                <div class="pInitAllTitle" >
+                    <img src="{{url('images/index/promiseDelivery.png')}}"><span>配送保证</span>
+                </div>
+                <div class="pInitAllValue">
+                    选择付款到平台，会有成都直达每个县市的冻车配送。
+                </div>
+            </div>
+        </div>
+        <div class="pInitBottom">
+            <div class="pInitAll  pInitBottomL">
+                <div class="pInitAllTitle" >
+                    <img src="{{url('images/index/promiseServer.png')}}"><span>服务稳定</span>
+                </div>
+                <div class="pInitAllValue">
+                    24小时均可在线购买，一天两送。
+                </div>
+            </div>
+            <div class="pInitBottomC">
+                <div class="pInitAll pInitBottomCC">
+                    <div class="pInitAllTitle" >
+                        <img src="{{url('images/index/promiseBrand.png')}}"><span>品牌保证</span>
+                    </div>
+                    <div class="pInitAllValue">
+                        所有商品均是品牌合作商，无山寨食品。
+                    </div>
+                </div>
+            </div>
+            <div class="pInitAll pInitBottomL">
+                <div class="pInitAllTitle" >
+                    <img src="{{url('images/index/promiseReal.png')}}"><span>实物保证</span>
+                </div>
+                <div class="pInitAllValue">
+                    所有商品的照片均是真实的实物照片，有拍摄版权。
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('javascript')
+    <script type="text/javascript" src="{{url('js/searchTool.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/index.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var index = 0;
+            var t;
+            $(".image li").first().show();
+            $(".shu li").first().addClass("Imgactive");
+            timer();
+            $(".shu li").mouseover(function(){
+                $(this).addClass("Imgactive").siblings("li").removeClass("Imgactive");
+                index = $(this).index();
+                $(".image li").eq(index).fadeIn().siblings().fadeOut();
+                var color = $(".image li").eq(index).attr("data-color");
+                $(".viwepager").css({
+                    backgroundColor : color
+                });
+            });
+            function timer(){
+                t = setInterval(function(){
+                    $(".shu li").eq(index).addClass("Imgactive").siblings("li").removeClass("Imgactive");
+                    $(".image li").eq(index).fadeIn().siblings().fadeOut();
+                    var color = $(".image li").eq(index).attr("data-color");
+                    $(".viwepager").css({
+                        backgroundColor : color
+                    });
+                    if(index==4){
+                        index=0;
+                    }else{
+                        index++;
+                    }
+                },3000);
+            }
+            $(".banner").hover(function(){
+                clearInterval(t);
+            },function(){
+                timer();
+            });
+        });
+    </script>
+@endsection

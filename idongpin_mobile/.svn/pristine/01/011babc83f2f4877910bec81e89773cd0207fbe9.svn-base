@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="{{url('js/lib/flexible.js')}}"></script>
+    <title>i冻品</title>
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/common.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/footer.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/usercenter/index.css')}}">
+</head>
+<body>
+	<header class="header">
+		<div class="header_ttl">
+			<span class="page_ttl">我的</span>
+				<span class="setting">
+				<img src="{{url('images/usercenter/setting.png')}}">
+			</span>
+		</div>
+		<div class="user_info">
+				<div class="user_avatar">
+					<img src="{{url('images/usercenter/header_photo.png')}}">
+				</div>
+				<div class="user_about">
+					<div class="user_name">
+						<span class="name">黄焖鸡米饭</span>
+						<span class="user_kind">（个人用户）</span>
+					</div>
+					<div class="approve">未认证<img src="{{url('images/usercenter/approve.png')}}"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+	</header>
+	<div class="content">
+		<div class="container">
+			<div class="my_order">
+				<img class="icon" src="{{url('images/usercenter/order.png')}}">
+				<span class="text">我的订单</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="order_status">
+				
+			</div>
+			<div class="customer_services">
+				<img class="icon" src="{{url('images/usercenter/service.png')}}">
+				<span class="text">我的客服</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="receive_address">
+				<img class="icon" src="{{url('images/usercenter/address.png')}}">
+				<span class="text">收货地址管理</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="after_sale">
+				<img class="icon" src="{{url('images/usercenter/afterSale.png')}}">
+				<span class="text">售后规则</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<ul>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/homePage.png')}}">
+					<span class="spanActive">首页</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/kind.png')}}">
+					<span>分类</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/purcherCar.png')}}">
+					<span>购物车</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/userCenter.png')}}">
+					<span>我的</span>
+				</a>
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</footer>
+</body>
+<script type="text/javascript" src="{{url('js/lib/jquery-1.11.3.min.js')}}"></script>
+<script type="text/javascript" src="{{url('js/usercenter/index.js')}}"></script>
+</html>

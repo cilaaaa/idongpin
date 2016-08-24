@@ -1,0 +1,308 @@
+/**
+ * @info 此文件是登录的样式表
+ * @author chenwu
+ * @date 2016/6/29
+ */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+body ,html{
+    /*position: relative;*/
+    /*height: 100%;*/
+}
+.main{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    /*min-height: 600px;*/
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    width: 100%;
+    min-width: 980px;
+    height: 85px;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0 0 20px #eaeceb;
+    background: -webkit-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: -moz-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: -o-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: linear-gradient(to bottom,#f2f2f2 0,#ebebe9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2f2f2,endColorstr=#ebebe9,GradientType=0);
+}
+
+.loginBar{
+    width: 980px;
+    height: 85px;
+    margin: 0 auto;
+}
+
+.headerTitle{
+    margin-top: 10px;
+    margin-left: 15px;
+    float: left;
+    cursor: pointer;
+}
+.headerTitle img{
+    width: 135px;
+    height: 45px;
+}
+.msg{
+    width: 135px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: right;
+    color: #666666;
+    font-family: "微软雅黑";
+}
+.spacing{
+    float: left;
+    height: 38px;
+    width: 1px;
+    background: #555555;
+    margin-top: 27px;
+    margin-left: 20px;
+}
+.mainTitle{
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 22px;
+    font-family: "微软雅黑";
+    color: #4a4a4a;
+}
+.right{
+    float: right;
+    margin-top: 40px;
+    margin-right: 15px;
+}
+.float{
+    float: left;
+}
+
+.contentPadding{
+    margin: 0 auto;
+}
+.contentA{
+    width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 38px;
+}
+.content{
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 38px;
+}
+.clear{
+    clear: both;
+}
+
+.form{
+    box-sizing: border-box;
+    width: 980px;
+    margin-left: 50%;
+    left: -490px;
+    position: relative;
+}
+.formHeader{
+    height: 37px;
+    margin-left: 268.5px;
+}
+.headerFont{
+    height: 24px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #e02341;
+    font-family: "Microsoft YaHei";
+}
+.line{
+    height: 3px;
+    width: 443px;
+    margin-top: 10px;
+    background: #e02341;
+}
+
+.formContent{
+    box-sizing: border-box;
+    padding-top: 10px;
+
+}
+
+
+
+.userName_Pwd{
+    margin-left: 268.5px;
+    height: 51px;
+    width: 443px;
+    float: left;
+    text-align: right
+}
+.userName_Pwd_Img{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 9px;
+    float: left;
+    font-size: 14px;
+    color: #ff6c00;
+    font-family: "Microsoft YaHei";
+}
+
+.userName_Pwd_Img label{
+    display: none;
+    float: left;
+}
+.userName_Pwd_Label{
+    font-size: 16px;
+    color: #a1a1a1;
+    font-family: "Microsoft YaHei";
+}
+
+.userName_Pwd_Input{
+    padding-left: 10px;
+    width: 318px;
+    height: 34px;
+    border: 1px solid #a1a1a1;
+    font-size: 14px;
+    color: #a1a1a1;
+    font-family: "Microsoft YaHei";
+}
+
+.userName_Pwd_Img .ufalse{
+    box-sizing: border-box;
+    padding-right: 10px;
+    width: 34px;
+    display: none;
+    float: left;
+}
+
+.userName_Pwd_Img .uimg{
+    display: none;
+}
+.userName_Pwd_Img .upwd{
+    display: none;
+}
+
+
+/*::-webkit-input-placeholder { !* WebKit browsers *!*/
+    /*font-size: 14px;*/
+    /*color: #a1a1a1;*/
+    /*font-family: "Microsoft YaHei";*/
+/*}*/
+
+/*:-moz-placeholder { !* Mozilla Firefox 4 to 18 *!*/
+    /*font-size: 14px;*/
+    /*color: #a1a1a1;*/
+    /*font-family: "Microsoft YaHei";*/
+/*}*/
+
+/*::-moz-placeholder { !* Mozilla Firefox 19+ *!*/
+    /*font-size: 14px;*/
+    /*color: #a1a1a1;*/
+    /*font-family: "Microsoft YaHei";*/
+/*}*/
+
+/*:-ms-input-placeholder { !* Internet Explorer 10+ *!*/
+    /*font-size: 14px;*/
+    /*color: #a1a1a1;*/
+    /*font-family: "Microsoft YaHei";*/
+/*}*/
+.autoLoginForget {
+   width: 443px;
+    height: 42px;
+    box-sizing: border-box;
+    padding-top: 18px;
+    padding-left: 114px;
+    margin-left: 268.5px;
+}
+.autoLogin{
+    width: 50%;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+}
+.forget{
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.autoLogin label{
+    font-size: 16px;
+    color: #a1a1a1;
+    font-family: "Microsoft YaHei";
+    float: left;
+}
+.autoLogin img{
+    cursor: pointer;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.modifyPWD{
+    font-size: 16px;
+    color: #a1a1a1;
+    font-family: "Microsoft YaHei";
+}
+.loginPadding{
+    box-sizing: border-box;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-left: 268.5px;
+}
+.logining{
+    width: 443px;
+    height: 37px;
+    text-align: right;
+}
+.logining button{
+    width: 330px;
+    height: 37px;
+    background: #e02341;
+    /*filter:alpha(opacity=50);  -moz-opacity:0.5;  -khtml-opacity: 0.5;  opacity: 0.5;*/
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    color: #fff;
+    font-family: "Microsoft YaHei";
+}
+
+.hasError input {
+    border: 1px solid red;
+}
+.hasError .labelname{
+    font-size: 14px;
+    color: #ff6c00;
+    font-family: "Microsoft YaHei";
+    display: block;
+}
+
+.hasError .ufalse{
+    display: block;
+}
+
+.hasError .uimg{
+    display: none;
+}
+
+.hasError .labelpwd{
+    font-size: 14px;
+    color: #ff6c00;
+    font-family: "Microsoft YaHei";
+    display: block;
+}
+
+
+

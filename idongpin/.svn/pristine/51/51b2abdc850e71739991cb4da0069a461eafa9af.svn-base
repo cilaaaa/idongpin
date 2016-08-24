@@ -1,0 +1,31 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/27
+ * Time: 13:29
+ * Instruction: 发布订单表
+ */
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class LaunchOrder extends Model{
+    protected $table = 'idp_launch_order';
+    protected $primaryKey = 'launch_order_id';
+    public $incrementing = false;
+    protected $keyType = 'varchar';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+    protected $fillable = [
+        'launch_order_id' ,'limit_time', 'amount', 'unit', 'launch_order_name', 'launch_order_detail',
+        'user_id', 'review_status', 'review_time', 'review_account'
+    ];
+
+}

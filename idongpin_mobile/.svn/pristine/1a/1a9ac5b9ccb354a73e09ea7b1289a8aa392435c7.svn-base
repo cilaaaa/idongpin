@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="{{url('js/lib/flexible.js')}}"></script>
+    <title>i冻品</title>
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/common.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/footer.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/index/index.css')}}">
+</head>
+<body>
+	<header class="header">
+		<div class="header_content">
+			<div class="location">
+				<img class="location_icon" src="{{url('images/index/location.png')}}">
+				<span class="location_address">上海</span>
+				<img class="address_dropdown" src="{{url('images/index/dropDown.png')}}">
+				<span class="clear"></span>
+			</div>
+			<div class="search_box">
+				<img class="search_icon" src="{{url('images/index/search.png')}}">
+				<span class="search_keyword">请输入关键字搜索</span>
+				<span class="clear"></span>
+			</div>
+			<div class="news">
+				<div class="news_icon">
+					<img class="news_pic" src="{{url('images/index/news.png')}}">
+					<div class="news_count">0</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="content">
+		<div class="container">
+			<div id="carousel" class="slider">
+			    <img src="{{url('images/index/image1.jpg')}}"/>
+			    <img src="{{url('images/index/image2.jpg')}}"/>
+			    <img src="{{url('images/index/image3.jpg')}}"/>
+			    <img src="{{url('images/index/image4.jpg')}}"/>
+			    <img src="{{url('images/index/image5.jpg')}}"/>	
+			</div>
+			<div class="menu"></div>
+			<div class="discount"></div>
+			<div class="recommend_host"></div>
+			<div class="brand_zone"></div>
+		</div>
+	</div>
+	<footer class="footer">
+		<ul>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/homePage.png')}}">
+					<span class="spanActive">首页</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/kind.png')}}">
+					<span>分类</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/purcherCar.png')}}">
+					<span>购物车</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="#">
+					<img src="{{url('images/index/userCenter.png')}}">
+					<span>我的</span>
+				</a>
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</footer>
+</body>
+<script type="text/javascript" src="{{url('js/lib/jquery-1.11.3.min.js')}}"></script>
+<script type="text/javascript" src="{{url('js/index/index.js')}}"></script>
+<script type="text/javascript" src="{{url('js/lib/jquery.excoloSlider.js')}}"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#carousel").excoloSlider({
+			width : "100%",
+			height : "auto",
+			autoSize : true,
+			interval : 3000,
+			prevButtonImage : "{{url('images/index/prev.png')}}",
+			nextButtonImage : "{{url('images/index/next.png')}}",
+			pagerImage : "{{url('images/index/pagericon.png')}}"
+		});
+		$(".slide-prev").remove();
+		$(".slide-next").remove();
+		$(".es-pager").remove();
+	});
+</script>
+</html>

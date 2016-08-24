@@ -1,0 +1,80 @@
+body{
+	min-height: 0px;
+}
+
+.footer{
+	display: none;
+}
+
+.container{
+	width: 980px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px #f2f6f7;
+    -webkit-box-shadow: 0 0 40px #f2f6f7;
+    -moz-box-shadow: 0 0 40px #f2f6f7;
+    -ms-box-shadow: 0 0 40px #f2f6f7;
+    -o-box-shadow: 0 0 40px #f2f6f7;
+}
+
+.leftSide{
+	float: left;
+	width: 174px;
+	background: #ffffff;
+	box-sizing: border-box;
+	padding: 10px 0px;
+	font-family: "Microsoft YaHei";
+}
+
+.tradeManage{
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #4a4a4a;
+	cursor: pointer;
+}
+
+.tradeMenu{
+	display: none;
+	line-height: 20px;
+	margin-left: 70px;
+}
+
+.tradeMenu li{
+	margin: 5px 0px;
+	text-align: left;
+}
+
+.tradeImg{
+	margin-right: 16px;
+}
+
+.vipCenter{
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #4a4a4a;
+	cursor: pointer;
+}
+
+.vipMenu{
+	display: none;
+	line-height: 20px;
+	margin-left: 70px;
+}
+
+.vipMenu li{
+	margin: 5px 0px;
+	text-align: left;
+}
+
+.vipImg{
+	margin-right: 16px;
+}
+
+.rightSide{
+	float: left;
+	width: 805px;
+	border-left: 1px solid #e8e8e8;
+}

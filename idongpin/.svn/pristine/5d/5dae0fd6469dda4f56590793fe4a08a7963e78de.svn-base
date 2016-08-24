@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+
+.infoMain{
+    box-sizing: border-box;
+}
+.infoTags{
+    padding: 0 15px ;
+    background: #FFFFFF;
+    height: 65px;
+    line-height: 65px;
+}
+.tagsName{
+    padding: 5px 5px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+
+.infoDetails{
+    padding-top: 10px;
+    margin-top: 3px;
+    background: #FFFFFF;
+}
+
+
+.details{
+
+}
+.orderTab{
+    width: 100%;
+    border-collapse: collapse;
+}
+.chooseAll{
+    cursor: pointer;
+}
+.aCount,.aName{
+    width: 100px;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.aAddress{
+    width: 180px;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.aCheckbox,.aStatus{
+    width: 70px;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.aCheckbox input{
+    cursor: pointer;
+}
+.operationAll{
+    text-align: right;
+    border-bottom: 2px solid  rgba(232,242,255,1);;
+    padding: 10px 0;
+}
+
+.operationAll .deletea{
+    margin-right: 19px;
+}
+.operation{
+    width: 150px;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.edit{
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    background-color: #e02341;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #ffffff;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.delete,.add ,.operationAll .adda,.operationAll .deletea{
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    margin-left: 10px;
+    background-color: #e02341;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #ffffff;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*弹窗*/
+.addMode{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,0.2);
+    top: 0px;
+    left: 0px;
+}
+.addMode .modeMain{
+    width: 600px;
+    height: 400px;
+    background: #FFFFFF;
+    margin:  0 auto;
+    margin-top: 300px;
+    position: relative;
+    text-align: center;
+}
+
+.modeMain .modeHeader{
+    text-align: left;
+   padding:  0 20px ;
+    height: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    border-bottom: 2px solid  rgba(232,242,255,1);;
+}
+
+.modeHeader img{
+    float: right;
+    margin-top: 11px;
+    width: 18px;
+    height: 18px;
+}
+.modeContent{
+    display: inline-block;
+    margin:  0 auto;
+    text-align: left;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.modeContent .modeItem{
+    height: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+.itemInput{
+    height: 30px;
+    width: 200px;
+}
+.modeFooter .btn_click{
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+.btnCancel,.btnSave{
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    background-color: #e02341;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #ffffff;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+}
+
+.btnSave{
+    margin-left: 10px;
+}

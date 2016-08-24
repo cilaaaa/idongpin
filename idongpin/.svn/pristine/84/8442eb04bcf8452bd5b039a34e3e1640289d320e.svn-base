@@ -1,0 +1,64 @@
+body{
+	background: rgba(232,242,255,1);
+	min-height: 0px;
+}
+
+.footer{
+	display: none;
+}
+
+.container{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.leftSide{
+	float: left;
+	width: 197px;
+	background: #ffffff;
+	box-sizing: border-box;
+	padding: 10px 0px;
+	font-family: "Microsoft YaHei";
+}
+
+.tradeManage{
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #4a4a4a;
+}
+
+.tradeMenu{
+	display: none;
+	line-height: 20px;
+	margin-left: 50px;
+}
+
+.tradeMenu li{
+	margin: 5px 0px;
+}
+
+.vipCenter{
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #4a4a4a;
+}
+
+.vipMenu{
+	display: none;
+	line-height: 20px;
+	margin-left: 50px;
+}
+
+.vipMenu li{
+	margin: 5px 0px;
+}
+
+.rightSide{
+	float: left;
+	width: 780px;
+	margin-left: 3px;
+}

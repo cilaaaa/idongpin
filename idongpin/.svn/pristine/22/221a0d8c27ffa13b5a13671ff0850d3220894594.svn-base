@@ -1,0 +1,620 @@
+@extends('layouts.app')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{url('css/findorder/findorder.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/product/productPageNav.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/laydateCore.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/public/laydate.css')}}">
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="orderReleased">
+            <div class="release">
+                <img src="{{url('images/findorder/showOrderBG.png')}}">
+                <span class="showOrder">还在等什么，快点秀出你的订单</span>
+                <span class="releaseBtn" onclick="releaseOrder()">我要发布订单</span>
+            </div>
+            <div class="tooltip">
+                <div class="tip">
+                    <div class="topTipBar"><img src="{{url('images/findorder/close.png')}}"></div>
+                    <div class="bottomTipBar">
+                        <div class="jurisdiction"><img
+                                    src="{{url('images/findorder/sadface.png')}}"><span>对不起，您还没有权限！</span></div>
+                        <div class="qualification"><span>请申请企业资质，并通过认证后前来抢单</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="recomendOrders">
+                <div class="leftOrder">
+                    <img class="buyPic" src="{{url('images/findorder/buy_01.png')}}">
+                    <div class="order">
+                        <div class="leftPart">
+                            <div class="describe">进口澳洲牛眼肉</div>
+                            <div class="detailNeed">具体需求</div>
+                            <ul class="needs">
+                                <li class="brandNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span
+                                            class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </li>
+                                <li class="warrantyNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span>
+                                </li>
+                                <li class="otherNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span>
+                                </li>
+                            </ul>
+                            <div class="status"><span class="needTtl">交易状态：</span><span class="needVal">买家比价中</span>
+                            </div>
+                        </div>
+                        <div class="rightPart">
+                            <div class="topPart">
+                                <img src="{{url('images/findorder/buyAway.png')}}">
+                            </div>
+                            <div class="bottomPart"><img
+                                        src="{{url('images/findorder/clock_01.png')}}"><span>一天前发布</span></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="rightOrder">
+                    <img class="buyPic" src="{{url('images/findorder/buy_01.png')}}">
+                    <div class="order">
+                        <div class="leftPart">
+                            <div class="describe">进口澳洲牛眼肉</div>
+                            <div class="detailNeed">具体需求</div>
+                            <ul class="needs">
+                                <li class="brandNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span
+                                            class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </li>
+                                <li class="warrantyNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span>
+                                </li>
+                                <li class="otherNeed">
+                                    <img class="dot" src="{{url('images/findorder/dot.png')}}"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span>
+                                </li>
+                            </ul>
+                            <div class="status"><span class="needTtl">交易状态：</span><span class="needVal">买家比价中</span>
+                            </div>
+                        </div>
+                        <div class="rightPart">
+                            <div class="topPart">
+                                <img src="{{url('images/findorder/buyAway.png')}}">
+                            </div>
+                            <div class="bottomPart"><img
+                                        src="{{url('images/findorder/clock_01.png')}}"><span>一天前发布</span></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="orders">
+                <ul>
+                    <li class="indent">
+                        <img src="{{url('images/findorder/buy_02.png')}}">
+                        <div class="indentContent">
+                            <div class="indentTop">
+                                <div class="goodsDescribe">进口澳洲牛眼肉</div>
+                                <div class="specificNeeds">具体需求</div>
+                                <div class="trademark"><span class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </div>
+                                <div class="shelfLife"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span></div>
+                                <div class="elseNeeds"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span></div>
+                                <div class="state"><span class="needTtl">交易状态</span><span class="needVal">买家比家中</span>
+                                </div>
+                            </div>
+                            <div class="indentBottom">
+                                <div class="publishDate"><img
+                                            src="{{url('images/findorder/clock_02.png')}}"><span>一天前发布</span></div>
+                                <div class="immediatelyRob">马上抢</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="indent">
+                        <img src="{{url('images/findorder/buy_02.png')}}">
+                        <div class="indentContent">
+                            <div class="indentTop">
+                                <div class="goodsDescribe">进口澳洲牛眼肉</div>
+                                <div class="specificNeeds">具体需求</div>
+                                <div class="trademark"><span class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </div>
+                                <div class="shelfLife"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span></div>
+                                <div class="elseNeeds"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span></div>
+                                <div class="state"><span class="needTtl">交易状态</span><span class="needVal">买家比家中</span>
+                                </div>
+                            </div>
+                            <div class="indentBottom">
+                                <div class="publishDate"><img
+                                            src="{{url('images/findorder/clock_02.png')}}"><span>一天前发布</span></div>
+                                <div class="immediatelyRob">马上抢</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="indent">
+                        <img src="{{url('images/findorder/buy_02.png')}}">
+                        <div class="indentContent">
+                            <div class="indentTop">
+                                <div class="goodsDescribe">进口澳洲牛眼肉</div>
+                                <div class="specificNeeds">具体需求</div>
+                                <div class="trademark"><span class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </div>
+                                <div class="shelfLife"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span></div>
+                                <div class="elseNeeds"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span></div>
+                                <div class="state"><span class="needTtl">交易状态</span><span class="needVal">买家比家中</span>
+                                </div>
+                            </div>
+                            <div class="indentBottom">
+                                <div class="publishDate"><img
+                                            src="{{url('images/findorder/clock_02.png')}}"><span>一天前发布</span></div>
+                                <div class="immediatelyRob">马上抢</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="indent">
+                        <img src="{{url('images/findorder/buy_02.png')}}">
+                        <div class="indentContent">
+                            <div class="indentTop">
+                                <div class="goodsDescribe">进口澳洲牛眼肉</div>
+                                <div class="specificNeeds">具体需求</div>
+                                <div class="trademark"><span class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </div>
+                                <div class="shelfLife"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span></div>
+                                <div class="elseNeeds"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span></div>
+                                <div class="state"><span class="needTtl">交易状态</span><span class="needVal">买家比家中</span>
+                                </div>
+                            </div>
+                            <div class="indentBottom">
+                                <div class="publishDate"><img
+                                            src="{{url('images/findorder/clock_02.png')}}"><span>一天前发布</span></div>
+                                <div class="immediatelyRob">马上抢</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="indent">
+                        <img src="{{url('images/findorder/buy_02.png')}}">
+                        <div class="indentContent">
+                            <div class="indentTop">
+                                <div class="goodsDescribe">进口澳洲牛眼肉</div>
+                                <div class="specificNeeds">具体需求</div>
+                                <div class="trademark"><span class="needTtl">品牌：</span><span class="needVal">双汇</span>
+                                </div>
+                                <div class="shelfLife"><span class="needTtl">保质期：</span><span
+                                            class="needVal">24个月</span></div>
+                                <div class="elseNeeds"><span class="needTtl">其他需求：</span><span
+                                            class="needVal">精肉比75%</span></div>
+                                <div class="state"><span class="needTtl">交易状态</span><span class="needVal">买家比家中</span>
+                                </div>
+                            </div>
+                            <div class="indentBottom">
+                                <div class="publishDate"><img
+                                            src="{{url('images/findorder/clock_02.png')}}"><span>一天前发布</span></div>
+                                <div class="immediatelyRob">马上抢</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- 分页 -->
+        <div class="pageNav">
+            <div class="pageNavRight">
+                <a href="" class="n pageHeader"><span><img src="{{url('images/product/pageNavBefore.jpg')}}"><img
+                                src="{{url('images/product/pageNavBefore.jpg')}}">首页</span></a>
+                <a class="n" id="pageNavBefore">
+                    <img src="{{url('images/product/pageNavBefore.jpg')}}">上一页
+                </a>
+                <a class="preMore">...</a>
+                <a>
+                    <span class="initSpan pc">1</span>
+                </a>
+                <a>
+                    <span class="initSpan">2</span>
+                </a>
+                <a>
+                    <span class="initSpan">3</span>
+                </a>
+                <a>
+                    <span class="initSpan">4</span>
+                </a>
+                <a>
+                    <span class="initSpan">5</span>
+                </a>
+                <a>
+                    <span class="initSpan">6</span>
+                </a>
+                <a>
+                    <span class="initSpan">7</span>
+                </a>
+                <a>
+                    <span class="initSpan">8</span>
+                </a>
+                <a>
+                    <span class="initSpan">9</span>
+                </a>
+                <a>
+                    <span class="initSpan">10</span>
+                </a>
+                <a class="nextMore">...</a>
+                <a class="n" id="pageNavNext">
+                    下一页<img src="{{url('images/product/pageNavNext.jpg')}}">
+                </a>
+                <a href="" class="n pagefooter"><span>尾页<img src="{{url('images/product/pageNavNext.jpg')}}"><img
+                                src="{{url('images/product/pageNavNext.jpg')}}"></span></a>
+            </div>
+        </div>
+        <div class="goodsTeme">
+            <div class="recomend">
+                <span class="hostGoods">推荐热品</span>
+                <span class="spot">.</span>
+                <span class="purpose">我们只选对的不选贵的</span>
+            </div>
+            <div class="sort">
+                <div class="sortGoods">
+                    <div class="option" data-type="">
+                        <div class="choice">鸡</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="option" data-type="">
+                        <div class="choice">鸭</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="option" data-type="">
+                        <div class="choice">鹅</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="option" data-type="">
+                        <div class="choice">牛</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="option" data-type="">
+                        <div class="choice">羊</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="option" data-type="">
+                        <div class="choice">猪</div>
+                        <div class="choiceIcon">
+                            <img src="{{url('images/selected.png')}}">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <a href="" class="more">更多</a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- 推荐热门产品 -->
+        <div class="content">
+
+            <ul class="goodsMode" id="goodsMode}" data-type="">
+
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="">
+                    <div class="border">
+                        <div class="hotGoodsSign">
+                            <img src="images/host.png">
+                        </div>
+                        <div class="goodsImg">
+                            <img src="{{url('images/product/product.png')}}">
+                        </div>
+                        <div class="goodsIntroduce">
+                            <div class="goodsName">澳门豆捞极品牛肋骨</div>
+                            <div class="goodsKind">
+                                <span>牛排</span>
+                                <span>酒店</span>
+                            </div>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="priceNow">
+                                <span class="now">￥<span>75.00</span></span></span>
+                            </div>
+                            <div class="regularPrice ">
+                                <span class="oldPrice">￥<span>150.00</span></span>
+                                <span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+                            </div>
+                        </div>
+                        <div class="belong">
+                            <img class="icon" src="images/goodsIcon.png">
+                            <span class="company">双汇</span>
+                            <span class="address">上海</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modifiedMode">
+        <div class="modeTable">
+            <div class="modeTableCell">
+                <form method="post" action="{{url('launchOrder')}}">
+                    {{csrf_field()}}
+                    <div class="modified">
+                        <div class="orderInfo">
+                            <div class="orderInfoTtl">
+                                <div class="orderOpen">发布订单</div>
+                                <img src="{{url('images/userCenter/close.png')}}">
+                            </div>
+                            <div class="info">
+                                <div class="topInfo">
+                                    <div><span class="infoTopic"><img src="">商品名称：</span><input class="infoInput"
+                                                                                                type="text"><span
+                                                class="infoTopic special"><img src="">需求量：</span><input
+                                                class="infoInput" type="text"></div>
+                                    <div><span class="infoTopic"><img src="">发布时限：</span><input class="infoInput"
+                                                                                                id="timeFrom"
+                                                                                                type="text"><span
+                                                class="gap">至</span><input class="infoInput" id="timeTo" type="text">
+                                    </div>
+                                    <div><span class="infoTopic"><img src="">保质期限：</span><input class="infoInput" type="text"><span class="infoTopic special"><img src="">产地：</span><select class="infoInput placeSelect">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bottomInfo">
+                                    <div class="infoBar"><span class="infoTopic"><img src="">单只重量：</span><input
+                                                class="infoInput" type="text"><span class="infoTopic special"><img
+                                                    src="">单只长度：</span><input class="infoInput" type="text"></div>
+                                    <div class="infoBar"><span class="infoTopic"><img src="">原料油皮量：</span><input
+                                                class="infoInput" type="text"><span
+                                                class="infoTopic special differTopic"><img src="">原料肉水分含量：</span><input
+                                                class="infoInput differ" type="text"></div>
+                                    <div><span class="infoTopic other">其他需求：</span><textarea
+                                                class="otherNeed"></textarea></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="btn">
+                            <div class="protocol"><img class="checkbox" src="{{url('images/userCenter/checked.png')}}"
+                                                       data-check="selected"><span>i冻品食品安检标准</span></div>
+						<span>
+							<button class="confirm" type="submit">发布</button>
+						</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="agreementMode">
+        <div class="modeTable">
+            <div class="modeTableCell">
+                <div class="agreement">
+                    <div class="agreementTtl">i冻品食品安检标准<img src="{{url('images/userCenter/close.png')}}"></div>
+                    <div class="agreementContent">
+                        <div class="pack">
+                            <div class="packTtl">包装：</div>
+                            <div class="packVal">使用洁净、符合食品卫生要求的内外包装</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sign">
+                            <div class="signTtl">标志：</div>
+                            <div class="signVal">注明产品名称、制造厂名、厂址、净重、批号、生产日期、保质期、执行标准号、规格及等级。</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="transport">
+                            <div class="transportTtl">运输：</div>
+                            <div class="transportVal">
+                                采用洁净车辆运输；保持车内阴凉通风且无动物存在；运输过程中须防尘、防蝇，严防暴晒和雨淋；严禁与有毒、有害物质混装混运，并随车提供车辆消毒记录。
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="stockpile">
+                            <div class="stockpileTtl">储存与保质期：</div>
+                            <div class="stockpileVal">应储存在低于零下18摄氏度的冷冻库内，送达我司的产品从产品生产日期到我司收货日期的时间长度不得超过产品的保质期限总长的一半。
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('javascript')
+    <script type="text/javascript" src="{{url('js/findorder/findorder.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/product/productPageNav.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/laydate.js')}}"></script>
+    <script>
+        laydate({
+            elem: "#timeFrom",
+            fixed: true
+        });
+        laydate({
+            elem: "#timeTo",
+            fixed: true
+        });
+    </script>
+@endsection

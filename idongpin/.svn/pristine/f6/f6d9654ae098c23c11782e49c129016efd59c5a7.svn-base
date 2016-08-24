@@ -1,0 +1,503 @@
+input[type="text"]{
+	box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-webkit-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-moz-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-ms-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-o-box-shadow: 4px 4px 14px #f6f6f6 inset;
+}
+
+.tradeMenu{
+	display: block;
+}
+
+.pageNav{
+	width: 762px;
+	height: 46px;
+	line-height: 46px;
+	margin-top: 14px;
+	color:#4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.topMode{
+	width: 762px;
+	/*height: 237px;*/
+	background: #ffffff;
+	margin-left: 28px;
+}
+
+.selectOrderTime{
+	width: 762px;
+	height: 31px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.selectDate{
+	display: inline-block;
+	height: 30px;
+	line-height: 32px;
+	margin: 0px 10px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+
+.selectDateActive{
+	border-bottom: 2px solid #ff6c00;
+}
+
+.orderInfoSearch{
+	width: 762px;
+	height: 94px;
+	margin-top: 30px;
+}
+
+.conditions{
+	width: 762px;
+	height: 30px;
+	margin-bottom: 17px;	
+}
+
+.condition_1{
+	width: 238px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	margin-right: 11px;
+	float: left;
+}
+
+.condition_2{
+	width: 253px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	margin-right: 9px;
+	float: left;
+}
+
+.condition_3{
+	width: 251px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	float: left;
+}
+
+.condition_1 .infoTtl{
+	display: inline-block;
+	width: 59px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.condition_2 .infoTtl,.condition_3 .infoTtl{
+	display: inline-block;
+	width: 73px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.infoVal{
+	display: inline-block;
+	width: 176px;
+	height: 28px;
+	line-height: 28px;
+	text-align: left;
+	box-sizing: border-box;
+	padding: 0 10px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border: 1px solid #e8e8e8;
+	float: left;
+}
+
+.condition_4 .infoTtl{
+	display: inline-block;
+	width: 74px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.space{
+	margin: 0 6px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.conditionSearch{
+	margin-left: 124px;
+	cursor: pointer;
+}
+
+.conditionSearchBtn{
+	display: inline-block;
+	width: 98px;
+	height: 30px;
+	border: none;
+	background: none;
+	background:  #e31e3c;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.selectOrderStatus{
+	width: 762px;
+	height: 32px;
+	line-height: 32px;
+}
+
+.selectOrderStatus .infoTtl{
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.status{
+	display: inline-block;
+	width: 70px;
+	height: 24px; 
+	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	text-align: center;
+	line-height: 24px;
+	margin-left: 8px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+
+.statusActive{
+	color: #ffffff;
+	background-color: #ff6c00;
+}
+
+.afterThreeMonth{
+	width: 762px;
+	background: #ffffff;
+	margin-top: 3px;
+	margin-left: 28px;
+}
+
+.beforeThreeMonth{
+	width: 762px;
+	background: #ffffff;
+	margin-top: 3px;
+	display: none;
+	margin-left: 28px;
+}
+
+.orderTab{
+	width: 760px;
+	border-collapse: collapse;
+	border: 1px solid #e8e8e8;
+}
+
+.th{
+	width: 760px;
+	height: 34px;
+	line-height: 24px;
+	background: #f7f7f7;
+	box-sizing: border-box;
+	padding: 0 28px;
+}
+
+.th .orderID{
+	float: left;
+	width: 188px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .goodsName{
+	float: left;
+	width: 136px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .price{
+	float: left;
+	width: 102px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .count{
+	float: left;
+	width: 76px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .freight{
+	float: left;
+	width: 100px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";	
+}
+
+.th .operation{
+	float: left;
+	width: 98px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr{
+	width: 704px;
+	height: 46px;
+	margin: 0 auto;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.tr .orderID{
+	float: left;
+	width: 188px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+
+.tr .orderID:hover{
+	color: #ff6c00;
+}
+
+.tr .goodsName{
+	float: left;
+	width: 136px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.tr .price{
+	float: left;
+	width: 102px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr .count{
+	float: left;
+	width: 76px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr .freight{
+	float: left;
+	width: 100px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";	
+}
+
+.tr .operation{
+	float: left;
+	width: 98px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.cancel{
+	color: #4a4a4a;
+	line-height: 26px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.cancel:hover{
+	color: #ff6c00;
+}
+
+.spacing{
+	padding: 0 10px;
+}
+
+.finish{
+	color: #4a4a4a;
+	line-height: 24px;
+}
+
+/*垂直水平居中*/
+.modeTable{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.modeTableCell{
+	display:table-cell;
+	vertical-align:middle;
+	height: 100px;
+}
+
+.modified{
+	width: 620px;
+    margin: 0 auto;
+    border: 1px solid #e8e8e8;
+    background: #ffffff;
+}
+
+.modified{
+	width: 620px;
+	margin: 0 auto;
+	border: 1px solid #e8e8e8;
+	background: #ffffff;
+}
+.modified .orderInfo{
+	width: auto;
+	height: auto;
+}
+.modified .orderInfo1{
+	width: auto;
+}
+.orderInfoTtl{
+	width: 620px;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 0 20px;
+	position: relative;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.orderOpen{
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}
+
+
+.orderInfoTtl img{
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+.modified .info{
+	width: 620px;
+	margin-top: 0px;
+	height: auto;
+	float: none;
+}
+
+.topInfo{
+	width: 620px;
+	box-sizing: border-box;
+	padding: 0 15px;
+	margin-top: 22px;
+}
+
+.topInfo .form-group{
+	display: inline-block;
+	width: 45%;
+	margin-bottom: 5px;
+	float:left;
+}
+
+
+.orderMode{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: rgba(0,0,0,0.2);
+	top: 0px;
+	left: 0px;
+}
+.orderMode .info .topInfo{
+	margin-bottom: 22px;
+}
+/*.orderMode .info .topInfo li{
+	height: 35px;
+}*/
+
+.orderMode .info .topInfo .form-group{
+	width: 50%;
+}
+.form-group-name{
+	display: inline-block;
+	/*height: 35px;*/
+	line-height: 35px;
+	width: 45%;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+.form-group-text{
+	display: inline-block;
+	/*height: 35px;*/
+	line-height: 35px;
+	width: 55%;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}

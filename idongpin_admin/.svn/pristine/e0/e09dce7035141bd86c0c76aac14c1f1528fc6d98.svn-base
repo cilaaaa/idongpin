@@ -1,0 +1,103 @@
+---
+title: API Reference
+
+language_tabs:
+- bash
+- javascript
+
+includes:
+
+search: true
+
+toc_footers:
+- <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
+---
+
+# Info
+
+Welcome to the generated API reference.
+<?php if($showPostmanCollectionButton): ?>
+[Get Postman Collection](<?php echo e($outputPath); ?>/collection.json)
+<?php endif; ?>
+
+# Available routes
+<?php foreach($parsedRoutes as $group => $routes): ?>
+<?php if($group): ?>
+#<?php echo e($group); ?>
+
+<?php endif; ?>
+<?php foreach($routes as $parsedRoute): ?>
+<?php if($parsedRoute['title'] != ''): ?>## <?php echo e($parsedRoute['title']); ?>
+
+<?php else: ?>## <?php echo e($parsedRoute['uri']); ?>
+
+<?php endif; ?>
+<?php if($parsedRoute['description']): ?>
+
+<?php echo e($parsedRoute['description']); ?>
+
+<?php endif; ?>
+
+> Example request:
+
+```bash
+curl "<?php echo e(config('app.url')); ?>/<?php echo e($parsedRoute['uri']); ?>" \
+-H "Accept: application/json"<?php if(count($parsedRoute['parameters'])): ?> \
+<?php foreach($parsedRoute['parameters'] as $attribute => $parameter): ?>
+    -d "<?php echo e($attribute); ?>"="<?php echo e($parameter['value']); ?>" \
+<?php endforeach; ?>
+<?php endif; ?>
+
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "<?php echo e(config('app.url')); ?>/<?php echo e($parsedRoute['uri']); ?>",
+    "method": "<?php echo e($parsedRoute['methods'][0]); ?>",
+    <?php if(count($parsedRoute['parameters'])): ?>
+"data": <?php echo str_replace('    ','        ',json_encode(array_combine(array_keys($parsedRoute['parameters']), array_map(function($param){ return $param['value']; },$parsedRoute['parameters'])), JSON_PRETTY_PRINT)); ?>,
+    <?php endif; ?>
+    "headers": {
+    "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+});
+```
+
+<?php if(in_array('GET',$parsedRoute['methods'])): ?>
+> Example response:
+
+```json
+<?php if(is_object($parsedRoute['response']) || is_array($parsedRoute['response'])): ?>
+<?php echo json_encode($parsedRoute['response'], JSON_PRETTY_PRINT); ?>
+
+<?php else: ?>
+<?php echo json_encode(json_decode($parsedRoute['response']), JSON_PRETTY_PRINT); ?>
+
+<?php endif; ?>
+```
+<?php endif; ?>
+
+### HTTP Request
+<?php foreach($parsedRoute['methods'] as $method): ?>
+`<?php echo e($method); ?> <?php echo e($parsedRoute['uri']); ?>`
+
+<?php endforeach; ?>
+<?php if(count($parsedRoute['parameters'])): ?>
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+<?php foreach($parsedRoute['parameters'] as $attribute => $parameter): ?>
+    <?php echo e($attribute); ?> | <?php echo e($parameter['type']); ?> | <?php if($parameter['required']): ?> required <?php else: ?> optional <?php endif; ?> | <?php echo implode(' ',$parameter['description']); ?>
+
+<?php endforeach; ?>
+<?php endif; ?>
+
+<?php endforeach; ?>
+<?php endforeach; ?>

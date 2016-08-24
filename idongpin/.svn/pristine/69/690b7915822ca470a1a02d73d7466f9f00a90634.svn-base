@@ -1,0 +1,37 @@
+
+$(document).ready(function(){
+	//为左右两边模块设置高度
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight ;
+
+	$(".leftSide").css("minHeight",minHeight);
+	$(".rightSide").css("minHeight",minHeight);
+	
+	//点击展开二级菜单
+	$(".tradeManage").delegate("","click",function(){
+		var show = $(this).attr("data-show");
+		if(show == "show"){
+			$(this).attr("data-show","hidden");
+			$(this).children(".tradeMenu").css("display","none");
+			$(this).children("tradeImg").css({
+				transform : "ratate(90deg)",
+				webkitTransform : "ratate(90deg)",
+				mozTransform : "ratate(90deg)",
+				msTransform : "ratate(90deg)",
+				oTransform : "ratate(90deg)"
+			});
+		}else{
+			$(this).attr("data-show","show");
+			$(this).children(".tradeMenu").css("display","block");
+			$(this).children("tradeImg").css({
+				transform : "ratate(0deg)",
+				webkitTransform : "ratate(0deg)",
+				mozTransform : "ratate(0deg)",
+				msTransform : "ratate(0deg)",
+				oTransform : "ratate(0deg)"
+			});
+		}
+	});
+});

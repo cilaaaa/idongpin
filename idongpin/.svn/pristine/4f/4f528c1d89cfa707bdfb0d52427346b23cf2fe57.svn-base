@@ -1,0 +1,42 @@
+
+$(document).ready(function(){
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight - 183;
+
+	$(".afterThreeMonth").css("minHeight",minHeight);
+	$(".beforeThreeMonth").css("minHeight",minHeight);
+
+	//切换订单日期
+	$(".selectDate").each(function(){
+		$(this).click(function(){
+			$(this).addClass("selectDateActive");
+			var txt = $(this).text();
+			$(".selectDate").not(this).removeClass("selectDateActive");
+			if(txt == "近三个月订单"){
+				$(".afterThreeMonth").css("display","block");
+				$(".beforeThreeMonth").css("display","none");
+			}else if(txt == "三个月前订单"){
+				$(".afterThreeMonth").css("display","none");
+				$(".beforeThreeMonth").css("display","block");
+			}
+		});
+	});
+	
+	//
+	$(".tradeMenu li").each(function(){
+		var liTxt = $(this).children("a").text();
+		if(liTxt == "我的订单"){
+			$(this).children("a").css("color","#ff6c00");
+		}
+	});
+
+	//状态筛选
+	$(".status").each(function(){
+		$(this).delegate("","click",function(){
+			$(this).addClass("statusActive");
+			$(".status").not(this).removeClass("statusActive");
+		});
+	});
+});

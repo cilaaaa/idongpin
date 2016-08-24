@@ -1,0 +1,43 @@
+
+$(document).ready(function(){
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight - 103;
+
+	$(".orderInfo").css("minHeight",minHeight);
+	$(".modifiedMode .orderInfoTtl img").delegate("","click",function(){
+		$(".modifiedMode ul li input,textarea").val("");
+		$(".modifiedMode .has-error .help-block").remove();
+		$(".modifiedMode .has-error").removeClass("has-error");
+		$(".modifiedMode").css("display","none");
+	});
+	$(".modifiedMode .btn .protocol span").delegate("","click",function(){
+		$(".agreementMode").css("display","block");
+	});
+	$(".agreementMode .agreementTtl img").delegate("","click",function(){
+		$(".agreementMode").css("display","none");
+	});
+
+	$(".modifiedMode .checkbox").each(function(){
+		$(this).delegate("","click",function(){
+			var check = $(this).attr("data-check");
+			var src = $(this).attr("src");
+			if(check == "unselected"){
+				var src = src.replace("unchecked.png","checked.png");
+				$(this).attr("data-check","selected");
+				$(this).attr("src",src);
+			}else{
+				var src = src.replace("checked.png","unchecked.png");
+				$(this).attr("data-check","unselected");
+				$(this).attr("src",src);
+			}
+		});
+	});
+
+
+});
+
+function releaseOrder(){
+	$(".modifiedMode").css("display","block");
+}

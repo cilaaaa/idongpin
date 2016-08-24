@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline:0;
+}
+
+
+/*//商品翻页导航样式*/
+.pageNav{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 26px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 70px;
+    width: 980px;
+    margin: 0 auto;
+}
+.pageNavRight{
+    position: absolute;
+    height: 24px;
+    right: 15px;
+    font-size: 0;
+}
+
+.pageNav a{
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+
+}
+.n{
+    height: 22px;
+    line-height: 22px;
+    padding: 0 18px;
+    border: 1px solid #cccccc;
+}
+
+.n img{
+    width: 12px;
+    height: 12px;
+}
+
+.initSpan{
+    display: block;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #cccccc;
+    color: #cccccc;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+.preMore,.nextMore{
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    color: #cccccc;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+.pc{
+    border: 1px solid #ff6c00;
+    color: #ff6c00;
+}
+
+.pageNav .pageNavRight .pageActive{
+    display: inline-block;
+}
+
+.pageNav .pageNavRight .pageNotActive{
+    display: none;
+}

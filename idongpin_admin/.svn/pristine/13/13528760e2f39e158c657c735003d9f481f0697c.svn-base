@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <title><?php echo $__env->yieldContent('title'); ?> | i冻品后台管理系统</title>
+    <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <link href="<?php echo e(url('dist/css/load/load.css')); ?>" rel="stylesheet">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?1658f80864b738322165d3ebf59d8b16";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body id="app-layout">
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_one"></div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <!-- Main Header -->
+    <?php echo $__env->make('admin.layouts.mainHeader', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!-- Left side column. contains the logo and sidebar -->
+    <?php echo $__env->make('admin.layouts.mainSidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <?php /*<h1>
+          <?php echo $__env->yieldContent('pageHeader'); ?>
+          <small><?php echo $__env->yieldContent('pageDesc'); ?></small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="/admin"><i class="fa fa-dashboard"></i> 控制面板</a></li>
+          <li class="active">Here</li>
+        </ol>*/ ?>
+        <h6>
+            <?php echo $__env->yieldContent('navigation'); ?>
+        </h6>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+    <?php echo $__env->yieldContent('content'); ?>
+    <!-- Your Page Content Here -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- JavaScripts -->
+<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<script src="<?php echo e(url('/dist/js/common.js')); ?>"></script>
+<?php echo $__env->yieldContent('js'); ?>
+<?php echo $__env->make('admin.layouts.mainFooter', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>

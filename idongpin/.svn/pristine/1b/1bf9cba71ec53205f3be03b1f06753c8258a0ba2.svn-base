@@ -1,0 +1,463 @@
+@extends('layouts.app')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{url('css/findorder/findorder.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/product/productPageNav.css')}}">
+@endsection
+
+@section('content')
+	<div class="container">
+		<div class="orderReleased">
+			<div class="orders">
+				<div class="orderLeft">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+				<div class="orderRight">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+			</div>
+			<div class="orders">
+				<div class="orderLeft">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+				<div class="orderRight">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+			</div>
+			<div class="orders">
+				<div class="orderLeft">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+				<div class="orderRight">
+					<div class="orderInfo">
+						<div class="orderTheme">求购进口澳洲牛眼肉</div>
+						<div class="need">具体需求：</div>
+						<div class="expirationDate">
+							<div class="infoTtl">保质期：</div>
+							<div class="infoValue">24个月</div>
+						</div>
+						<div class="sourceArea">
+							<div class="infoTtl">原地：</div>
+							<div class="infoValue">澳大利亚</div>
+						</div>
+						<div class="otherNeed">
+							<div class="infoTtl">其他需求：</div>
+							<div class="infoValue">精肉比75%...</div>
+						</div>
+						<div class="status">
+							<div class="infoTtl">交易状态：</div>
+							<div class="infoValue">买家比价中</div>
+						</div>
+					</div>
+					<div class="rightAway">
+						<img src="{{url('images/findorder/rightAway.png')}}">
+						<div>一天前发布</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 分页 -->
+	     <div  class="pageNav">
+	        <div class="pageNavRight">
+                <a href="" class="n pageHeader"><span><img src="{{url('images/product/pageNavBefore.jpg')}}"><img src="{{url('images/product/pageNavBefore.jpg')}}">首页</span></a>
+                <a class="n" id="pageNavBefore">
+                    <img src="{{url('images/product/pageNavBefore.jpg')}}">上一页
+                </a>
+                <a class="preMore">...</a>
+                <a>
+                    <span class="initSpan pc"  >1</span>
+                </a>
+                <a>
+                    <span class="initSpan">2</span>
+                </a>
+                <a>
+                    <span class="initSpan">3</span>
+                </a>
+                <a>
+                    <span class="initSpan">4</span>
+                </a>
+                <a>
+                    <span class="initSpan">5</span>
+                </a>
+                <a>
+                    <span class="initSpan">6</span>
+                </a>
+                <a>
+                    <span class="initSpan">7</span>
+                </a>
+                <a>
+                    <span class="initSpan">8</span>
+                </a>
+                <a>
+                    <span class="initSpan">9</span>
+                </a>
+                <a>
+                    <span class="initSpan">10</span>
+                </a>
+                <a class="nextMore">...</a>
+                <a class="n" id="pageNavNext">
+                    下一页<img src="{{url('images/product/pageNavNext.jpg')}}">
+                </a>
+                <a href="" class="n pagefooter"><span>尾页<img src="{{url('images/product/pageNavNext.jpg')}}"><img src="{{url('images/product/pageNavNext.jpg')}}"></span></a>
+            </div>
+	    </div>
+		<div class="goodsTeme">
+			<div class="recomend">
+				<span class="hostGoods">推荐热品</span>
+				<span class="spot">.</span>
+				<span class="purpose">我们只选对的不选贵的</span>
+			</div>
+			<div class="sort">
+				<div class="sortGoods">
+					<div class="option" data-type="">
+						<div class="choice">鸡</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<span>|</span>
+					<div class="option" data-type="">
+						<div class="choice">鸭</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<span>|</span>
+					<div class="option" data-type="">
+						<div class="choice">鹅</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<span>|</span>
+					<div class="option" data-type="">
+						<div class="choice">牛</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<span>|</span>
+					<div class="option" data-type="">
+						<div class="choice">羊</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<span>|</span>
+					<div class="option" data-type="">
+						<div class="choice">猪</div>
+						<div class="choiceIcon">
+							<img src="{{url('images/selected.png')}}">
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<a href="" class="more">更多</a>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 推荐热门产品 -->
+		<div class="content">
+
+			<ul class="goodsMode" id="goodsMode}" data-type="">
+
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+				<li onclick="">
+					<div class="hotGoodsSign" >
+						<img  src="images/host.png">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">澳门豆捞极品牛肋骨</div>
+						<div class="goodsKind">
+							<span>牛排</span>
+							<span>酒店</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>75.00</span></span></span>
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>150.00</span></span>
+							<span class="proUnitPrice"><span>10.0</span>/<span>斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="images/goodsIcon.png">
+						<span class="company">双汇</span>
+						<span class="address">上海</span>
+					</div>
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+@endsection
+
+@section('javascript')
+	<script type="text/javascript" src="{{url('js/findorder/findorder.js')}}"></script>
+	<script type="text/javascript" src="{{url('js/product/productPageNav.js')}}"></script>
+@endsection

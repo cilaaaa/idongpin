@@ -1,0 +1,422 @@
+/**
+ * 此文件是搜索工具栏的样式表
+ * @author chenqin
+ * @date 2016/6/27
+ */
+/*下拉前搜索栏的样式*/
+.searchTool{
+	width: 100%;
+	height: 125px;
+	background: -webkit-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: -moz-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: -o-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);
+    background: linear-gradient(to bottom,#f2f2f2 0,#ebebe9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2f2f2,endColorstr=#ebebe9,GradientType=0);
+	box-shadow: 0 0 20px #efefef;
+	-webkit-box-shadow: 0 0 40px #efefef;
+	-moz-box-shadow: 0 0 40px #efefef;
+	-ms-box-shadow: 0 0 40px #efefef;
+	-o-box-shadow: 0 0 40px #efefef;
+}
+
+.searchTool>div{
+	position: relative;
+	width: 950px;
+	height: 125px;
+	margin: 0 auto;
+}
+
+.searchBar{
+	width: 950px;
+	height: 106px;
+	box-sizing: border-box;
+	padding-top: 7px;
+}
+
+.logo{
+	width: 230px;
+	height: 106px;
+	float: left;
+	cursor: pointer;
+}
+
+.logo img{
+	margin-top: 17px;
+	height: 62px;
+}
+
+.nature{
+	width: 182px;
+	height: 16px;
+	line-height: 16px;
+	color: #666666;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	letter-spacing: 2px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	text-align: right;
+}
+
+.search{
+	float: right;
+	width: 650px;
+	height: 58px;
+}
+
+.classifiedSearch{
+	width: 690px;
+	height: 23px;
+	color: #666666;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.classified{
+	display: inline-block;
+    width: 64px;
+    height: 23px;
+    color: #e02341;
+    text-align: center;
+    line-height: 23px;
+}
+
+.searchActive{
+	background-color: #e02341;
+    display: inline-block;
+    width: 64px;
+    height: 23px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 23px;
+}
+
+.classifiedSearch span:hover{
+	cursor: pointer;
+}
+
+.searchBox{
+	width: 654px;
+	height: 34px;
+	border: 2px solid #e02341;
+}
+
+.searchBox input{
+	width: 547px;
+	height: 34px;
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	padding: 0 20px;
+}
+
+.searchBox .topSearchBtn{
+	width: 105px;
+	height: 34px;
+	background-color: #e02341;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	line-height: 34px;
+	float: right;
+}
+
+/*下拉后搜索栏的样式*/
+.scrollSearch{
+	width: 100%;
+	height: 48px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
+	background: #ffffff;
+}
+
+.scrollSearch .seachContent{
+	position: relative;
+	width: 950px;
+	height: 48px;
+	margin: 0 auto;
+}
+
+.companyLogo{
+	height: 40px;
+	width: 290px;
+	float: left;
+	margin-top: 4px;
+}
+
+.companyLogo img{
+	height: 100%;
+	height: 100%;
+}
+
+.searchMode{
+	width: 650px;
+	height:34px;
+	float: right;
+	border:3px solid #e02341;
+	margin-top: 4px;
+}
+
+.searchKind{
+	display: none;
+	width: 104px;
+	height: 34px;
+	float: left;
+	border-right: 1px solid #e2e2e2;
+	font-size: 16px;
+    font-family: "Microsoft YaHei";
+    background: #ffffff;
+}
+
+.searchKind div{
+	position: relative;
+	width: 104px;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	text-align: center;
+}
+
+.searchKind div:hover{
+	cursor: default;
+}
+
+.searchKind img{
+	float: right;
+	width: 8px;
+	height: 4px;
+	margin-top: 15px;
+}
+
+.kindOption{
+	width: 104px;
+	position: absolute;
+	top: 40px;
+}
+
+.kindOption li{
+	display: none;
+	width: 104px;
+	height: 34px;
+	line-height: 40px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
+.kindOption li:hover{
+	cursor: pointer;
+}
+
+.searchInput{
+	width: 440px;
+	height: 34px;
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	padding: 0 20px;
+	font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.topSearchBtn{
+	width: 105px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 16px;
+    font-family: "Microsoft YaHei";
+	background: #13b51a;
+	float: right;
+	border:none;
+}
+
+.topSearchBtn:hover{
+	cursor: pointer;
+}
+
+.nav{
+	width: 720px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	margin-left: 240px;	
+}
+
+.navTtl{
+	display: none;
+	width: 240px;
+	height: 40px;
+	background-color: #13b51a;
+	box-sizing: border-box;
+	padding: 0 20px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	line-height: 40px;
+	float: left;
+}
+
+.navTtl:hover{
+	cursor: pointer;
+}
+
+.navTtl img{
+	width: 22px;
+	height: 22px;
+	float: right;
+	margin-top: 9px;
+}
+
+.navMenu{
+	float: left;
+	margin-left: 50px;
+}
+
+.navMenu li{
+	float: left;
+}
+
+.menu{
+	display: block;
+	padding: 5px 30px;
+	height: 27px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}
+
+.active{
+	color: #e02341;
+}
+
+.menuActive{
+	border-bottom: 3px solid #e02341;
+	color: #e02341;
+}
+
+.menubtn{
+	width: 180px;
+	height: 30px;
+	float: right;
+	padding: 5px 0px;
+}
+
+.purcher{
+	width: 84px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	background-color: #ffa800;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.purcher:hover{
+	cursor: pointer;
+}
+
+.entering{
+	width: 84px;
+	height: 30px;
+	float: right;
+	line-height: 30px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	background-color: #ffa800;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.entering a{
+	color: #ffffff;
+}
+
+.QRWindow{
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	height: 0px;
+	background-color: rgba(0,0,0,0.2);
+	z-index: 99999;
+	box-sizing: border-box;
+	display: none;
+}
+
+.idongpinQR{
+	width: 420px;
+	height: 488px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
+.close_1{
+	position: relative;
+	width: 420px;
+	height: 46px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.close_1 img{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 13px;
+	right: 13px;
+}
+
+.QR{
+	width: 420px;
+	height: 441px;
+	position: relative;
+	text-align: center;
+}
+
+.QR img{
+	width: 220px;
+	height: 220px;
+	margin: 0 auto;
+	margin-top: 22px;
+}
+
+.notice{
+	width: 420px;
+	height: 82px;
+}
+
+.noticeTop{
+	width: 420px;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 24px;
+	font-family: "Microsoft YaHei";
+}
+
+.noticeBottom{
+	width: 420px;
+	height: 18px;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}

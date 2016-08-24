@@ -1,0 +1,62 @@
+
+$(document).ready(function(){
+	//为左右两边模块设置高度
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight ;
+
+	$(".rightSide").css("minHeight",minHeight);
+	var rightSideHeight = $(".rightSide").height();
+	$(".leftSide").height(rightSideHeight - 20);
+	
+	//点击展开二级菜单
+	$(".tradeManage").delegate("","click",function(){
+		var show = $(this).attr("data-show");
+		if(show == "show"){
+			$(this).attr("data-show","hidden");
+			$(this).children(".tradeMenu").css("display","none");
+			$(this).children(".tradeImg").css({
+				transform : "rotate(0deg)",
+				webkitTransform : "rotate(0deg)",
+				mozTransform : "rotate(0deg)",
+				msTransform : "rotate(0deg)",
+				oTransform : "rotate(0deg)"
+			});
+		}else{
+			$(this).attr("data-show","show");
+			$(this).children(".tradeMenu").css("display","block");
+			$(this).children(".tradeImg").css({
+				transform : "rotate(90deg)",
+				webkitTransform : "rotate(90deg)",
+				mozTransform : "rotate(90deg)",
+				msTransform : "rotate(90deg)",
+				oTransform : "rotate(90deg)"
+			});
+		}
+	});
+	$(".vipCenter").delegate("","click",function(){
+		var show = $(this).attr("data-show");
+		if(show == "show"){
+			$(this).attr("data-show","hidden");
+			$(this).children(".vipMenu").css("display","none");
+			$(this).children(".vipImg").css({
+				transform : "rotate(0deg)",
+				webkitTransform : "rotate(0deg)",
+				mozTransform : "rotate(0deg)",
+				msTransform : "rotate(0deg)",
+				oTransform : "rotate(0deg)"
+			});
+		}else{
+			$(this).attr("data-show","show");
+			$(this).children(".vipMenu").css("display","block");
+			$(this).children(".vipImg").css({
+				transform : "rotate(90deg)",
+				webkitTransform : "rotate(90deg)",
+				mozTransform : "rotate(90deg)",
+				msTransform : "rotate(90deg)",
+				oTransform : "rotate(90deg)"
+			});
+		}
+	});
+});

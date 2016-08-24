@@ -1,0 +1,58 @@
+
+$(document).ready(function(){
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight - 103;
+
+	$(".orderInfo").css("minHeight",minHeight);
+
+	$(".releaseBtn").delegate("","click",function(){
+		$(".modifiedMode").css("display","block");
+	});
+	$(".orderInfoTtl img").delegate("","click",function(){
+		$(".modifiedMode").css("display","none");
+	});
+	$(".btn .protocol span").delegate("","click",function(){
+		$(".agreementMode").css("display","block");
+	});
+	$(".agreementTtl img").delegate("","click",function(){
+		$(".agreementMode").css("display","none");
+	});
+
+	$(".checkbox").each(function(){
+		$(this).delegate("","click",function(){
+			var check = $(this).attr("data-check");
+			var src = $(this).attr("src");
+			if(check == "unselected"){
+				var src = src.replace("unchecked.png","checked.png");
+				$(this).attr("data-check","selected");
+				$(this).attr("src",src);
+			}else{
+				var src = src.replace("checked.png","unchecked.png");
+				$(this).attr("data-check","unselected");
+				$(this).attr("src",src);
+			}
+		});
+	});
+
+	$(".modifiedMode .btn .confirm").click(function(){
+		var rowMax=6;
+		for(var i=0;i<rowMax;i+=2){
+			alert($('.modifiedMode .info ').children("li").eq(i).find("input").val());
+			if(i==4){
+
+				if($('.modifiedMode .info ').children("li").eq(i).find("input").val()==""){
+					$('.modifiedMode .info ').children("li").eq(i).children(".form-control").find("span").show() ;
+					$('.modifiedMode .info ').children("li").eq(i+1).children(".form-control").find("span").show() ;
+				}
+			}else {
+				if($('.modifiedMode .info ').children("li").eq(i).find("input").val()==""|| $('.info ').children("li").eq(i+1).find("input").val()==""){
+					$('.modifiedMode .info ').children("li").eq(i).children(".form-control").find("span").show();
+					$('.modifiedMode .info ').children("li").eq(i+1).children(".form-control").find("span").show() ;
+				}
+			}
+		}
+	});
+
+});

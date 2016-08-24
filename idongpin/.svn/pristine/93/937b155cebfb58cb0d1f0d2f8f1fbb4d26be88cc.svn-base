@@ -1,0 +1,51 @@
+$(document).ready(function(){
+
+//为左右两边模块设置高度
+    var windowHeight = $(window).height();
+    var loginInfoHeight = $(".loginInfo").height();
+    var searchToolHeight = $(".searchTool").height();
+    var infoTagsH=$(".infoTags").height();
+    var minHeight = windowHeight - loginInfoHeight -searchToolHeight-infoTagsH ;
+
+    // $(".rightSide").css("minHeight",minHeight);
+    $(".infoDetails").css("minHeight",minHeight-3);
+    //设置表格条纹
+    $(".orderTab tr").each(function(index){
+        if((index % 2) == 1){
+            $(this).css("background","rgba(242, 242, 242, 1)");
+        }
+    });
+
+    // 全选按钮
+    var status=0;
+    $(".chooseA").click(function () {
+        if(status==0){
+            status=1;
+            $(".orderTab tr .aCheckbox input").each(function () {
+                $(this).prop("checked",true);
+            });
+        }
+        else{
+            status=0;
+            $(".orderTab  tr .aCheckbox input").each(function () {
+                $(this).prop("checked",false);
+            });
+        }
+    });
+
+    //设置弹窗的宽度和高度
+    var windowWidth = $(window).width();
+    $(".addMode").css({
+        width : windowWidth + "px",
+        height : windowHeight + "px"
+    });
+    var detailHeight = $(".addDetails").height();
+    $(".addDetails").css("marginTop",(windowHeight - detailHeight)/2 +"px");
+
+    $(".adda").click(function () {
+        $(".addmode").css("display","block");
+    });
+    $(".addDetails img").click(function () {
+        $(".addMode").css("display","none");
+    });
+});

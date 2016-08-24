@@ -1,0 +1,235 @@
+.searchContent .sel_title{
+    font-size: 16px;
+    font-family: '微软雅黑';
+    color:#333333;
+    margin-left: 15px;
+}
+.searchContent .sel_company{
+    color:#333333;
+    font-size: 16px;
+    font-family: '微软雅黑';
+    width: 300px;
+    height: 30px;
+    border:1px solid #a1a1a1;
+}
+.formHeader{
+    height: 50px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.tag{
+    font-size: 18px;
+    color:#efefef;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}
+.updateForm .formHeader .updating,.saving,.canceling,.goback,.continues{
+    font-family: '微软雅黑';
+    font-size: 16px;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    color:#ffffff;
+}
+.saving,.canceling,.continues{
+    display: none;
+}
+.updateForm .formHeader .formTitle{
+    font-family: '微软雅黑';
+    font-size: 22px;
+    display: inline-block;
+    margin-left: 20px;
+    float: left;
+    color:#333333;
+}
+#Form .info_table{
+    margin-top: 10px;
+    width: 100%;
+}
+#Form .info_table td{
+    width: 33%;
+    height: 40px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: #efefef;
+}
+#Form .info_table td .property_name{
+    font-size: 16px;
+    font-family: '微软雅黑';
+    color:#333333;
+}
+#Form .info_table td .property_text{
+    font-size: 16px;
+    font-family: '微软雅黑';
+    color:#333333;
+    width: 250px;
+}
+.add{
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.searchContent .search{
+    width: 200px;
+    font-size: 16px;
+    font-family: '微软雅黑';
+    margin-right: 10px;
+}
+.form1{
+    width: 100%;
+    margin-top: 10px;
+}
+.form1 .form-group{
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+.remove:hover{
+    font-size: 22px;
+}
+.add_div{
+    width: 500px;
+    background-color: #efefef;
+    border:1px solid #a1a1a1;
+    border-radius:5px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left:-250px;
+    z-index: 99;
+    padding: 15px;
+}
+.add_div .div_title{
+    display: inline-block;
+    font-size: 22px;
+    color:#333333;
+    float: left;
+    margin-left: 15px;
+    font-family: '微软雅黑';
+    margin-top: 15px;
+}
+.add_div .div_close{
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    margin-right: 10px;
+    color:#333333;
+    margin-top: 15px;
+}
+.add_div .div_close:hover{
+    font-size: 20px;
+}
+.add_div .checkbox{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+}
+.add_div .text{
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 5px;
+    font-family: '微软雅黑';
+    font-size: 16px;
+}
+.add_div.context{
+    height: 25px;
+}
+.inventory{
+    width: 100%;
+}
+.inventory .div_head{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #a1a1a1;
+    border-top: 1px solid #a1a1a1;
+}
+.inventory .formTitle{
+    color:#333333;
+    font-size: 22px;
+    margin-left: 15px;
+    font-family: '微软雅黑';
+}
+.inventory .add_inventory{
+    width: 100px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    font-size: 16px;
+    margin-top: 3px;
+    font-family: '微软雅黑';
+}
+.add_invent,.update_invent{
+    width: 400px;
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 5px;
+    border:1px solid #a1a1a1;
+    background-color: #efefef;
+}
+.add_invent .title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.update_invent .title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.add_invent .title .title_text{
+    font-family: '微软雅黑';
+    font-size: 20px;
+    color:#333333;
+}
+.update_invent .title .title_text{
+    font-family: '微软雅黑';
+    font-size: 20px;
+    color:#333333;
+}
+.add_invent .title .close{
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    float: right;
+}
+.update_invent .title .close{
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    float: right;
+}
+.add_invent .title .close:hover{
+    font-size: 22px;
+}
+.update_invent .title .close:hover{
+    font-size: 22px;
+}
+.add_invent .inventSubmit{
+    width: 100%;
+}
+.update_invent .inventSubmit{
+    width: 100%;
+}

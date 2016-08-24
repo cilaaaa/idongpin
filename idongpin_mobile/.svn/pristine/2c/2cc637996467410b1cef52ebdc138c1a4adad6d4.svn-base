@@ -1,0 +1,158 @@
+@placeholderColor: #cccccc;
+@baseColor: #4d4d4d;
+@borderColor: #bcbcbc;
+@btnColor: #e31e3c;
+.font-size(@font-size){
+	[data-dpr="1"] & {
+		font-size: @font-size;
+	}
+	[data-dpr="2"] & {
+		font-size:@font-size*2;
+	}
+	[data-dpr="3"] & {
+		font-size:@font-size*3;
+	}
+}
+.font-family{
+	font-family: "Microsoft YaHei";
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background: #fafafa;
+}
+
+.content{
+	width: 9.15rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-top: 0.53rem;
+}
+
+.go_register{
+	width: 9.15rem;
+	height: 0.94rem;
+	line-height:0.94rem;
+	text-align: right;
+	a{
+		color: @baseColor;
+		.font-size(15px);
+		.font-family;
+	}
+}
+
+.company_logo{
+	width: 3.98rem;
+	margin: 0 auto;
+	img{
+		width: 3.98rem;
+	}
+}
+
+.form_control{
+	margin-top: 1.52rem;
+	.user_name{
+		width: 9.15rem;
+		height: 1.02rem;
+		border-bottom: 1px solid @borderColor;
+		text-align: center;
+		line-height: 1.02rem;
+		.user_icon{
+			display:block;
+			width: 2.4rem;
+			color: @baseColor;
+			.font-size(15px);
+			.font-family;
+			float:left;
+			text-align: left;
+		}
+		.user_input{
+			width: 6.75rem;
+			height: 1rem;
+			border: none;
+			background: none;
+			color: @baseColor;
+			.font-size(15px);
+			.font-family;
+			float:left;
+			&::-webkit-input-placeholder {
+　　			color: @placeholderColor;
+　　		}
+		}
+	}
+	.user_pwd{
+		width: 9.15rem;
+		height: 1.04rem;
+		border-bottom: 1px solid @borderColor;
+		text-align: center;
+		line-height: 1.04rem;
+		.pwd_icon{
+			display: block;
+			width: 2.4rem;
+			height: 1.04rem;
+			color: @baseColor;
+			.font-size(15px);
+			.font-family;
+			float: left;
+			text-align: left;
+		}
+		.pwd_input{
+			width: 5.95rem;
+			height: 1.04rem;
+			line-height: 1.04rem;
+			border: none;
+			background: none;
+			color: @baseColor;
+			.font-size(15px);
+			.font-family;
+			float:left;
+			&::-webkit-input-placeholder {
+　　			color: @placeholderColor;
+　　		}
+		}
+		.showPwd{
+			display: block;
+			width: 0.8rem;
+			height: 1.04rem;
+			line-height: 1.04rem;
+			float: left;
+			text-align: center;
+		}
+	}
+	.forget_pwd{
+		width: 9.15rem;
+		height: 0.72rem;
+		line-height: 0.72rem;
+		text-align: right;
+		margin-top: 0.2rem;
+		a{
+			color: @baseColor;
+			.font-size(12px);
+			.font-family;
+		}
+	}
+	.login{
+		width: 9.15rem;
+		height: 1.15rem;
+		margin-top: 0.11rem;
+		.login_btn{
+			display: block;
+			width: 9.15rem;
+			height: 1.15rem;
+			margin: 0 auto;
+			line-height: 1.25rem;
+			text-align: center;
+			border-radius: 0.08rem;
+			color: #ffffff;
+			.font-size(18px);
+			.font-family;
+			border: none;
+			background: @btnColor;
+		}
+	}
+}

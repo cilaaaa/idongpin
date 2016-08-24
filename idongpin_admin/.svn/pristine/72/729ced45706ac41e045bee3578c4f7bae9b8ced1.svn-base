@@ -1,0 +1,228 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: chendongnan
+ * Date: 16/8/11
+ * Time: 上午9:26
+ */
+
+namespace App\Http\Controllers\Order;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Validator;
+use App\Product;
+use App\ProProperty;
+use App\Order;
+use App\User;
+use App\LaunchOrder;
+use App\Quote;
+use App\Http\Controllers\Controller;
+
+class OrderAjax extends Controller{
+    public function getCompanyPro(Request $request){
+        if(isset($request->companyid)){
+            $product_ids = Product::where('company_id',$request->companyid)->get();
+            $products = array();
+            foreach($product_ids as $key => $product_id){
+                $products[$key]['proid'] = $product_id->pro_id;
+                $products[$key]['proname'] = ProProperty::where('property_name','pro_name')
+                    ->where('pro_id',$product_id->pro_id)
+                    ->first()->property_value;
+            }
+            return new JsonResponse($products, 200);
+        }else{
+            return new JsonResponse(array('msg' => '缺少参数'), 422);
+        }
+    }
+
+    private function validateOrder(array $data)
+    {
+        return Validator::make($data, [
+            'company_id' => 'required',
+            'pro_id' => 'required',
+            'order_user_id' => 'required',
+            'amount' => array('required','regex:/^[0-9]+(\.[0-9]{2})?$/'),
+            'qty' => 'required',
+            'freight' => array('required','regex:/^[0-9]+(\.[0-9]{2})?$/'),
+            'price_unit' => 'required',
+            'freight_type'=> 'required',
+            'qty_unit'=> 'required',
+            'receipt_person_phone'=> array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,
+            7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$/'),
+            'receipt_person'=> 'required',
+            'arrival_date'=> 'required|date',
+            'address' => 'required',
+            'unit_price' => 'required',
+        ]);
+    }
+
+    private function checkOrderid($orderid){
+        if(Order::where('order_id',$orderid)->count()!=0){
+            $orderid = date("YmdHms").rand(10,99);
+        }
+        return $orderid;
+    }
+
+    public function order_add(Request $request){
+        $validator = $this->validateOrder($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        if(User::where('user_phone',$request->order_user_id)->count()==0){
+            return redirect()->to($this->getRedirectUrl())
+                ->withInput($request->input())
+                ->withErrors(array('msg' => '该用户不存在'), $this->errorBag());
+        }else{
+            $orderid = date("YmdHms").rand(10,99);
+            $orderid = $this->checkOrderid($orderid);
+            $create_time = date("Y-m-d H:m:s");
+            Order::create([
+                'order_id' => $orderid,
+                'order_user_id' => User::where('user_phone',$request->order_user_id)->first()->user_id,
+                'company_id' => $request->company_id,
+                'pro_id' => $request->pro_id,
+                'order_time' => $create_time,
+                'unit_price' => $request->unit_price,
+                'order_status' => '已下单',
+                'amount' => $request->amount,
+                'freight' => $request->freight,
+                'qty' => $request->qty,
+                'address' => isset($request->address)?$request->address:"",
+
+                'price_unit'=>$request->price_unit,
+                'freight_type'=>$request->freight_type,
+                'qty_unit'=>$request->qty_unit,
+                'receipt_person_phone'=>$request->receipt_person_phone,
+                'receipt_person'=>$request->receipt_person,
+                'arrival_date'=>$request->arrival_date,
+            ]);
+            return redirect()->route('order::orderlist');
+        }
+    }
+
+    private function validateOrderUpdate(array $data)
+    {
+        return Validator::make($data, [
+            'amount' => array('required','regex:/^[0-9]+(\.[0-9]{2})?$/'),
+            'unit_price' => array('required','regex:/^[0-9]+(\.[0-9]{2})?$/'),
+            'qty' => 'required',
+            'freight' => array('required','regex:/^[0-9]+(\.[0-9]{2})?$/')
+        ]);
+    }
+
+    public function order_update(Request $request)
+    {
+        if (isset($request->do_method)) {
+            if ($request->do_method == 'update') {
+                $validator = $this->validateOrderUpdate($request->all());
+                if ($validator->fails()) {
+                    $this->throwValidationException(
+                        $request, $validator
+                    );
+                }
+                $infoArr = array_except($request->all(), ['order_id', 'do_method', '_token']);
+                Order::where('order_id', $request->order_id)->update($infoArr);
+                return redirect()->route('order::orderDetail', ['orderid' => $request->order_id]);
+            }
+        } else {
+            if (($request->ajax() && !$request->pjax()) || $request->wantsJson()) {
+                return new JsonResponse(array('msg' => '缺少参数'), 422);
+            }
+
+            return redirect()->to($this->getRedirectUrl())
+                ->withInput($request->input())
+                ->withErrors(array('msg' => '缺少参数'), $this->errorBag());
+        }
+    }
+
+    private function validateLaunchOrder(array $data)
+    {
+        return Validator::make($data, [
+            'launch_order_name' => 'required',
+            'amount' => 'required',
+            'limit_time_from' => 'required',
+            'limit_time_to' => 'required',
+            'shelf_life' => 'required',
+        ]);
+    }
+
+    public function launchOrder_update(Request $request)
+    {
+        if (isset($request->do_method)) {
+            if ($request->do_method == 'update') {
+                $validator = $this->validateLaunchOrder($request->all());
+                if ($validator->fails()) {
+                    $this->throwValidationException(
+                        $request, $validator
+                    );
+                }
+                $infoArr = array_except($request->all(), ['launch_order_id', 'do_method', '_token']);
+                LaunchOrder::where('launch_order_id', $request->launch_order_id)->update($infoArr);
+                return redirect()->route('order::launchOrderDetail', ['orderid' => $request->launch_order_id]);
+            } else if ($request->do_method == 'del') {
+                LaunchOrder::where('launch_order_id', $request->launch_order_id)->delete();
+                return new JsonResponse(array('msg' => 'success'), 200);
+            }
+        } else {
+            if (($request->ajax() && !$request->pjax()) || $request->wantsJson()) {
+                return new JsonResponse(array('msg' => '缺少参数'), 422);
+            }
+
+            return redirect()->to($this->getRedirectUrl())
+                ->withInput($request->input())
+                ->withErrors(array('msg' => '缺少参数'), $this->errorBag());
+        }
+    }
+
+    private function validateQuote(array $data){
+        return Validator::make($data,[
+            'quote_launch_order_id' => 'required',
+            'quote_user_id' => 'required',
+            'quote_price' => 'required',
+            'quote_freight' => 'required',
+        ]);
+    }
+
+    public function quote(Request $request)
+    {
+        if(isset($request->do_method)){
+            if($request->do_method == 'add'){
+                $validator = $this->validateQuote($request->all());
+                if ($validator->fails()) {
+                    $this->throwValidationException(
+                        $request, $validator
+                    );
+                }
+                $quote_query = Quote::withTrashed()
+                    ->where('quote_launch_order_id', $request->quote_launch_order_id)
+                    ->where('quote_user_id', $request->quote_user_id);
+                if ($quote_query->count() == 0) {
+                    $infoArr = array_except($request->all(),['_token','do_method']);
+                    Quote::create($infoArr);
+                    return new JsonResponse(array('msg' => 'success'), 200);
+                }else{
+                    if($quote_query->first()->deleted_at!=""){
+                        $quote_query->restore();
+                        $infoArr = array_except($request->all(),['_token','do_method']);
+                        $quote_query->update($infoArr);
+                        return new JsonResponse(array('msg' => 'success'), 200);
+                    }else{
+                        return new JsonResponse(array('msg' => '该商户已报价'), 422);
+                    }
+                }
+            }else if($request->do_method == 'update'){
+                $infoArr = array_except($request->all(),['quote_id','_token','do_method']);
+                Quote::where('quote_id',$request->quote_id)->update($infoArr);
+                return new JsonResponse(array('msg' => 'success'), 200);
+            }else if($request->do_method == 'del'){
+                Quote::where('quote_id',$request->quote_id)->delete();
+                return new JsonResponse(array('msg' => 'success'), 200);
+            }
+        }else{
+            return new JsonResponse(array('msg' => '缺少参数'), 422);
+        }
+    }
+}

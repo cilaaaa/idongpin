@@ -1,0 +1,62 @@
+.updateForm{
+    width: 600px;
+    display: none;
+    background-color: #fafafa;
+    border:1px solid #e1e1e1;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    margin-left: 50%;
+    left: -300px;
+}
+.updateForm .formHeader{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.updateForm .formHeader .formTitle{
+    font-family: '微软雅黑';
+    font-size: 22px;
+    display: inline-block;
+    margin-left: 20px;
+    float: left;
+    color:#333333;
+}
+.updateForm .formHeader .closeForm{
+    font-size: 18px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    color:#666666;
+}
+.updateForm .formHeader .closeForm:hover{
+    font-size: 22px;
+    color:#000000;
+    cursor: pointer;
+}
+.container-fluid .formDisplay{
+    display: block;
+}
+.tag{
+    font-size: 18px;
+    color:#efefef;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}
+.container-fluid .searchContent .add{
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    margin-left: 20px;
+    font-family: 'Microsoft Yahei';
+    color:#ffffff;
+}
+.update .form-group{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}

@@ -1,0 +1,245 @@
+/*下拉前搜索栏的样式*/
+.clear{
+    clear: both;
+}
+
+.welcome .login{
+    float: right;
+    margin-left: 10px;
+}
+
+/*.searchTool{*/
+    /*width: 100%;*/
+    /*height: 125px;*/
+    /*background: -webkit-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);*/
+    /*background: -moz-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);*/
+    /*background: -o-linear-gradient(top,#f2f2f2 0,#ebebe9 100%);*/
+    /*background: linear-gradient(to bottom,#f2f2f2 0,#ebebe9 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2f2f2,endColorstr=#ebebe9,GradientType=0);*/
+    /*box-shadow: 0 0 20px #efefef;*/
+    /*-webkit-box-shadow: 0 0 40px #efefef;*/
+    /*-moz-box-shadow: 0 0 40px #efefef;*/
+    /*-ms-box-shadow: 0 0 40px #efefef;*/
+    /*-o-box-shadow: 0 0 40px #efefef;*/
+/*}*/
+/*.searchBar{*/
+    /*width: 950px;*/
+    /*height: 71px;*/
+    /*box-sizing: border-box;*/
+    /*padding-top: 13px;*/
+/*}*/
+
+.logo{
+    width: 213px;
+    margin-right: 70px;
+}
+.logo img{
+    width: 180px;
+    height: 62px;
+}
+.nature{
+    width: 180px;
+    height: 16px;
+    color: #666666;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    letter-spacing: 2px;
+    padding: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+/*.search{*/
+    /*float: right;*/
+    /*width: 650px;*/
+    /*height: 58px;*/
+    /*display: inline-block;*/
+/*}*/
+.search .searchBox{
+    width: 521px;
+    height: 34px;
+    margin-top: 0;
+    float: left;
+    border: 2px solid #e02341;
+}
+.search .searchBox input{
+    width: 410px;
+    height: 34px;
+    border: none;
+    background: none;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.search .searchBox .searchBtn{
+    width: 105px;
+    height: 34px;
+    background-color: #e02341;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    line-height: 34px;
+    float: right;
+}
+
+.search   .searchBtnQ{
+    width: 105px;
+    float: right;
+    height: 34px;
+    color: #e02341;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    line-height: 34px;
+    border: 2px solid #e02341;
+}
+.nav{
+    width: 650px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 280px;
+}
+.navMenuP{
+    height: 40px;
+}
+.menu{
+    display: block;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    margin: 0;
+}
+
+.menu:hover{
+    color: #e02341;
+    
+}
+
+.menuActive{
+    border-bottom: 3px solid #e02341;
+}
+
+.navMenuP ul{
+    display: inline;
+}
+.navMenuP li{
+    position: relative;
+    width: 130px;
+    height: 38px;
+    float: left;
+    text-align: center;
+}
+
+.secondCarte li{
+    width: 100px;
+}
+
+.navMenuP ul li a{
+    box-sizing: border-box;
+    width: 130px;
+}
+
+.navTtlP{
+    width: 130px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    color: #4a4a4a;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    line-height: 40px;
+    float: left;
+}
+
+.selectOption>li:hover{
+    color: #e02341;
+}
+
+.navMenuP>li>a:hover{
+    color: #e02341;
+}
+
+.navTtlP img{
+    margin-left: 5px;
+    width: 12px;
+    height: 8px;
+    float: right;
+    margin-top: 16px;
+}
+
+.carte{
+    position: absolute;
+    text-align: left;
+    width: 240px;
+    height: auto;
+    display: none;
+    top: 40px;
+}
+.firstCarte{
+    height: auto;
+    left: 0px;
+}
+
+.menuItem:hover{
+    background-color: #f8f8f8;
+}
+
+.secondCarte{
+    height: 412px;
+}
+.menuAll:hover{
+    cursor: pointer;
+    background-color: #f8f8f8;
+}
+.menuAll{
+    width: 240px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.bigAll{
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: "Microsoft YaHei";
+}
+
+.container{
+    width: 980px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #f2f6f7;
+    -webkit-box-shadow: 0 0 40px #f2f6f7;
+    -moz-box-shadow: 0 0 40px #f2f6f7;
+    -ms-box-shadow: 0 0 40px #f2f6f7;
+    -o-box-shadow: 0 0 40px #f2f6f7;
+}
+
+.firstCarte {
+    position: relative;
+    left: 0px;
+    width: 240px;
+    height: 310px;
+    background-color: #ffffff;
+    z-index: 99;
+    border-right: none;
+    border: 1px solid #e8e8e8;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menuItem {
+    width: 240px;
+    height: 62px;
+    line-height: 42px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    color: #4a4a4a;
+    font-family: "Microsoft YaHei";
+    position: relative;
+    background: #ffffff;
+}

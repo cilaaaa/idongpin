@@ -1,0 +1,67 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/index.css')}}">
+@endsection
+
+@section('rightSideContent')
+	<div class="userInfo">
+		<div class="photo">
+			<img src="{{url('images/userCenter/headPhoto.png')}}">
+		</div>
+		<div class="info">
+			<div class="useName"><span>IDP</span><span class="userType">（个人用户）</span></div>
+			<div class="orders">
+				<span class="deal">已报价订单（<span>12</span>）</span>
+				<span class="undeal">未处理订单（<span>12</span>）</span>
+			</div>
+		</div>
+		<div class="orderRelease">
+			<div class="releaseBtn">我要发布订单</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="orderInfo">
+		<div class="recentOrder"><span>最近订单信息</span><img src="{{url('images/userCenter/down_01.png')}}"></div>
+		<div class="orderTab">
+			<ul class="th">
+				<li class="orderID">订单号</li>
+				<li class="goodsName">货品名称</li>
+				<li class="price">单价</li>
+				<li class="count">数量</li>
+				<li class="freight">运费</li>
+				<li class="operation">操作</li>
+			</ul>
+			<ul>
+				<li class="tr">
+					<div class="orderID">2016072215051234</div>
+					<div class="goodsName">台湾风味烤肠</div>
+					<div class="price"> ¥11.2 </div>
+					<div class="count">10箱 </div>
+					<div class="freight">免运费</div>
+					<div class="operation"><span class="cancel">取消</span><span class="spacing">/</span><span class="finish">完成</span></div>
+				</li>
+				<li class="tr">
+					<div class="orderID">2016072215051234</div>
+					<div class="goodsName">台湾风味烤肠</div>
+					<div class="price"> ¥11.2 </div>
+					<div class="count">10箱 </div>
+					<div class="freight">免运费</div>
+					<div class="operation"><span class="cancel">取消</span><span class="spacing">/</span><span class="finish">完成</span></div>
+				</li>
+				<li class="tr">
+					<div class="orderID">2016072215051234</div>
+					<div class="goodsName">台湾风味烤肠</div>
+					<div class="price"> ¥11.2 </div>
+					<div class="count">10箱 </div>
+					<div class="freight">免运费</div>
+					<div class="operation"><span class="cancel">取消</span><span class="spacing">/</span><span class="finish">完成</span></div>
+				</li>
+			<ul>
+		</div>
+	</div>
+@endsection
+
+@section('js')
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="{{url('js/userCenter/index.js')}}"></script>
+@endsection

@@ -1,0 +1,47 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: user88
+ * Date: 2016/6/27
+ * Time: 10:16
+ */
+namespace App\Http\Controllers\User;
+
+use App\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $user = User::where('user_id',$request->user()->user_id)->firstOrFail();
+        return view('userCenter/index',['user'=>$user]);
+    }
+    
+    public function address(){
+        return view('userCenter/address');
+    }
+
+    public function launch_order(){
+        return view('userCenter/askPrice');
+    }
+
+    public function order(){
+        return view('userCenter/myOrder');
+    }
+
+    public function auth(){
+        return view('userCenter/accountSafe');
+    }
+
+    public function userinfo(){
+        return view('userCenter/accountInfo');
+    }
+}

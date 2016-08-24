@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商铺管理</title>
+    <meta name="description" content="LogViewer">
+    <meta name="author" content="ARCANEDEV">
+    <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+    <?php echo $__env->yieldContent('css'); ?>
+</head>
+<body>
+
+<?php echo $__env->yieldContent('navigation'); ?>
+
+<div class="container-fluid">
+    <?php echo $__env->yieldContent('content'); ?>
+</div>
+
+
+<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<?php echo $__env->yieldContent('js'); ?>
+</body>
+</html>

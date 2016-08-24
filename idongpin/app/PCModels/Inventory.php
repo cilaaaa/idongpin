@@ -1,0 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/27
+ * Time: 13:28
+ * Instruction: 商品库存表
+ */
+
+namespace App\PCModels;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Inventory extends Model{
+    protected $table = 'idp_inventory';
+    public $timestamps = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+    protected $fillable = [
+        'id' ,'pro_id', 'wholesale_price', 'wholesale_unit', 'wholesale_amount', 'wholesale_price_extend'
+    ];
+
+}

@@ -1,0 +1,81 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/myOrder.css')}}">
+@endsection
+
+@section('rightSideContent')
+	<div class="topMode">
+		<div class="selectOrderTime">
+			<span class="selectDate selectDateActive">近三个月订单</span>
+			<span class="selectDate">三个月前订单</span>
+		</div>
+		<div class="orderInfoSearch">
+			<form>
+				<div class="conditions">
+					<div class="condition">
+						<span class="infoTtl">订单号：</span><input class="infoVal" type="text">
+					</div>
+					<div class="condition">
+						<span class="infoTtl">货品名称：</span><input class="infoVal" type="text">
+					</div>
+					<div class="condition">
+						<span class="infoTtl">供应商名:</span><input class="infoVal" type="text">
+					</div>
+				</div>
+				<div class="conditions">
+					<span class="infoTtl">下单时间：</span><input class="infoVal" type="text"><span class="spacing">至</span><input class="infoVal" type="text">
+					<span class="conditionSearch"><input class="conditionSearchBtn" type="submit" value="查询"></span>
+				</div>
+			</form>
+		</div>
+		<div class="selectOrderStatus">
+			<span class="infoTtl">订单状态：</span><span class="status">全部</span><span class="status">未完成</span><span class="status">已完成</span>
+		</div>
+	</div>
+	<div class="afterThreeMonth">
+		<table class="orderTab">
+			<tr>
+				<td class="orderID">订单号</td>
+				<td class="goodsName">货品名称</td>
+				<td class="price">单价</td>
+				<td class="count">数量</td>
+				<td class="total">总价</td>
+				<td class="freight">运费</td>
+				<td class="operation">操作</td>
+			</tr>
+			<tr>
+				<td class="orderID">20160612345</td>
+				<td class="goodsName">台湾风味烤肠</td>
+				<td class="price"> ¥11.2 </td>
+				<td class="count">10箱 </td>
+				<td class="total">¥112 </td>
+				<td class="freight">免运费</td>
+				<td class="operation"><span class="cancel">取消</span><span class="finish">完成</span></td>
+			</tr>
+			<tr>
+				<td class="orderID">20160612345</td>
+				<td class="goodsName">台湾风味烤肠</td>
+				<td class="price"> ¥11.2 </td>
+				<td class="count">10箱 </td>
+				<td class="total">¥112 </td>
+				<td class="freight">免运费</td>
+				<td class="operation"><span class="cancel">取消</span><span class="finish">完成</span></td>
+			</tr>
+			<tr>
+				<td class="orderID">20160612345</td>
+				<td class="goodsName">台湾风味烤肠</td>
+				<td class="price"> ¥11.2 </td>
+				<td class="count">10箱 </td>
+				<td class="total">¥112 </td>
+				<td class="freight">免运费</td>
+				<td class="operation"><span class="cancel">取消</span><span class="finish">完成</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="beforeThreeMonth"></div>
+@endsection
+
+@section('js')
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="{{url('js/userCenter/myOrder.js')}}"></script>
+@endsection

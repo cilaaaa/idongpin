@@ -1,0 +1,86 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/29
+ * Time: 10:05
+ */
+
+namespace App\Http\Controllers\Order;
+
+use App\Http\Controllers\Controller;
+use App\Quote;
+use App\LaunchOrder;
+use Illuminate\Http\Request;
+use Validator;
+use Mockery\CountValidator\Exception;
+
+class OrderController extends Controller
+{
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $user = User::where('user_id',$request->user()->user_id)->firstOrFail();
+        echo $user;
+        return view('index/home');
+    }
+
+    private function validateBid(array $data){
+        return Validator::make($data,[
+            'quote_launch_order_id' => 'required',
+            'quote_user_id' => 'required',
+            'quote_price' => array('required','regex:/^(0|[1-9][0-9]{0,9})(\.[0-9]{1,2})?$/')
+        ]);
+    }
+
+    public function bid(Request $request){
+        $validator = $this->validateBid($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        try{
+            Quote::create($request->all());
+            return redirect()->route('user::index');
+        }catch(Exception $e){
+            return redirect()->to($this->getRedirectUrl())
+                ->withErrors($e->getMessage(), $this->errorBag());
+        }
+    }
+
+    private function validateLaunchOrder(array $data){
+        return Validator::make($data,[
+            'limit_time' => 'required|date',
+            'amount' => 'required',
+            'unit' => 'required',
+            'launch_order_name' => 'required',
+            'launch_order_detail' => 'required',
+            'user_id' => 'required'
+        ]);
+    }
+
+    public function launchOrder(Request $request){
+        $validator = $this->validateLaunchOrder($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        try{
+            LaunchOrder::create($request->all());
+            return redirect()->route('user::index');
+        }catch(Exception $e){
+            return redirect()->to($this->getRedirectUrl())
+                ->withErrors($e->getMessage(), $this->errorBag());
+        }
+    }
+}

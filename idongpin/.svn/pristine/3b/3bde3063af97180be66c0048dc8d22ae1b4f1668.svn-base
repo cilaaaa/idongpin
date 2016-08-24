@@ -1,0 +1,265 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/acountInfo.css')}}">
+@endsection
+
+@section('rightSideContent')
+    <div class="infoMain">
+        <div class="infoTags">
+            <span class="tagsName redSpan" id="basInfo">基本信息</span><span class="tagsText" id="comInfo">企业信息</span>
+        </div>
+        <div class="infoDetails">
+            <div class="head">
+                <div>
+                    <img>
+                </div>
+                <span>上传头像</span>
+            </div>
+            <div class="details">
+                <div class="Certification">
+                    <span class="a">IDP</span>（<span class="b">未认证</span>）
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">账户：</span><span class="detailsItemText">18625654856</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">性别：</span><span class="detailsItemText">男</span>
+                </div>
+                <div class="detailsItem" >
+                    <span class="detailsItemName">电话：</span><span class="detailsItemText">18625654856</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">邮箱：</span><span class="detailsItemText">18625654856@qq.com</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">个人公司类型：</span><span class="detailsItemText">企业单位</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">所在地：</span><span class="detailsItemText">上海广中西路777弄99号</span>
+                </div>
+                <div class="opera">
+                    <span class="operaChange">修改</span><span class="operaConfirm">确定</span>
+                </div>
+            </div>
+            <div class="detailsC displayNone">
+                <div class="Certification">
+                    <span class="a">IDP</span>（<span class="b">未认证</span>）
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">账户：</span><span class="detailsItemText">18625654856</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">公司类型：</span><span class="detailsItemText">企业单位</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">公司名称：</span><span class="detailsItemText">上海涌得贸易</span>
+                </div>
+                <div class="detailsItem" >
+                    <span class="detailsItemName">经营地址：</span><span class="detailsItemText">上海广中西路777弄99号</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">主营行业：</span><span class="detailsItemText">牛 羊 猪</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">主营产品：</span><span class="detailsItemText">销售 采购</span>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">公司网站：</span><span class="detailsItemText">www.zdongdong.com</span>
+                </div>
+                <div class="opera">
+                    <span class="operaChange">修改</span><span class="operaConfirm">确定</span>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="editMode">
+        <div class="modeTable">
+            <div class="modeCell">
+                <div class="modeMain">
+                    <div class="modeHeader">
+                        <span>基本信息修改</span> <img src="{{url('images/userCenter/close.png')}}">
+                    </div>
+                    <div class="modeContent">
+                        <form action="">
+                            <div class="modeItem">
+                                <div class="itemLeft">账　　户：</div><input class="itemInput" readonly>
+                            </div>
+                            <div class="modeItem">
+                                <div class="sexSelect">
+                                    <div class="itemLeft">性　　别：</div>
+                                    <div  class="typeSelect">
+                                        <div  class="typeHeader">
+                                            <div >请选择</div><img src="">
+                                        </div>
+                                        <ul class="personalType">
+                                            <li>男</li>
+                                            <li>女</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modeItem">
+                                <div class="itemLeft">电　　话：</div><input class="itemInput">
+                            </div >
+                            <div class="modeItem">
+                                <div class="itemLeft">邮　　箱：</div><input class="itemInput">
+                            </div >
+                            <div class="modeItem">
+                                <div class="companyTypeSelect">
+                                    <div class="itemLeft">公司类型：</div>
+                                    <div  class="typeSelect">
+                                        <div  class="typeHeader">
+                                            <div >请选择</div><img src="">
+                                        </div>
+                                        <ul class="personalType">
+                                            <li>企业单位</li>
+                                            <li>事业单位</li>
+                                            <li>社会团体</li>
+                                            <li>个体经营</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div >
+                            <div class="modeItem">
+                                <span>地　　址：</span><input class="itemInput">
+                            </div >
+                        </form>
+                    </div>
+                    <div class="modeFooter">
+                        <div class="btn_click">
+                            <button  class="btnCancel">取消</button> <button type="submit" class="btnSave" >保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="companyMode">
+        <div class="modeTable">
+            <div class="modeCell">
+                <div class="modeMain">
+                    <div class="modeHeader">
+                        <span>企业信息修改</span> <img src="{{url('images/userCenter/close.png')}}">
+                    </div>
+                    <div class="modeContent">
+                        <form action="">
+                            <div class="modeItem">
+                                <div class="itemLeft">账　　户：</div><input class="itemInput" readonly>
+                            </div>
+                            <div class="modeItem">
+                                <div class="companyTypeSelect">
+                                    <div class="itemLeft">公司类型：</div>
+                                    <div  class="typeSelect">
+                                        <div  class="typeHeader">
+                                            <div >请选择</div><img src="">
+                                        </div>
+                                        <ul class="personalType">
+                                            <li>企业单位</li>
+                                            <li>事业单位</li>
+                                            <li>社会团体</li>
+                                            <li>个体经营</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div >
+                            <div class="modeItem">
+                                <div class="itemLeft">公司名称：</div><input class="itemInput">
+                            </div >
+                            <div class="modeItem">
+                                <div class="itemLeft">经营地址：</div><input class="itemInput">
+                            </div >
+                            <div class="modeItem">
+                                <div class="industrySelect">
+                                    <div class="itemLeft">主营行业：</div>
+                                    <div  class="typeSelect">
+                                        <div  class="typeHeader">
+                                            <div ></div><img src="">
+                                        </div>
+                                        <ul class="personalType">
+                                            <li>
+                                                <span>鸡</span><img  src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>鸭</span><img  src="{{url('images/userCenter/btn_2_1.png')}}"  class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>鹅</span><img  src="{{url('images/userCenter/btn_2_1.png')}}"  class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>牛</span><img  src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>羊</span><img  src="{{url('images/userCenter/btn_2_1.png')}}"  class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>猪</span><img  src="{{url('images/userCenter/btn_2_1.png')}}"  class="industryCheck">
+                                            </li> <li>
+                                                <span>海鲜</span><img  src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>其他</span><img src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <div>
+                                                <div class="industryConfirm">
+                                                    <span>确定</span>
+                                                </div>
+                                                <div class="industryCancel">
+                                                    <span>取消</span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div >
+                            <div class="modeItem">
+                                <div class="productSelect">
+                                    <div class="itemLeft">主营产品：</div>
+                                    <div  class="typeSelect">
+                                        <div  class="typeHeader">
+                                            <div ></div><img src="">
+                                        </div>
+                                        <ul class="personalType">
+                                            <li>
+                                                <span>销售</span><img  src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>采购</span><img  src="{{url('images/userCenter/btn_2_1.png')}}"  class="industryCheck">
+                                            </li>
+                                            <li>
+                                                <span>其他</span><img src="{{url('images/userCenter/btn_2_1.png')}}" class="industryCheck">
+                                            </li>
+                                            <div>
+                                                <div class="industryConfirm">
+                                                    <span>确定</span>
+                                                </div>
+                                                <div class="industryCancel">
+                                                    <span>取消</span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div >
+                            <div class="modeItem">
+                                <span>公司网站：</span><input class="itemInput">
+                            </div >
+                        </form>
+                    </div>
+                    <div class="modeFooter">
+                        <div class="btn_click">
+                            <button  class="btnCancel">取消</button> <button type="submit" class="btnSave" >保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url('js/userCenter/acountInfo.js')}}"></script>
+
+@endsection

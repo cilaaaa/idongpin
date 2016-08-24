@@ -1,0 +1,38 @@
+.table  thead td{
+    color:white;
+    font-family: '微软雅黑';
+    font-size: 14px;
+    background-color: #333333;
+    border-right: 1px solid #555555;
+}
+.container-fluid .searchContent{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+}
+.table tbody td .checkbox{
+    width: 20px;
+    height: 20px;
+}
+.table tbody tr:nth-child(odd) td{
+    background-color: #efefef;
+}
+.container-fluid .searchContent #search{
+    width: 250px;
+    height: 35px;
+    padding-left: 10px;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color:#333333;
+    border:1px solid #a1a1a1;
+}
+.container-fluid .searchContent form{
+    display: inline-block;
+}
+.container-fluid .searchContent .search{
+    width: 80px;
+    font-size: 16px;
+    font-family: '微软雅黑';
+}

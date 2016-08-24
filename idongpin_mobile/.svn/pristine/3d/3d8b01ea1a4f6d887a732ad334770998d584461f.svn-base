@@ -1,0 +1,196 @@
+@font-face {
+  font-family: 'user';
+  src: url('../../fonts/auth/user.eot');
+  src: url('../../fonts/auth/user.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/auth/user.woff') format('woff'), /* chrome、firefox */ url('../../fonts/auth/user.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../fonts/auth/user.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: 'pwd';
+  src: url('../../fonts/auth/pwd.eot');
+  src: url('../../fonts/auth/pwd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/auth/pwd.woff') format('woff'), /* chrome、firefox */ url('../../fonts/auth/pwd.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../fonts/auth/pwd.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: 'goto';
+  src: url('../../fonts/auth/goto.eot');
+  src: url('../../fonts/auth/goto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/auth/goto.woff') format('woff'), /* chrome、firefox */ url('../../fonts/auth/goto.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../../fonts/auth/goto.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: url('../../images/auth/bg_pic.png') top center no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.content {
+  width: 8.96rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 0.53rem;
+}
+.go_register {
+  width: 8.96rem;
+  height: 0.94rem;
+  line-height: 0.94rem;
+  text-align: right;
+}
+.go_register a {
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .go_register a {
+  font-size: 14px;
+}
+[data-dpr="2"] .go_register a {
+  font-size: 28px;
+}
+[data-dpr="3"] .go_register a {
+  font-size: 42px;
+}
+.go_register a .goto {
+  font-family: "goto";
+}
+.company_logo {
+  width: 3.98rem;
+  margin: 0 auto;
+}
+.company_logo img {
+  width: 3.98rem;
+}
+.form_control {
+  margin-top: 2rem;
+}
+.form_control .user_name {
+  width: 9rem;
+  height: 1.25rem;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+  line-height: 1.25rem;
+}
+.form_control .user_name .user_con {
+  color: #ffffff;
+  font-family: "user";
+}
+[data-dpr="1"] .form_control .user_name .user_con {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .user_name .user_con {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .user_name .user_con {
+  font-size: 42px;
+}
+.form_control .user_name .user_input {
+  width: 6rem;
+  height: 1rem;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .user_name .user_input {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .user_name .user_input {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .user_name .user_input {
+  font-size: 42px;
+}
+.form_control .user_pwd {
+  width: 9rem;
+  height: 1.25rem;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+  line-height: 1.25rem;
+}
+.form_control .user_pwd .pwd_icon {
+  color: #ffffff;
+  font-family: "pwd";
+}
+[data-dpr="1"] .form_control .user_pwd .pwd_icon {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .user_pwd .pwd_icon {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .user_pwd .pwd_icon {
+  font-size: 42px;
+}
+.form_control .user_pwd .pwd_input {
+  width: 6rem;
+  height: 1rem;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .user_pwd .pwd_input {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .user_pwd .pwd_input {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .user_pwd .pwd_input {
+  font-size: 42px;
+}
+.form_control .forget_pwd {
+  width: 9rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  text-align: right;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .form_control .forget_pwd {
+  font-size: 14px;
+}
+[data-dpr="2"] .form_control .forget_pwd {
+  font-size: 28px;
+}
+[data-dpr="3"] .form_control .forget_pwd {
+  font-size: 42px;
+}
+.form_control .login {
+  width: 9rem;
+  height: 1.25rem;
+  margin-top: 1.25rem;
+}
+.form_control .login .login_btn {
+  display: block;
+  width: 7rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  line-height: 1.25rem;
+  text-align: center;
+  border-radius: 0.625rem;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+  background: none;
+  border: none;
+  background: #64bfc4;
+}
+[data-dpr="1"] .form_control .login .login_btn {
+  font-size: 16px;
+}
+[data-dpr="2"] .form_control .login .login_btn {
+  font-size: 32px;
+}
+[data-dpr="3"] .form_control .login .login_btn {
+  font-size: 48px;
+}

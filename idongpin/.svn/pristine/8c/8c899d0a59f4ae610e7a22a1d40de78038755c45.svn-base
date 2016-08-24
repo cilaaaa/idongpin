@@ -1,0 +1,61 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/address.css')}}">
+@endsection
+
+@section('rightSideContent')
+    <div class="infoMain">
+        <div class="infoTags">
+            <span class="tagsName" >收货地址</span>
+        </div>
+        <div class="infoDetails">
+            <div class="details">
+                <div class="operationAll"><span class="adda">新增</span><span class="deletea">删除</span></div>
+                <table class="orderTab">
+                    <tr>
+                        <td class="chooseA aCheckbox ">全选</td>
+                        <td class="aName">收货人姓名</td>
+                        <td class="aAddress">地址</td>
+                        <td class="aCount">电话</td>
+                        <td class="aStatus">是否默认</td>
+                        <td class="operation">操作</td>
+                    </tr>
+                    <tr>
+                        <td class="aCheckbox"><input type="checkbox"></td>
+                        <td class="aName">王先生</td>
+                        <td class="aAddress">广中西路777弄江裕大厦1205室挨冻品公司</td>
+                        <td class="aCount">18217148408</td>
+                        <td class="aStatus"><input type="radio"></td>
+                        <td class="operation"><span class="edit">编辑</span><span class="delete">删除</span></td>
+                    </tr>
+                    <tr>
+                        <td class="aCheckbox"><input type="checkbox"></td>
+                        <td class="aName">王先生</td>
+                        <td class="aAddress">广中西路777弄江裕大厦1205室挨冻品公司</td>
+                        <td class="aCount">18217148408</td>
+                        <td class="aStatus"><input type="radio"></td>
+                        <td class="operation"><span class="edit">编辑</span><span class="delete">删除</span></td>
+                    </tr>
+                    <tr>
+                        <td class="aCheckbox"><input type="checkbox"></td>
+                        <td class="aName">王先生</td>
+                        <td class="aAddress">广中西路777弄江裕大厦1205室挨冻品公司</td>
+                        <td class="aCount">18217148408</td>
+                        <td class="aStatus"><input type="radio"></td>
+                        <td class="operation"><span class="edit">编辑</span><span class="delete">删除</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="addMode">
+        <div class="addDetails">
+            woshi水
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url('js/userCenter/address.js')}}"></script>
+
+@endsection

@@ -1,0 +1,29 @@
+$(document).ready(function(){
+
+//为左右两边模块设置高度
+    var windowHeight = $(window).height();
+    var loginInfoHeight = $(".loginInfo").height();
+    var searchToolHeight = $(".searchTool").height();
+    var infoTagsH=$(".infoTags").height();
+    var minHeight = windowHeight - loginInfoHeight -searchToolHeight-infoTagsH ;
+
+    // $(".rightSide").css("minHeight",minHeight);
+    $(".infoDetails").css("minHeight",minHeight-3);
+
+
+    $("#basInfo").click(function () {
+        $("#comInfo").removeClass("redSpan");
+        if(!$(this).hasClass("redSpan"))
+            $(this).addClass("redSpan");
+        $(".details").css("display","block");
+        $(".detailsC").css("display","none");
+    });
+    $("#comInfo").click(function () {
+        $("#basInfo").removeClass("redSpan");
+        if(!$(this).hasClass("redSpan"))
+            $(this).addClass("redSpan");
+        $(".detailsC").css("display","block");
+        $(".details").css("display","none");
+    });
+
+});

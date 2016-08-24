@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+.displayNone{
+    display: none;
+}
+.displayBlock{
+    display: block;
+}
+.infoMain{
+    box-sizing: border-box;
+}
+.infoTags{
+    padding: 0 15px ;
+    background: #FFFFFF;
+    height: 65px;
+    line-height: 65px;
+}
+ .tagsName{
+    margin-right: 30px;
+    padding: 5px 10px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+     cursor: pointer;
+}
+ .tagsText{
+    margin-right: 30px;
+    padding: 5px 10px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+     cursor: pointer;
+}
+
+.redSpan{
+    background-color:#e02341;
+    border: 2px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: #FFFFFF;
+}
+.infoDetails{
+    padding: 0 15px ;
+    padding-top: 10px;
+    margin-top: 3px;
+    background: #FFFFFF;
+}
+.head{
+    width: 100px;
+    float: left;
+}
+.head img{
+    width: 64px;
+    height: 64px;
+}
+.head span{
+    padding-left: 5px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    cursor: pointer;
+}
+
+.details{
+    float: left;
+}
+.detailsC{
+    float: left;
+}
+.Certification{
+    height: 20px;
+}
+.Certification .a{
+    margin-right: 10px;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: "Microsoft Yahei";
+
+}
+.Certification .b{
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+
+.detailsItem{
+    height: 32px;
+    line-height: 32px;
+}
+.detailsItem .detailsItemName{
+     font-size: 14px;
+     font-family: "Microsoft Yahei";
+     color: #333333;
+ }
+.detailsItem .detailsItemText{
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    color: #333333;
+}
+
+.opera{
+    padding-top: 20px;
+}
+
+.opera span{
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 65px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-right: 15px;
+    background-color:#e02341;
+    border: 2px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: #FFFFFF;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+}

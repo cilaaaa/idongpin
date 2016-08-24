@@ -1,0 +1,55 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/29
+ * Time: 10:06
+ */
+
+namespace App\Http\Controllers\Findorder;
+
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Validator;
+use App\Madein;
+use App\LaunchOrder;
+
+class FindorderController extends Controller
+{
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $madein = Madein::all();
+        return view('findorder/index',['madein'=>$madein]);
+    }
+
+    private function validateLaunchOrder(array $data){
+        return Validator::make($data,[
+            'launch_order_name' => 'required',
+            'amount' => 'required',
+            'limit_time_from' => 'required',
+            'limit_time_to' => 'required',
+            'madein' => 'required',
+            'shelf_lef' => 'required'
+        ]);
+    }
+
+    public function launchOrder(Request $request){
+        $validator = $this->validateLaunchOrder($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        $infoArr = array_except($request->all(),['_token']);
+        $infoArr['user_id'] = $request->user()->user_id;
+        LaunchOrder::create($infoArr);
+        return redirect()->route('user::index');
+    }
+}

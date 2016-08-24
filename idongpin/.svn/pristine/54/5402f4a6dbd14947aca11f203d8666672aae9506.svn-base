@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+
+.infoMain{
+    box-sizing: border-box;
+    margin-left: 28px;
+    margin-right: 15px;
+}
+.infoTags{
+    background: #FFFFFF;
+    height: 76px;
+    padding-top: 20px;
+}
+.tagsName{
+    color: #3a3b3b;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+
+.infoDetails{
+    background: #FFFFFF;
+}
+
+
+.details{
+}
+.orderTab{
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+}
+.orderTab thead{
+    background-color: #f7f7f7;
+}
+.chooseAll{
+    cursor: pointer;
+}
+.aCount{
+    width: 156px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    padding-left: 25px;
+}
+.aName{
+    width: 101px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.aAddress{
+    width: 238px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+.aCheckbox{
+    width: 45px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    text-align: center;
+}
+.aStatus{
+    width: 89px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.aCheckbox input{
+    cursor: pointer;
+}
+.operationAll{
+    text-align: right;
+    padding: 10px 0;
+}
+
+.operationAll .deletea{
+    margin-right: 19px;
+    margin-left: 15px;
+}
+.operation{
+    width: 131px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.edit,.delete{
+    display: inline-block;
+    height: 24px;
+    color: #3a3b3b;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 15px;
+}
+.operationAll .adda,.operationAll .deletea{
+    display: inline-block;
+    height: 24px;
+    color: #3a3b3b;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+
+/*弹窗*/
+.addMode{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,0.2);
+    top: 0px;
+    left: 0px;
+}
+.modeTable{
+   display: table;
+    width: 100%;
+    height: 100%;
+}
+.modeCell{
+    display:table-cell;
+    vertical-align:middle;
+    height: 100px;
+    text-align: center;
+}
+
+.addMode .modeMain{
+    width: 600px;
+    height: 400px;
+    background: #FFFFFF;
+    margin:  0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.modeMain .modeHeader{
+    text-align: left;
+   padding:  0 20px ;
+    height: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    border-bottom: 2px solid  rgba(232,242,255,1);;
+}
+
+.modeHeader img{
+    float: right;
+    margin-top: 11px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.modeContent{
+    display: inline-block;
+    margin:  0 auto;
+    text-align: left;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.modeContent .modeItem{
+    height: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+.itemInput{
+    height: 30px;
+    width: 200px;
+}
+.modeCheckbox{
+    cursor: pointer;
+}
+.modeFooter .btn_click{
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+.btnCancel,.btnSave{
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    background-color: #e02341;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #ffffff;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+}
+
+.btnSave{
+    margin-left: 10px;
+}
+
+/*弹窗*/

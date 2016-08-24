@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+
+
+.infoContent{
+    padding: 0 15px ;
+    background-color: #FFFFFF;
+}
+
+
+.infoTags{
+    height: 65px;
+    line-height: 65px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+.infoTags span{
+    margin-right: 30px;
+    padding: 5px 10px;
+}
+.addStyle{
+    background-color: red;
+    border: 2px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.infoDetails{
+    padding-top: 10px;
+    border-top: 1px solid #2e6da4;
+}
+.head{
+    width: 100px;
+    float: left;
+
+}
+
+
+.head img{
+    width: 64px;
+    height: 64px;
+}
+.head span{
+    padding-left: 5px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.details{
+    float: left;
+}
+.Certification{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: "Microsoft Yahei";
+}
+.Certification .a{
+    color: #4a4a4a;
+}
+.Certification .b{
+    color: #333333;
+}
+
+
+.detailsItem{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    color: #333333;
+}

@@ -1,0 +1,170 @@
+$(document).ready(function(){
+
+//为左右两边模块设置高度
+    var windowHeight = $(window).height();
+    var loginInfoHeight = $(".loginInfo").height();
+    var searchToolHeight = $(".searchTool").height();
+    var infoTagsH=$(".infoTags").height();
+    var minHeight = windowHeight - loginInfoHeight -searchToolHeight-infoTagsH ;
+
+    // $(".rightSide").css("minHeight",minHeight);
+    $(".infoDetails").css("minHeight",minHeight-3);
+
+
+    $("#basInfo").click(function () {
+        $("#comInfo").removeClass("redSpan");
+        if(!$(this).hasClass("redSpan"))
+            $(this).addClass("redSpan");
+        $(".details").css("display","block");
+        $(".detailsC").css("display","none");
+    });
+    $("#comInfo").click(function () {
+        $("#basInfo").removeClass("redSpan");
+        if(!$(this).hasClass("redSpan"))
+            $(this).addClass("redSpan");
+        $(".detailsC").css("display","block");
+        $(".details").css("display","none");
+    });
+
+    //基本信息修改
+    $(".details .operaChange").click(function () {
+        $(".editMode").css("display","block")
+        var count=$(".details ").children(".detailsItem").eq(0).children(".detailsItemText").text();
+        var sex=$(".details ").children(".detailsItem").eq(1).children(".detailsItemText").text();
+        var phone=$(".details ").children(".detailsItem").eq(2).children(".detailsItemText").text();
+        var type=$(".details ").children(".detailsItem").eq(3).children(".detailsItemText").text();
+        var address=$(".details ").children(".detailsItem").eq(4).children(".detailsItemText").text();
+        $(".editMode .modeMain  .modeContent form ").children(".modeItem").eq(0).children("input").val(count);
+        $(".editMode .modeMain  .modeContent form ").children(".modeItem").eq(1).children().children(".typeSelect").children(".typeHeader").children("div").text(sex);
+        $(".editMode .modeMain  .modeContent form ").children(".modeItem").eq(2).children("input").attr("placeholder",phone);
+        $(".editMode .modeMain  .modeContent form ").children(".modeItem").eq(3).children().children(".typeSelect").children(".typeHeader").children("div").text(type);
+        $(".editMode .modeMain  .modeContent form ").children(".modeItem").eq(4).children("input").attr("placeholder",address);
+    });
+    // 性别选择
+    $(".editMode .sexSelect .typeHeader").click(function () {
+        $(".editMode .sexSelect .personalType").toggle();
+    });
+    $(".editMode .sexSelect .personalType li").each(function () {
+        $(this).click(function () {
+            $(".editMode .sexSelect .typeHeader >div").text($(this).text());
+            $(".editMode .sexSelect .personalType").toggle();
+        });
+    });
+    // 公司类型选择
+    $(".editMode .companyTypeSelect .typeHeader").click(function () {
+        $(".editMode .companyTypeSelect .personalType").toggle();
+    });
+    $(".editMode .companyTypeSelect .personalType li").each(function () {
+        $(this).click(function () {
+            $(".editMode .companyTypeSelect .typeHeader >div").text($(this).text());
+            $(".editMode .companyTypeSelect .personalType").toggle();
+        });
+    });
+    //企业信息修改
+    $(".detailsC .operaChange").click(function () {
+        $(".companyMode").css("display","block");
+        var count=$(".detailsC ").children(".detailsItem").eq(0).children(".detailsItemText").text();
+        var type=$(".detailsC ").children(".detailsItem").eq(1).children(".detailsItemText").text();
+        var name=$(".detailsC ").children(".detailsItem").eq(2).children(".detailsItemText").text();
+        var address=$(".detailsC ").children(".detailsItem").eq(3).children(".detailsItemText").text();
+        var hangye=$(".detailsC ").children(".detailsItem").eq(4).children(".detailsItemText").text();
+        var product=$(".detailsC ").children(".detailsItem").eq(5).children(".detailsItemText").text();
+        var site=$(".detailsC ").children(".detailsItem").eq(6).children(".detailsItemText").text();
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(0).children("input").val(count);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(1).children().children(".typeSelect").children(".typeHeader").children("div").text(type);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(2).children("input").attr("placeholder",name);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(3).children("input").attr("placeholder",address);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(4).children().children(".typeSelect").children(".typeHeader").children("div").text(hangye);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(5).children().children(".typeSelect").children(".typeHeader").children("div").text(product);
+        $(".companyMode .modeMain  .modeContent form ").children(".modeItem").eq(6).children("input").attr("placeholder",site);
+    });
+    //主营行业选择
+    $(".companyMode .industrySelect .typeHeader").click(function () {
+        $(".companyMode .industrySelect .personalType").toggle();
+    });
+    $(".companyMode .industrySelect .personalType li").click(function () {
+        if($(this).children("img").attr("src")=="http://www.idongpin.com.cn/images/userCenter/btn_2_1.png")
+            $(this).children("img").attr("src","http://www.idongpin.com.cn/images/userCenter/btn_2_2.png");
+        else
+            $(this).children("img").attr("src","http://www.idongpin.com.cn/images/userCenter/btn_2_1.png");
+    });
+
+    $(".industrySelect .industryConfirm").click(function () {
+        var text=$("<div></div>");
+        var count=0;
+        $(".companyMode .industrySelect .personalType li img").each(function () {
+            if($(this).attr("src")=="http://www.idongpin.com.cn/images/userCenter/btn_2_2.png"){
+               text.append($("<span></span>").append($(this).prev().text()));
+                count++;
+             }
+        });
+        if(count==0)
+            $(".companyMode .industrySelect .personalType").toggle();
+        else{
+            count=0;
+            $(".companyMode .industrySelect .typeHeader >div ").empty();
+            $(".companyMode .industrySelect .typeHeader >div ").append(text);
+            $(".companyMode .industrySelect .personalType").toggle();
+        }
+    });
+    $(".industrySelect .industryCancel").click(function () {
+        $(".companyMode .industrySelect .personalType").toggle();
+    });
+    // 主营产品选择
+    $(".companyMode .productSelect .typeHeader").click(function () {
+        $(".companyMode .productSelect .personalType").toggle();
+    });
+    $(".companyMode .productSelect .personalType li").click(function () {
+        if($(this).children("img").attr("src")=="http://www.idongpin.com.cn/images/userCenter/btn_2_1.png")
+            $(this).children("img").attr("src","http://www.idongpin.com.cn/images/userCenter/btn_2_2.png");
+        else
+            $(this).children("img").attr("src","http://www.idongpin.com.cn/images/userCenter/btn_2_1.png");
+    });
+
+    $(".productSelect .industryConfirm").click(function () {
+        var text=$("<div></div>");
+        var count=0;
+        $(".companyMode .productSelect .personalType li img").each(function () {
+            if($(this).attr("src")=="http://www.idongpin.com.cn/images/userCenter/btn_2_2.png"){
+                text.append($("<span></span>").append($(this).prev().text()));
+                count++;
+            }
+        });
+        if(count==0)
+            $(".companyMode .productSelect .personalType").toggle();
+        else{
+            count=0;
+            $(".companyMode .productSelect .typeHeader >div ").empty();
+            $(".companyMode .productSelect .typeHeader >div ").append(text);
+            $(".companyMode .productSelect .personalType").toggle();
+        }
+    });
+    $(".productSelect .industryCancel").click(function () {
+        $(".companyMode .productSelect .personalType").toggle();
+    });
+    // 公司类型选择
+    $(".companyMode .companyTypeSelect .typeHeader").click(function () {
+        $(".companyMode .companyTypeSelect .personalType").toggle();
+    });
+    $(".companyMode .companyTypeSelect .personalType li").each(function () {
+        $(this).click(function () {
+            $(".companyMode .companyTypeSelect .typeHeader >div").text($(this).text());
+            $(".companyMode .companyTypeSelect .personalType").toggle();
+        });
+    });
+    //修改取消事件
+    $(".editMode .modeHeader img").click(function () {
+        $(".editMode").css("display","none");
+    });
+    $(".editMode .btnCancel").click(function () {
+        $(".editMode").css("display","none");
+    });
+    $(".companyMode .modeHeader img").click(function () {
+        $(".companyMode").css("display","none");
+    });
+    $(".companyMode .btnCancel").click(function () {
+        $(".companyMode").css("display","none");
+    });
+
+
+});

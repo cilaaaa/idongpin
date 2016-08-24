@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.billAllLeft{
+    float: left;
+    width: auto;
+}
+.billAllRight {
+    float: right;
+}
+.container{
+    height: 831px;
+    box-sizing: border-box;
+    padding-bottom: 55px;
+    padding-top: 45px;
+}
+
+.secondCarte li{
+    width: 100px;
+}
+
+.companyAddress{
+    height: 291px;
+    box-sizing: border-box;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.companyAddress .companyName{
+    height: 47px;
+    line-height: 47px;
+    margin-bottom: 14px;
+    color: #ff6c00;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+.companyAddress .nextAll{
+    height: 28px;
+    line-height: 28px;
+}
+.companyAddress .nextAllName{
+    display: inline-block;
+    width: 70px;
+    color: #a1a1a1;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+.companyAddress .nextAllText{
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.companyMaps{
+    position: relative;
+    height: 440px;
+    box-sizing: border-box;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+/*中间导航样式*/
+.navMenuP .nvl:hover{
+    border-bottom: 3px solid #ff6c00;
+}
+
+.navMenuP .nvl .nva:hover{
+    color: #ff6c00;
+}

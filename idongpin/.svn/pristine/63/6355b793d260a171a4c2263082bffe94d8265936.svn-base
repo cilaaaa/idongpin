@@ -1,0 +1,32 @@
+@extends('layouts.app')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/index.css')}}">
+@endsection
+
+@section('content')
+	<div class="container">
+		<div class="leftSide">
+			<div>
+				<img src=""><span>交易管理</span>
+				<ul>
+					<li>我的订单</li>
+					<li>我的询价单</li>
+				</ul>
+			</div>
+			<div>
+				<img src=""><span>会员中心</span>
+				<ul>
+					<li>账户信息</li>
+					<li>收货地址</li>
+					<li>账户安全</li>
+				</ul>
+			</div>
+		</div>
+		<div class="rightSide"></div>
+		<div class="clear"></div>
+	</div>
+@endsection
+
+@section('js')
+	<script type="text/javascript" src="{{url('js/userCenter/index.js')}}"></script>
+@endsection

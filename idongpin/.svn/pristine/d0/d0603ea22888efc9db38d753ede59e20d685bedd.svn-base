@@ -1,0 +1,205 @@
+$(document).ready(function () {
+    var windowHeight = $(window).height();
+    var loginInfoHeight = $(".loginInfo").height();
+    var searchToolHeight = $(".searchTool").height();
+    var minHeight = windowHeight - loginInfoHeight - searchToolHeight - 183;
+
+    $(".afterThreeMonth").css("minHeight", minHeight);
+    $(".beforeThreeMonth").css("minHeight", minHeight);
+
+    //切换订单日期
+    $(".selectDate").each(function () {
+        $(this).click(function () {
+            $(this).addClass("selectDateActive");
+            var txt = $(this).text();
+            $(".selectDate").not(this).removeClass("selectDateActive");
+            if (txt == "近三个月订单") {
+                $(".afterThreeMonth").css("display", "block");
+                $(".beforeThreeMonth").css("display", "none");
+            } else if (txt == "三个月前订单") {
+                $(".afterThreeMonth").css("display", "none");
+                $(".beforeThreeMonth").css("display", "block");
+            }
+        });
+    });
+
+    //设置弹窗的宽度和高度
+    var windowWidth = $(".detailMode").width();
+    var windowHeight = $(window).height();
+    $(".detailMode").css({
+        width: windowWidth + "px",
+        height: windowHeight + "px"
+    });
+    $(".agreementMode").css({
+        width: windowWidth + "px",
+        height: windowHeight + "px"
+    });
+    $(".modifiedMode").css({
+        width: windowWidth + "px",
+        height: windowHeight + "px"
+    });
+    var detailHeight = $(".detail").height();
+    $(".detail").css("marginTop", (windowHeight - detailHeight) / 2 + "px");
+    var detailHeight = $(".agreement").height();
+    $(".agreement").css("marginTop", (windowHeight - detailHeight) / 2 + "px");
+    var detailHeight = $(".modified").height();
+    $(".modified").css("marginTop", (windowHeight - detailHeight) / 2 + "px");
+
+    $(".orderInfoTtl img").delegate("", "click", function () {
+        $(".detailMode").css("display", "none");
+    });
+
+    $(".protocol span").delegate("", "click", function () {
+        $(".detailMode").css("display", "none");
+        $(".agreementMode").css("display", "block");
+    });
+
+    $(".agreementTtl img").delegate("", "click", function () {
+        $(".detailMode").css("display", "block");
+        $(".agreementMode").css("display", "none");
+    });
+
+    //
+    $(".tradeMenu li").each(function () {
+        var liTxt = $(this).children("a").text();
+        if (liTxt == "我的询价单") {
+            $(this).children("a").css("color", "#ff6c00");
+        }
+    });
+
+    //状态筛选
+    $(".status").each(function () {
+        $(this).delegate("", "click", function () {
+            $(this).addClass("statusActive");
+            $(".status").not(this).removeClass("statusActive");
+        });
+    });
+
+    $(".merchant").each(function () {
+        $(this).delegate("", "click", function () {
+            var _this = $(this);
+            var obj = $(this).attr('data-count');
+            if (obj > 0) {
+                var detail = $(this).attr("data-detail");
+                if (typeof(detail) == "undefined" || detail == "no") {
+                    $(".merchant").not(this).parent().siblings(".trdetail").remove();
+                    $(".merchant").not(this).children("img").css({
+                        transform: "rotate(-90deg)",
+                        webkitTransform: "rotate(-90deg)",
+                        mozTransform: "rotate(-90deg)",
+                        msTransform: "rotate(-90deg)",
+                        oTransform: "rotate(-90deg)",
+                    });
+                    $(".merchant").not(this).attr("data-detail", "no");
+                    $.ajax({
+                        url: 'http://www.idongpin.com.cn/user/getQuote',
+                        type: 'get',
+                        cache: 'false',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        data: {
+                            launch_order_id: $(this).parent().attr('data-order'),
+                        },
+                        success: function (data) {
+                            if (data.msg == 'success') {
+                                var quotes = JSON.parse(data.quotes);
+                                var str = "";
+                                for (i = 0; i < quotes.length; i++) {
+                                    str = str + "<li class='tr trdetail'>"
+                                        + "<div class='goodsName'></div>"
+                                        + "<div class='merchant'>" + quotes[i].company_name + "</div>"
+                                        + "<div class='offer'>¥" + quotes[i].quote_price + "</div>"
+                                        + "<div class='freight'>" + quotes[i].quote_freight + "</div>"
+                                        + "<div class='operation'><span class='finish' onclick=showQuoteDetail(quotes[i].quote_user_id)>详情</span></div>"
+                                        + "</li>";
+                                }
+                                _this.parent().after(str);
+                            }
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    });
+                    $(this).children("img").css({
+                        transform: "rotate(0deg)",
+                        webkitTransform: "rotate(0deg)",
+                        mozTransform: "rotate(0deg)",
+                        msTransform: "rotate(0deg)",
+                        oTransform: "rotate(0deg)",
+                    });
+                    $(this).attr("data-detail", "yes");
+                } else {
+                    $(this).parent().siblings(".trdetail").remove();
+                    $(this).children("img").css({
+                        transform: "rotate(-90deg)",
+                        webkitTransform: "rotate(-90deg)",
+                        mozTransform: "rotate(-90deg)",
+                        msTransform: "rotate(-90deg)",
+                        oTransform: "rotate(-90deg)",
+                    });
+                    $(this).attr("data-detail", "no");
+                }
+            }
+        });
+    });
+
+    $(".offer").each(function () {
+        $(this).delegate("", "click", function () {
+            var check = $(this).find(".checkbox").attr("data-check");
+            var src = $(this).find(".checkbox").attr("src");
+            if (check == "unselected") {
+                src = $(this).find(".checkbox").attr("src").replace("unchecked.png", "checked.png");
+                $(this).find(".checkbox").attr("data-check", "selected");
+                $(this).find(".checkbox").attr("src", src);
+                $(".offer").not(this).find(".checkbox").attr("data-check", "unselected");
+                $(".offer").not(this).find(".checkbox").attr("src", src.replace("checked.png", "unchecked.png"));
+            } else {
+                src = $(this).find(".checkbox").attr("src").replace("checked.png", "unchecked.png");
+                $(this).find(".checkbox").attr("data-check", "unselected");
+                $(this).find(".checkbox").attr("src", src);
+            }
+
+        });
+    });
+
+    $(".detail .modify").delegate("", "click", function () {
+        $(".modifiedMode").css("display", "block");
+        $(".detailMode").css("display", "none");
+    });
+
+    $(".modified .orderInfoTtl img").delegate("", "click", function () {
+        $(".modifiedMode").css("display", "none");
+        $(".detailMode").css("display", "block");
+    });
+});
+//点击查看详情
+$(".finish").each(function () {
+    $(this).delegate("", "click", function () {
+        var launchid = $(this).attr('data-launchid');
+        $.ajax({
+            url: 'http://www.idongpin.com.cn/user/getLaunchOrder',
+            type: 'get',
+            cache: 'false',
+            dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                launch_order_id: launchid,
+            },
+            success: function (data) {
+                if (data.msg == 'success') {
+                    var order = JSON.parse(data.launchOrder);
+                    $.each(order,function(name,value){
+                        $("."+name).html(value);
+                    });
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    });
+});

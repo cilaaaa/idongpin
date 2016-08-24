@@ -1,0 +1,262 @@
+.updateForm{
+    width: 100%;
+    background-color: #fafafa;
+    border:1px solid #e1e1e1;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    padding-bottom: 20px;
+}
+.updateForm .formHeader{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.updateForm .formHeader .formTitle{
+    font-family: '微软雅黑';
+    font-size: 22px;
+    display: inline-block;
+    margin-left: 20px;
+    float: left;
+    color:#333333;
+}
+.updateForm .formHeader .updating,.deleting,.saving,.canceling,.goback{
+    font-family: '微软雅黑';
+    font-size: 14px;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    color:#ffffff;
+    margin-top: 10px;
+}
+.updateForm .submit{
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 16px;
+    letter-spacing: 20px;
+    position: absolute;
+    border-bottom: 20px;
+    margin-left: 50%;
+    left: -120px;
+    font-family: '微软雅黑';
+    cursor: pointer;
+}
+.form1{
+    margin-top: 10px;
+}
+.container-fluid .formDisplay{
+    display: block;
+}
+.tag{
+    font-size: 18px;
+    color:#efefef;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}
+.saving,.canceling{
+    display: none;
+}
+#form1 .form-group{
+    width: 50%;
+    display:inline-block;
+    float: left;
+}
+.imagesManage .image_header{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 15px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.imagesManage .image_header .title{
+    font-size: 20px;
+    font-family: 'Microsoft YaHei';
+    color:#333333;
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+}
+.imagesManage .image_header .btn-group{
+    margin-right: 20px;
+}
+.imagesManage .imageContent .imginfo{
+    width: 150px;
+    height: 185px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+.imagesManage .imageContent .imginfo img{
+    width: 150px;
+    height: 150px;
+}
+.imagesManage .imageContent .imginfo .imgName{
+    display: block;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+    color:#a1a1a1;
+    background-color: #EFF0F4;
+}
+.imagesManage .imageContent .imginfo .over{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(101,206,167,0.6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+.imagesManage .imageContent .icon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color:#ffffff;
+    font-size: 20px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius:50%;
+    position: absolute;
+    text-align: center;
+    background-color:rgba(101,206,167,0.6);
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+}
+.imagesManage .imageContent .imginfo:hover .imgName{
+    color:white;
+    background-color:#65CEA7;
+}
+.imagesManage .imageContent .imginfo:hover .over{
+    display: block;
+}
+.imgadd{
+    width: 440px;
+    min-height: 200px;
+    border:1px solid #a1a1a1;
+    background-color: #efefef;
+    position: absolute;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    top:450px;
+    left: 50%;
+    margin-left: -150px;
+    z-index:999;
+    display: none;
+}
+.imgadd .head{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.imgadd .foot{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-top: 1px solid #a1a1a1;
+}
+.imgadd .foot .submit{
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    margin-top: 5px;
+}
+.imgadd .head .title{
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    color:#333333;
+    margin-left: 15px;
+}
+.imgadd .head .delete{
+    margin-right: 15px;
+    display: inline-block;
+    float: right;
+
+}
+.imgadd .addbtn{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+}
+.imgadd .addbtn .add{
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+}
+.imgadd .imgContent{
+    margin-top: 5px;
+    border-top:1px solid #a1a1a1;
+    width: 100%;
+    min-height: 105px;
+    position: relative;
+}
+.imgadd .imgContent .imgItem{
+    width: 100px;
+    height: 125px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+.imgadd .imgContent .imgItem .deleItem{
+    width: 30px;
+    height: 30px;
+    color:white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-color:rgba(64,224,208,0.8);
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 100;
+}
+.imgadd .imgItem img{
+    width: 100px;
+    height: 100px;
+}
+.imgadd .imgContent .imgItem .imgName{
+    width: 100%;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    background-color: #dfdfdf;
+    color:#a1a1a1;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+}
+.imgadd .imgContent .imgItem .over{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(101,206,167,0.6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+.imgadd .imgContent .imgItem:hover .imgName{
+    color:white;
+    background-color:#65CEA7;
+}
+.imgadd .imgContent .imgItem:hover .over{
+    display: block;
+}
+.imgadd .imgContent .imgItem:hover .deleItem{
+    display: block;
+}

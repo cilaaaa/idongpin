@@ -1,0 +1,169 @@
+
+$(document).ready(function(){
+	var windowHeight = $(window).height();
+	var loginInfoHeight = $(".loginInfo").height();
+	var searchToolHeight = $(".searchTool").height();
+	var minHeight = windowHeight - loginInfoHeight -searchToolHeight - 183;
+
+	$(".afterThreeMonth").css("minHeight",minHeight);
+	$(".beforeThreeMonth").css("minHeight",minHeight);
+
+	//切换订单日期
+	$(".selectDate").each(function(){
+		$(this).click(function(){
+			$(this).addClass("selectDateActive");
+			var txt = $(this).text();
+			$(".selectDate").not(this).removeClass("selectDateActive");
+			if(txt == "近三个月订单"){
+				$(".afterThreeMonth").css("display","block");
+				$(".beforeThreeMonth").css("display","none");
+			}else if(txt == "三个月前订单"){
+				$(".afterThreeMonth").css("display","none");
+				$(".beforeThreeMonth").css("display","block");
+			}
+		});
+	});
+
+	//设置弹窗的宽度和高度
+	var windowWidth = $(".detailMode").width();
+	var windowHeight = $(window).height();
+	$(".detailMode").css({
+		width : windowWidth + "px",
+		height : windowHeight + "px"
+	});
+	$(".agreementMode").css({
+		width : windowWidth + "px",
+		height : windowHeight + "px"
+	});
+	$(".modifiedMode").css({
+		width : windowWidth + "px",
+		height : windowHeight + "px"
+	});
+	var detailHeight = $(".detail").height();
+	$(".detail").css("marginTop",(windowHeight - detailHeight)/2 +"px");
+	var detailHeight = $(".agreement").height();
+	$(".agreement").css("marginTop",(windowHeight - detailHeight)/2 +"px");
+	var detailHeight = $(".modified").height();
+	$(".modified").css("marginTop",(windowHeight - detailHeight)/2 +"px");
+
+	//点击查看详情
+	$(".finish").each(function(){
+		$(this).delegate("","click",function(){
+			$(".detailMode").css("display","block");
+		});
+	});
+
+	$(".orderInfoTtl img").delegate("","click",function(){
+		$(".detailMode").css("display","none");
+	});
+
+	$(".protocol span").delegate("","click",function(){
+		$(".detailMode").css("display","none");
+		$(".agreementMode").css("display","block");
+	});
+
+	$(".agreementTtl img").delegate("","click",function(){
+		$(".detailMode").css("display","block");
+		$(".agreementMode").css("display","none");
+	});
+
+	//
+	$(".tradeMenu li").each(function(){
+		var liTxt = $(this).children("a").text();
+		if(liTxt == "我的询价单"){
+			$(this).children("a").css("color","#ff6c00");
+		}
+	});
+
+	//状态筛选
+	$(".status").each(function(){
+		$(this).delegate("","click",function(){
+			$(this).addClass("statusActive");
+			$(".status").not(this).removeClass("statusActive");
+		});
+	});
+
+	$(".merchant").each(function(){
+		$(this).delegate("","click",function(){
+			var obj = $(this).children(".merchantCount")
+			console.log("obj="+obj);
+			if(obj.length > 0){
+				var count = parseInt($(obj).text());
+				if(count > 1){
+					var detail = $(this).attr("data-detail");
+					console.log("detail="+detail);
+					if(typeof(detail) == "undefined" || detail == "no"){
+						$(".merchant").not(this).parent().siblings(".trdetail").remove();
+						$(".merchant").not(this).children("img").css({
+							transform : "rotate(-90deg)",
+							webkitTransform : "rotate(-90deg)",
+							mozTransform : "rotate(-90deg)",
+							msTransform : "rotate(-90deg)",
+							oTransform : "rotate(-90deg)",
+						});
+						$(".merchant").not(this).attr("data-detail","no");
+						var str = "";
+						for(i = 0;i < count;i++){
+							str = str + "<li class='tr trdetail'>"
+											+"<div class='goodsName'></div>"
+											+"<div class='merchant'>"+"上海涌得报价"+"</div>"
+											+"<div class='offer'>¥"+"2000"+"</div>"
+											+"<div class='freight'>"+"免运费"+"</div>"
+											+"<div class='operation'><span class='cancel'>取消</span><span class='spacing'>/</span><span class='finish' onclick=showDetail(this)>详情</span></div>"
+										+"</li>";
+						}
+						$(this).parent().after(str);
+						$(this).children("img").css({
+							transform : "rotate(0deg)",
+							webkitTransform : "rotate(0deg)",
+							mozTransform : "rotate(0deg)",
+							msTransform : "rotate(0deg)",
+							oTransform : "rotate(0deg)",
+						});
+						$(this).attr("data-detail","yes");
+					}else{
+						$(this).parent().siblings(".trdetail").remove();
+						$(this).children("img").css({
+							transform : "rotate(-90deg)",
+							webkitTransform : "rotate(-90deg)",
+							mozTransform : "rotate(-90deg)",
+							msTransform : "rotate(-90deg)",
+							oTransform : "rotate(-90deg)",
+						});
+						$(this).attr("data-detail","no");
+					}
+				}
+			}
+		});
+	});
+
+	$(".offer").each(function(){
+		$(this).delegate("","click",function(){
+			var check = $(this).children(".checkbox").attr("data-check");
+			var src = $(this).children(".checkbox").attr("src");
+			if(check == "unselected"){
+				var src = src.replace("unchecked.png","checked.png");
+				$(this).children(".checkbox").attr("data-check","selected");
+				$(this).children(".checkbox").attr("src",src);
+			}else{
+				var src = src.replace("checked.png","unchecked.png");
+				$(this).children(".checkbox").attr("data-check","unselected");
+				$(this).children(".checkbox").attr("src",src);
+			}
+		});
+	});
+
+	$(".detail .modify").delegate("","click",function(){
+		$(".modifiedMode").css("display","block");
+		$(".detailMode").css("display","none");
+	});
+
+	$(".modified .orderInfoTtl img").delegate("","click",function(){
+		$(".modifiedMode").css("display","none");
+		$(".detailMode").css("display","block");
+	});
+});
+
+function showDetail(obj){
+	$(".detailMode").css("display","block");
+}

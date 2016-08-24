@@ -1,0 +1,438 @@
+@extends('admin.layouts.sublayout')
+@section('css')
+    <link href="{{url('css/order/orderDetail.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url('css/datepicker.css') }}" type="text/css" />
+@endsection
+@section('navigation')
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="{{ route('order::index') }}" class="navbar-brand">
+                    订单管理
+                </a>
+                <span class="tag">>></span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="{{ Route::is('order::orderlist') ? 'active' : '' }}">
+                    <a href="{{ route('order::orderlist') }}">
+                        订单列表
+                    </a>
+                </li>
+                <li>
+                    <span class="tag">>></span>
+                </li>
+                <li class="{{ Route::is('order::orderDetail') ? 'active' : '' }}">
+                    <a href="{{ route('order::orderDetail') }}">
+                        订单详情
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+@stop
+@section('content')
+    <div class="container-fluid">
+        <div class="updateForm" id="Form">
+            <div class="formHeader">
+                <input type="hidden" id="companyid" name="companyid" value="">
+                <span class="formTitle">订单详情</span>
+                <span class="btn btn-info goback"><i class="glyphicon glyphicon-chevron-left"></i>返回</span>
+                @if($order->order_status != '已完成' && $order->order_status != '已取消')
+                    <span class="btn btn-success updating"><i class="glyphicon glyphicon-book"></i>编辑</span>
+                    <span class="btn btn-warning  canceling"><i class="glyphicon glyphicon-remove"></i>取消</span>
+                    <span class="btn btn-success saving" onclick="savingUpdateOrder();"><i class="glyphicon
+                    glyphicon-floppy-save" ></i>保存</span>
+                @endif
+            </div>
+        </div>
+        <div style="padding: 15px;">
+            <form class="form-horizontal form" name="form" id="form" action="{{url('order/update')}}" method="post">
+                {{csrf_field()}}
+                <ul class="ul">
+                    <li class="Item">
+                        <div class="form-group">
+                            <input type="hidden" name="do_method" value="update">
+                            <label class="col-sm-4  control-label">订单ID：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="order_id">{{$order->order_id}}</span>
+                                @else
+                                    <span class="order_id">{{$order->order_id}}</span>
+                                    <input type="hidden" class="order_id"  name="order_id"  value="{{$order->order_id}}">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">询价单ID：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="launch_order_id">{{$order->launch_order_id}}</span>
+                                @else
+                                    <span class="launch_order_id">{{$order->launch_order_id}}</span>
+                                    {{--<input type="hidden" class="launch_order_id"  name="launch_order_id"  value="{{$order->launch_order_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">团购ID：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="launch_tg_id">{{$order->launch_tg_id}}</span>
+                                @else
+                                    <span class="launch_tg_id">{{$order->launch_tg_id}}</span>
+                                    {{--<input type="hidden" class="launch_tg_id"  name="launch_tg_id"  value="{{$order->launch_tg_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="col-sm-4  control-label">用户名称：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="order_user_id">{{$order->order_user_id}}</span>
+                                @else
+                                    <span class="order_user_id">{{$order->order_user_id}}</span>
+                                    {{--<input type="hidden" class="order_user_id"  name="order_user_id"  value="{{$order->order_user_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">商品名：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="pro_id">{{$order->product_info['pro_name']}}</span>
+                                @else
+                                    <span class="pro_id">{{$order->product_info['pro_name']}}</span>
+                                    {{--<input type="hidden" class="pro_id" name="pro_id"  value="{{$order->pro_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                        {{--<div class="form-group">--}}
+                        {{--<label class="col-sm-4  control-label">商品库存ID：</label>--}}
+                        {{--<div class="col-sm-8">--}}
+                        {{--@if($order->order_status == '已完成' || $order->order_status == '已取消')--}}
+                        {{--<span class="inventory_id">{{$order->inventory_id}}</span>--}}
+                        {{--@else--}}
+                        {{--<span class="inventory_id">{{$order->inventory_id}}</span>--}}
+                        {{--<input type="hidden" class="inventory_id"  name="inventory_id"  value="{{$order->inventory_id}}">--}}
+                        {{--@endif--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">供应商：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="company_id">{{$order->company_id}}</span>
+                                @else
+                                    <span class="company_id">{{$order->company_id}}</span>
+                                    {{--<input type="hidden" class="company_id"  name="company_id"  value="{{$order->company_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">支付单号：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="pay_id">{{$order->pay_id}}</span>
+                                @else
+                                    <span class="pay_id">{{$order->pay_id}}</span>
+                                    {{--<input type="hidden" class="pay_id"  name="pay_id"  value="{{$order->pay_id}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                        {{--<div class="form-group">--}}
+                        {{--<label class="col-sm-4  control-label">付款方式：</label>--}}
+                        {{--<div class="col-sm-8">--}}
+                        {{--@if($order->order_status == '已完成' || $order->order_status == '已取消')--}}
+                        {{--<span class="pay_method">{{$order->pay_method}}</span>--}}
+                        {{--@else--}}
+                        {{--<span class="pay_method">{{$order->pay_method}}</span>--}}
+                        {{--<input type="hidden" class="pay_method"  name="pay_method"  value="{{$order->pay_method}}">--}}
+                        {{--@endif--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        <div class="form-group {{ $errors->has('unit_price') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">商品单价：</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    @if($order->order_status == '已完成' || $order->order_status== '已取消')
+                                        <span class="unit_price">{{$order->unit_price.$order->price_unit}}</span>
+                                    @else
+                                        <input type="text" class="form-control unit_price"  name="unit_price"  value="{{$order->unit_price}}" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-default dropdown-toggle unit"  data-toggle="dropdown">
+                                                <label class="price_unit">{{$order->price_unit}}</label>
+                                                <label class="caret"></label>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li class="text-center" onclick="change_price_unit(this);"><a>元/kg</a></li>
+                                                <li class="text-center" onclick="change_price_unit(this);"><a>元/件</a></li>
+                                                <li class="text-center" onclick="change_price_unit(this);"><a>元/吨</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="hidden" name="price_unit" id="price_unit" value="{{$order->price_unit}}">
+                                        @if ($errors->has('unit_price'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('unit_price') }}</strong>
+                                    </span>
+                                        @endif
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('qty') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">商品数量：</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                        <span class="qty">{{$order->qty}}</span>
+                                    @else
+                                        <input type="text" class="form-control qty"  name="qty"  value="{{$order->qty}}" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-default dropdown-toggle unit" data-toggle="dropdown">
+                                                <label class="qty_unit">{{$order->qty_unit}}</label>
+                                                <label class="caret"></label>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li class="text-center" onclick="change_qty_unit(this);"><a>kg</a></li>
+                                                <li class="text-center" onclick="change_qty_unit(this);"><a>件</a></li>
+                                                <li class="text-center" onclick="change_qty_unit(this);"><a>吨</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="hidden" name="qty_unit" id="qty_unit" value="{{$order->qty_unit}}">
+                                        @if ($errors->has('qty'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('qty') }}</strong>
+                                    </span>
+                                        @endif
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">订单已付金额：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="pay_amount">{{$order->pay_amount}}</span>
+                                @else
+                                    <span class="pay_amount">{{$order->pay_amount}}</span>
+                                    {{--<input type="hidden" class="pay_amount"  name="pay_amount"  value="{{$order->pay_amount}}">--}}
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('amount') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单总付金额：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="amount">{{$order->amount}}</span>
+                                @else
+                                    <input type="text" class="form-control amount"  name="amount"  value="{{$order->amount}}" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+                                    @if ($errors->has('amount'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('amount') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4  control-label">订单状态：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="order_status">{{$order->order_status}}</span>
+                                @else
+                                    <select class="form-control" name="order_status" value="">
+                                        <option value="已下单" {{$order->order_status == "已下单"?'selected':''}}>已下单</option>
+                                        <option value="已修改" {{$order->order_status == "已修改"?'selected':''}}>已修改</option>
+                                        <option value="已确认" {{$order->order_status == "已确认"?'selected':''}}>已确认</option>
+                                        <option value="已完成" {{$order->order_status == "已完成"?'selected':''}}>已完成</option>
+                                        <option value="已取消" {{$order->order_status == "已取消"?'selected':''}}>已取消</option>
+                                    </select>
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('freight_type') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">运费结算方式：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="freight">{{$order->freight_type}}</span>
+                                @else
+                                    <select class="freight_type form-control" name="freight_type">
+                                        <option value="自提" {{$order->freight_type == "自提"?'selected':''}}>自提</option>
+                                        <option value="货到付款" {{$order->freight_type == "货到付款"?'selected':''}}>货到付款</option>
+                                        <option value="免运费" {{$order->freight_type == "免运费"?'selected':''}}>免运费</option>
+                                    </select>
+                                    @if ($errors->has('freight'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('freight') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('freight') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">运费：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="freight">{{$order->freight}}</span>
+                                @else
+                                    <input type="text" class="form-control freight"  name="freight"  value="{{$order->freight}}" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+                                    @if ($errors->has('freight'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('freight') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('receipt_person') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">收货人：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="address">{{$order->receipt_person}}</span>
+                                @else
+                                    <input type="text" class="form-control receipt_person"  name="receipt_person"  value="{{$order->receipt_person}}">
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('receipt_person') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('receipt_person_phone') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">收货人电话：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="address">{{$order->receipt_person_phone}}</span>
+                                @else
+                                    <input type="text" class="form-control receipt_person_phone"  name="receipt_person_phone"  value="{{$order->receipt_person_phone}}" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                    @if ($errors->has('receipt_person_phone'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('receipt_person_phone') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('arrival_date') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">到货日期：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="address">{{$order->arrival_date}}</span>
+                                @else
+                                    <input type="text" class="form-control arrival_date" id="arrival_date"  name="arrival_date"  value="{{$order->arrival_date}}">
+                                    @if ($errors->has('arrival_date'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('arrival_date') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">收货地址：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="address">{{$order->address}}</span>
+                                @else
+                                    <input type="text" class="form-control address"  name="address"  value="{{$order->address}}">
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('address') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('order_time') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单创建时间：</label>
+                            <div class="col-sm-8">
+                                <span class="order_time">{{$order->order_time}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('pay_time') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单付款时间：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="pay_time">{{$order->pay_time}}</span>
+                                @else
+                                    <input type="text" class="form-control pay_time" id="pay_time" name="pay_time"  value="{{$order->pay_time}}">
+                                    @if ($errors->has('pay_time'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('pay_time') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('confirm_time') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单确定时间：</label>
+                            <div class="col-sm-8">
+                                <span class="confirm_time">{{$order->confirm_time}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group {{ $errors->has('send_time') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单发货时间：</label>
+                            <div class="col-sm-8">
+                                @if($order->order_status == '已完成' || $order->order_status == '已取消')
+                                    <span class="send_time">{{$order->send_time}}</span>
+                                @else
+                                    <input type="text" class="form-control send_time" id="send_time" name="send_time"  value="{{$order->send_time}}">
+                                    @if ($errors->has('send_time'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('send_time') }}</strong>
+                                </span>
+                                    @endif
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class='Item'>
+                        <div class="form-group {{ $errors->has('finish_time') ? ' has-error' : '' }}">
+                            <label class="col-sm-4  control-label">订单完成时间：</label>
+                            <div class="col-sm-8">
+                                <span class="finish_time">{{$order->finish_time}}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <input type="hidden" name="order_status" value="已修改">
+            </form>
+        </div>
+    </div>
+@stop
+@section('js')
+    @include('admin.layouts.loading')
+    <script src="{{url('js/order/orderDetail.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/datepicker/datepicker.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/datepicker/datepicker-cn.js')}}"></script>
+    <script type="text/javascript">
+        $('#send_time,#pay_time,#arrival_date').datepicker({
+            language: "zh-CN",
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
+@endsection

@@ -1,0 +1,12 @@
+
+
+<?php $__env->startSection('title'); ?>商铺管理<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('navigation'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <iframe src="<?php echo e(url('/company/list')); ?>" frameborder="0" style="width: 100%;min-height: 650px"></iframe>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

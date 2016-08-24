@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+.displayNone{
+    display: none;
+}
+.displayBlock{
+    display: block;
+}
+.infoMain{
+    box-sizing: border-box;
+}
+.infoTags{
+    padding: 0 15px ;
+    background: #FFFFFF;
+    height: 65px;
+    line-height: 65px;
+}
+.tagsName{
+    padding: 5px 5px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+.tagsText{
+    padding: 5px 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.infoDetails{
+    padding: 0 15px ;
+    padding-top: 10px;
+    margin-top: 3px;
+    background: #FFFFFF;
+}
+.head{
+    width: 100px;
+    float: left;
+}
+.head img{
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+.head span{
+    padding-left: 5px;
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    cursor: pointer;
+}
+
+.details{
+    float: left;
+}
+.Certification{
+    height: 20px;
+}
+.Certification .a{
+    margin-right: 10px;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: "Microsoft Yahei";
+
+}
+.Certification .b{
+    color: #333333;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+
+.detailsItem{
+    height: 32px;
+    line-height: 32px;
+}
+.detailsItem .detailsItemName{
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    color: #333333;
+}
+.detailsItem .detailsItemText{
+    display: inline-block;
+    width: 250px;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    color: #333333;
+}
+
+.detailsItemA{
+    color:#e02341 ;
+    cursor: pointer;
+    text-decoration: underline;
+}

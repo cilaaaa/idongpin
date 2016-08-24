@@ -1,0 +1,980 @@
+
+.clear{
+	clear: both;
+}
+
+input[type="text"]{
+	box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-webkit-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-moz-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-ms-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-o-box-shadow: 4px 4px 14px #f6f6f6 inset;
+}
+
+.tradeMenu{
+	display: block;
+}
+
+.pageNav{
+	width: 762px;
+	height: 46px;
+	line-height: 46px;
+	margin-top: 14px;
+	color:#4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.topMode{
+	width: 762px;
+	height: 237px;
+	background: #ffffff;
+	margin-left: 28px;
+}
+
+.selectOrderTime{
+	width: 762px;
+	height: 31px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.selectDate{
+	display: inline-block;
+	height: 30px;
+	line-height: 32px;
+	margin: 0px 10px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+
+.selectDateActive{
+	border-bottom: 2px solid #ff6c00;
+}
+
+.orderInfoSearch{
+	width: 762px;
+	height: 94px;
+	margin-top: 30px;
+}
+
+.conditions{
+	width: 762px;
+	height: 30px;
+	margin-bottom: 17px;	
+}
+
+.condition_1{
+	width: 238px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	margin-right: 11px;
+	float: left;
+}
+
+.condition_2{
+	width: 253px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	margin-right: 9px;
+	float: left;
+}
+
+.condition_3{
+	width: 251px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	float: left;
+}
+
+.condition_1 .infoTtl{
+	display: inline-block;
+	width: 59px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.condition_2 .infoTtl,.condition_3 .infoTtl{
+	display: inline-block;
+	width: 73px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.infoVal{
+	display: inline-block;
+	width: 176px;
+	height: 28px;
+	line-height: 28px;
+	text-align: left;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border: 1px solid #e8e8e8;
+	float: left;
+}
+
+.condition_4 .infoTtl{
+	display: inline-block;
+	width: 74px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.space{
+	margin: 0 6px;
+	height: 30px;
+	line-height: 30px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.conditionSearch{
+	margin-left: 124px;
+	cursor: pointer;
+}
+
+.conditionSearchBtn{
+	display: inline-block;
+	width: 98px;
+	height: 30px;
+	border: none;
+	background: none;
+	background:  #e31e3c;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.selectOrderStatus{
+	width: 762px;
+	height: 32px;
+	line-height: 32px;
+}
+
+.selectOrderStatus .infoTtl{
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.status{
+	display: inline-block;
+	width: 70px;
+	height: 24px; 
+	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	text-align: center;
+	line-height: 24px;
+	margin-left: 8px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	cursor: pointer;
+}
+
+.statusActive{
+	color: #ffffff;
+	background-color: #ff6c00;
+}
+
+.afterThreeMonth{
+	width: 762px;
+	background: #ffffff;
+	margin-top: 3px;
+	margin-left: 28px;
+}
+
+.beforeThreeMonth{
+	width: 762px;
+	background: #ffffff;
+	margin-top: 3px;
+	display: none;
+	margin-left: 28px;
+}
+
+.orderTab{
+	width: 760px;
+	border-collapse: collapse;
+	border: 1px solid #e8e8e8;
+}
+
+.th{
+	width: 760px;
+	height: 34px;
+	line-height: 24px;
+	background: #f7f7f7;
+	box-sizing: border-box;
+	padding: 0 28px;
+}
+
+.th .goodsName{
+	float: left;
+	width: 150px;
+	height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .merchant{
+	float: left;
+	height: 32px;
+	width: 245px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .offer{
+	float: left;
+	width: 106px;
+	height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.th .freight{
+	float: left;
+	width: 102px;
+	height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";	
+}
+
+.th .operation{
+	float: left;
+	width: 98px;
+	height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 32px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr{
+	width: 704px;
+	height: 46px;
+	margin: 0 auto;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.tr:last-child{
+	border-bottom: none;
+}
+
+.tr .goodsName{
+	float: left;
+	width: 150px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr .merchant{
+	float: left;
+	width: 245px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.merchant img{
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.tr .offer{
+	float: left;
+	width: 106px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.tr .freight{
+	float: left;
+	width: 102px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";	
+}
+
+.tr .operation{
+	float: left;
+	width: 98px;
+	height: 46px;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 46px;
+	font-family: "Microsoft YaHei";
+}
+
+.cancel{
+	color: #4a4a4a;
+	line-height: 26px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.cancel:hover{
+	color: #ff6c00;
+}
+
+.spacing{
+	padding: 0 15px;
+}
+
+.finish{
+	color: #4a4a4a;
+	line-height: 24px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.finish:hover{
+	color: #ff6c00;
+}
+
+.detailMode{
+	position:absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background: rgba(0,0,0,0.2);
+	top: 0;
+	left: 0;
+}
+
+.detail{
+	width: 720px;
+	position: absolute;
+	left: 50%;
+	margin-left: -360px;
+	z-index: 999;
+	border: 1px solid #e8e8e8;
+	background: #ffffff;
+}
+
+.modifiedMode{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0,0,0,0.2);
+	top: 0px;
+	left: 0px;
+}
+
+.modified{
+	width: 620px;
+	height: 534px;
+	margin: 0 auto;
+	border: 1px solid #e8e8e8;
+	background: #ffffff;
+}
+
+.detail .orderInfo{
+	width: 100%;
+}
+
+.modified .orderInfo{
+	width: 620px;
+}
+
+.orderInfoTtl{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 0 20px;
+	position: relative;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.askPriceOrder{
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.publishDate{
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	margin-left: 54px;
+}
+
+.orderInfoTtl img{
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+.detail .info{
+	width: 100%;
+}
+
+.modified .info{
+	width: 620px;
+	height: 340px;
+}
+
+.topInfo{
+	width: 620px;
+	height: 141px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin-top: 22px;
+}
+
+.topInfo div{
+	width: 580px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 17px;
+}
+
+.infoTopic{
+	display: inline-block;
+	width: 88px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.required{
+	color: #e31e3c;
+}
+
+.differTopic{
+	width: 120px;
+}
+
+.detail .infoInput{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	width: 178px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	background: none;
+}
+
+.modified .infoInput{
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	width: 178px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border: 1px solid #e8e8e8;
+	background: none;
+}
+
+.detail .differ,.modified .differ{
+	width: 146px;
+}
+
+.gap{
+	box-sizing: border-box;
+	padding-left: 46px;
+	padding-right: 61px;
+	color: #4a4a4a;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.special{
+	margin-left: 35px;
+}
+
+.detail .bottomInfo{
+	width: 620px;
+	box-sizing: border-box;
+	padding: 0 20px;
+}
+
+.modified .bottomInfo{
+	width: 620px;
+	height: 250px;
+	box-sizing: border-box;
+	padding: 0 20px;
+}
+
+.infoBar{
+	width: 580px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 17px;
+}
+
+.other{
+	float: left;
+}
+
+.detail .otherNeed{
+	display: inline-block;
+	width: 480px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.modified .otherNeed{
+	display: inline-block;
+	width: 480px;
+	height: 156px;
+	box-sizing: border-box;
+	padding: 10px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border: 1px solid #e8e8e8;
+	box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-webkit-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-moz-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-ms-box-shadow: 4px 4px 14px #f6f6f6 inset;
+	-o-box-shadow: 4px 4px 14px #f6f6f6 inset;
+}
+
+.detail .offerInfo{
+	width: 100%;
+	margin-top: 32px;
+}
+
+.modified .offerInfo{
+	display: none;
+}
+
+.offerInfo ul{
+	width: 100%;
+}
+
+.offer{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.offer:hover{
+	background: #f7f7f7;
+}
+
+.offerTh{
+	height: 32px;
+	line-height: 32px;
+	background: #eeeeee;
+}
+
+
+
+.select{
+	float: left;
+	display: inline-block;
+	width:66px;
+	height: 40px;
+	line-height: 40px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.select .checkbox{
+	display: inline-block;
+	width:12px;
+	height: 12px;
+	margin-top: 14px;
+	margin-left: 40px;
+}
+
+.Business{
+	float: left;
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow: hidden;
+}
+
+.quote{
+	float: left;
+	display: inline-block;
+	width: 170px;
+	height: 40px;
+	line-height: 40px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.carriage{
+	float: left;
+	display: inline-block;
+	width: 170px;
+	height: 40px;
+	line-height: 40px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.selectTh{
+	height:32px;
+	line-height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.BusinessTh{
+	height:32px;
+	line-height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.quoteTh{
+	height:32px;
+	line-height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.carriageTh{
+	height:32px;
+	line-height: 32px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.btn{
+	width: 100%;
+	height: 30px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding: 5px 20px;
+}
+
+.protocol{
+	width: 279px;
+	height:30px;
+	box-sizing: border-box;
+	color: #4a4a4a;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	float: left;
+	margin-left: 88px;
+}
+
+.protocol img{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-top: 3px;
+	margin-right: 3px;
+	float: left;
+}
+
+.protocol span:hover{
+	text-decoration: underline;
+	color: #e02341;
+	cursor: pointer;
+}
+
+.btn>span{
+	float: right;
+	display: inline-block;
+	width: 203px;
+	height: 30px;
+}
+
+.confirm{
+	display: inline-block;
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	border: none;
+	background: none;
+	background: #ff6c00;
+	border: 1px solid #ff6c00;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+.detail .modify{
+	display: inline-block;
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	border: none;
+	background: #ff6c00;
+	border: 1px solid #ff6c00;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+.modified .modify{
+	display: inline-block;
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	border: none;
+	background: none;
+	border: 1px solid #ff6c00;
+	color: #ff6c00;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+}
+
+.agreementMode{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0,0,0,0.2);
+	top: 0px;
+	left: 0px;
+}
+
+.agreement{
+	width: 620px;
+	height: 534px;
+	margin: 0 auto;
+	border: 1px solid #e8e8e8;
+	background: #ffffff;
+}
+
+.agreementTtl{
+	width: 620px;
+	height: 37px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	line-height: 37px;
+	border-bottom: 1px solid #e8e8e8;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	position: relative;
+}
+
+.agreementTtl img{
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.agreementContent{
+	width: 620px;
+	height: 496px;
+	box-sizing: border-box;
+	padding-left: 47px;
+	padding-right: 52px;
+	line-height: 28px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.pack{
+	width: 520px;
+	margin-top: 26px;
+}
+
+.packTtl{
+	float: left;
+	width: 48px;
+}
+
+.packVal{
+	float: left;
+	width: 472px;
+}
+
+.sign{
+	width: 520px;
+	margin-top: 28px;
+}
+
+.signTtl{
+	float: left;
+	width: 48px;
+}
+
+.signVal{
+	float: left;
+	width: 472px;
+}
+
+.transport{
+	width: 520px;
+	margin-top: 26px;
+}
+
+.transportTtl{
+	float: left;
+	width: 48px;
+}
+
+.transportVal{
+	float: left;
+	width: 472px;
+}
+
+.stockpile{
+	width: 520px;
+	margin-top: 26px;
+}
+
+.stockpileTtl{
+	float: left;
+	width: 106px;
+}
+
+.stockpileVal{
+	float: left;
+	width: 414px;
+}
+.detailMode .info .list{
+	width: 40%;
+	height: 45px;
+	margin-left: 5%;
+	line-height: 45px;
+	display: inline-block;
+	float: left;
+}
+.detailMode .info .list label{
+	display: inline-block;
+	float: left;
+	margin-right: 5px;
+	text-align: right;
+	width: 100px;
+}
+.detailMode .info .list label span{
+	font-size: 14px;
+	font-family: '微软雅黑';
+	color:#333333;
+}
+
+.detailMode .info .list input select{
+	font-size: 16px;
+	font-family: '微软雅黑';
+	color:#333333;
+	height: 30px;
+	width: 175px;
+	margin-top: 7px;
+	padding-left: 5px;
+	border:1px solid #a1a1a1;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.detailMode .info .list input,.detailMode .info .list select{
+	display: none;
+}
+
+.list .form-control{
+	display: block;
+}
+.list .form-control input{
+	display: block;
+}
+.list .form-control .help-block{
+	display: none;
+}
+.has-error,.has-error label,.has-error .form-control .help-block{
+	color: #a94442;
+}
+.has-error .form-control input{
+	border:1px solid #a94442;
+}
+.has-error .form-control .help-block{
+	display: block;
+}

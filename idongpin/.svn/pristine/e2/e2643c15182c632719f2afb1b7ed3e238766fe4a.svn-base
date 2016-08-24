@@ -1,0 +1,523 @@
+.bookkeepingInfo{
+	display: none;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	height: 0px;
+	background-color: rgba(0,0,0,0.2);
+	box-sizing: border-box;
+	z-index: 999;
+}
+
+.bookkeepingWindow{
+	width: 778px;
+	height: 508px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
+.topBookkeepingTtl{
+	width: 778px;
+	height: 47px;
+	line-height: 47px;
+	border-bottom: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 0 20px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}
+
+.bottomBookkeepingInfo{
+	width: 778px;
+	height: 460px;
+}
+
+.leftBookkeepingInfo{
+	width: 388px;
+	height: 460px;
+	float: left;
+}
+
+.companyName{
+	width: 388px;
+	height: 20px;
+	margin-top: 27px;
+}
+
+.registeredCapital{
+	width: 388px;
+	height: 18px;
+	margin-top: 44px;
+}
+
+.RegistrationID{
+	width: 388px;
+	height: 18px;
+	margin-top: 19px; 
+}
+
+.registerOffice{
+	width: 388px;
+	height: 18px;
+	margin-top: 19px; 
+}
+
+.busnissLimit{
+	width: 388px;
+	height: 18px;
+	margin-top: 19px;
+}
+
+.businessScope{
+	width: 388px;
+	margin-top: 16px;
+}
+
+.businessScope .bookkeepingInfoTheme,.businessScope .bookkeepingInfoValue{
+	line-height: 24px;
+}
+
+.rightBookkeepingInfo{
+	width: 388px;
+	height: 460px;
+	float: right;
+	background: url("../../images/product/renzheng.png") no-repeat;
+	background-position: 193px 235px;
+}
+
+.registeredAddress{
+	widows: 388px;
+	margin-top: 28px;
+	line-height: 18px;
+}
+
+.registerDate{
+	width: 388px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 29px;
+}
+
+.legalPerson{
+	width: 388px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 19px;
+}
+
+.companyType{
+	width: 388px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 19px;
+}
+
+.annualInspectionTime{
+	width: 388px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 19px;
+}
+
+.bookkeepingInfoTheme{
+	width: 94px;
+	float: left;
+	box-sizing: border-box;
+	padding-right: 20px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	text-align: right;
+}
+
+.bookkeepingInfoValue{
+	width: 294px;
+	float: left;
+	color: #4a4a4a;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	box-sizing: border-box;
+	padding-right: 20px;
+	text-align: left;
+}
+
+.registeredAddress{
+	width: 388px;
+	line-height: 20px;
+}
+
+.container{
+	padding-bottom: 40px;
+}
+
+.company{
+	width: 980px;
+	height: 260px;
+	background: url("../../images/product/shuanghuiCompany.png") top center no-repeat;
+	box-sizing: border-box;
+	padding-top: 60px;
+}
+
+.companyName{
+	width: 980px;
+	height: 29px;
+	text-align: center;
+	line-height: 29px;
+	color: #ffffff;
+	font-size: 30px;
+	font-family: "Microsoft YaHei";
+}
+
+.property{
+	width: 980px;
+	height: 15px;
+	line-height: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 30px;
+	box-sizing : border-box;
+	padding-left: 428px;
+}
+
+.brand{
+	width: 980px;
+	height: 15px;
+	line-height: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 9px;
+	box-sizing : border-box;
+	padding-left: 428px;
+}
+
+.contactPerson{
+	width: 980px;
+	height: 15px;
+	line-height: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 9px;
+	box-sizing : border-box;
+	padding-left: 428px;
+}
+
+.contactPerson img{
+	margin-left: 18px;
+	width: 9px;
+	height: 14px;
+}
+
+.companyInfo{
+	width: 980px;
+	box-sizing:border-box;
+	padding: 30px 15px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.companyIntroduce{
+	width: 477px;
+	border-right: 3px dashed #e8e8e8;
+	box-sizing:border-box;
+	padding: 23px 40px;
+	line-height: 28px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.companyIntroduce div a{
+	color: #ff6c00;
+}
+
+.companyIntroduce>a{
+	display: inline-block;
+	width: 394px;
+	height: 15px;
+	line-height: 15px;
+	color: #ff6c00;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 34px;
+}
+
+.info{
+	float: left;
+	width: 278px;
+	height: 215px;
+	box-sizing:border-box;
+	padding: 23px 40px;
+}
+
+.infoItem{
+	width: 393px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.infoTtl{
+	width: 71px;
+	line-height: 28px;
+	float: left;
+}
+
+.infoContent{
+	float: left;
+	line-height: 28px;
+}
+
+.check{
+	float: left;
+	line-height: 28px;
+}
+
+.info>span{
+	display: inline-block;
+	width: 394px;
+	height: 15px;
+	line-height: 15px;
+	color: #ff6c00;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 34px;
+}
+
+.info>span:hover{
+	cursor: pointer;
+}
+
+.service{
+	width: 980px;
+	height: 286px;
+	margin-top: 15px;
+}
+
+.tradeCredit{
+	width: 482px;
+	height: 284px;
+	border: 1px solid #e8e8e8;
+	float: left;
+}
+
+.creditRecord{
+	width: 482px;
+	height: 47px;
+	line-height: 46px;
+	border-bottom: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 0 20px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}
+
+.trade{
+	width: 482px;
+	height: 116px;
+	margin-top: 62px;
+}
+
+.transaction{
+	width: 155px;
+	height: 116px;
+	float: left;
+	border-right: 3px dashed #e8e8e8;
+}
+
+.purchaser{
+	width: 166px;
+	height: 116px;
+	float: left;
+	border-right: 3px dashed #e8e8e8;
+}
+
+.purchAgain{
+	width: 155px;
+	height: 116px;
+	float: left;
+}
+
+.top{
+	width: 100%;
+	height: 34px;
+	text-align: center;
+	line-height: 34px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.middle{
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color: #4a4a4a;
+	font-size: 28px;
+	font-family: "Microsoft YaHei";
+}
+
+.bottom{
+	width: 100%;
+	height: 33px;
+	text-align: center;
+	line-height: 33px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 14px;
+}
+
+.bottom span{
+	color: #ff6c00;
+}
+
+.qualityAssurance{
+	width: 482px;
+	height: 284px;
+	border: 1px solid #e8e8e8;
+	float: right;
+}
+
+.assuranceServices{
+	width: 482px;
+	height: 47px;
+	line-height: 46px;
+	border-bottom: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 0 20px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+}
+
+.assurance{
+	width: 482px;
+	height: 120px;
+	margin-top: 62px;
+}
+
+.quality{
+	width: 155px;
+	height: 120px;
+	float: left;
+	border-right: 3px dashed #e8e8e8;
+	text-align: center;
+}
+
+.quality img{
+	width: 48px;
+	height: 48px;
+}
+
+.QA{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-top: 16px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.sipping{
+	width: 166px;
+	height: 116px;
+	float: left;
+	border-right: 3px dashed #e8e8e8;
+	text-align: center;
+}
+
+.sipping img{
+	width: 48px;
+	height: 48px;
+}
+
+.DA{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-top: 16px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.exchange{
+	width: 155px;
+	height: 116px;
+	float: left;
+	text-align: center;
+}
+
+.exchange img{
+	width: 48px;
+	height: 48px;
+}
+
+.RA{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-top: 16px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.own{
+	width: 100%;
+	height: 36px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.certificates{
+	width: 978px;
+	height: 338px;
+	margin-top: 15px;
+	border: 1px solid #e8e8e8;
+}
+
+.certificateAbout{
+	width: 978px;
+	height: 47px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	line-height: 46px;
+	color: #a4a4a4;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.allCertificates{
+	width: 978px;
+	height: 291px;
+}
+
+.certificate{
+	float: left;
+	width: 235px;
+	height: 289px;
+	border: 1px solid #ffffff;
+	border-right: 1px solid #e8e8e8;
+}
+
+.certificate:hover{
+	border: 1px solid #ff6c00;
+}
+
+.certificate img{
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,408 @@
+@extends('layouts.product_header')
+@section('css')
+	<link rel="stylesheet" type="text/css" href="{{url('css/product/commercialTenant.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('css/product/productPageNav.css')}}">
+@endsection
+
+@section('content')
+	<!-- viwepager start -->
+	<div class="viwepager">
+		<div class="banner">
+			<img src="{{url('images/product/storeBanner.png')}}">
+		<!-- <ul class="image">
+				@if(count($company['images']) > 0)
+			@for($i = 0 ; $i<count($company['images']) ; $i++)
+				<li>
+                    <a href="javascript:void(0)">
+                        <img src="{{url($company['images'][$i])}}">
+							</a>
+						</li>
+					@endfor
+		@endif
+				</ul>
+                <div  class="shu">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div> -->
+		</div>
+	</div>
+	<div class="goods">
+		<div class="goodsTeme">
+			<div class="recomend">
+				<span class="hostGoods">限时促销</span>
+				<span class="spot">.</span>
+				<span class="purpose">我们只选对的不选贵的</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 推荐热门产品 -->
+		<div class="content contentButtom">
+			<ul class="goodsMode modeActive" id="goodsMode_1">
+				@foreach($company_pro as $key => $value)
+					<li onclick="window.location.href='{{url('product/item?companyid='.$value['company_id'].'&proid='.$value['pro_id'])}}'">
+						<div class="hotGoodsSign" >
+							<img  src="{{url('images/host.png')}}">
+						</div>
+						<div class="goodsImg">
+							@if($value['pro_img'] != "")
+								<img src="{{url($value['pro_img'])}}">
+							@endif
+						</div>
+						<div class="goodsIntroduce">
+							<div class="goodsName">{{$value['pro_name']}}</div>
+							<div class="goodsKind">
+								<span>{{$value['pro_type_id']}}</span>
+								<span>{{$value['pro_mode']}}</span>
+							</div>
+						</div>
+						<div class="goodsInfo">
+							<div class="priceNow">
+								<span class="now">￥<span>{{$value['inventory'][0]['attributes']['wholesale_price']}}</span></span><span class="price">/<span>{{$value['inventory'][0]['attributes']['wholesale_unit']}}</span></span>
+
+							</div>
+							<div class="regularPrice ">
+								<span class="oldPrice">￥<span>{{$value['pro_regularPrice']}}</span></span>
+								<span class="proUnitPrice"><span>{{$value['inventory'][0]['attributes']['wholesale_price_extend']}}</span><span>/斤</span></span>
+							</div>
+						</div>
+						<div class="belong">
+							<img class="icon" src="{{url('images/goodsIcon.png')}}">
+							<span class="company">{{$value['pro_provider']}}</span>
+							<span class="address">{{$value['pro_place']}}</span>
+						</div>
+					</li>
+				@endforeach
+			</ul>
+			<!-- 分页 -->
+			<div  class="pageNav">
+				<?php $URL = $_SERVER['REQUEST_URI'];?>
+				<?php
+				if (isset($_GET['page'])){
+					$page = $_GET['page'];
+				}else{
+					$page = 1;
+				}
+				?>
+				<div class="pageNavRight" data-pageCount="{{$page_number}}">
+					@if(isset($_GET['page']))
+						<a href="{{url(str_replace('&page='.$_GET['page'],'&page=1',$URL))}}" class="n pageHeader"><span><img src="{{url('images/product/pageNavBefore.jpg')}}"><img src="{{url('images/product/pageNavBefore.jpg')}}">首页</span></a>
+					@else
+						<a href="{{url($URL.'&page=1')}}" class="n pageHeader"><span><img src="{{url('images/product/pageNavBefore.jpg')}}"><img src="{{url('images/product/pageNavBefore.jpg')}}">首页</span></a>
+					@endif
+					@if(isset($_GET['page']))
+						<a class="n" id="pageNavBefore" href="{{$page!=1?url(str_replace('&page='.$_GET['page'],'&page='.($page-1),$URL)):" "}}">
+							<img src="{{url('images/product/pageNavBefore.jpg')}}">上一页
+						</a>
+					@else
+						<a class="n" id="pageNavBefore" href="{{$page!=1?url($URL.'&page='.($page-1)):" "}}">
+							<img src="{{url('images/product/pageNavBefore.jpg')}}">上一页
+						</a>
+					@endif
+					<a class="preMore">...</a>
+					@for($i = 1 ; $i <=$page_number;$i++)
+						@if($page == $i)
+							@if(isset($_GET['page']))
+								<a href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+									<span class="initSpan pc">{{$i}}</span>
+								</a>
+							@else
+								<a href="{{url($URL.'&page='.$i)}}">
+									<span class="initSpan pc">{{$i}}</span>
+								</a>
+							@endif
+						@else
+							@if($page > 2 && $page <= $page_number-3)
+								@if($page -2<= $i && $i <=$page+3)
+									@if(isset($_GET['page']))
+										<a class="pageActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@else
+									@if(isset($_GET['page']))
+										<a class="pageNotActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageNotActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@endif
+							@elseif($page<=2)
+								@if($i <= 6)
+									@if(isset($_GET['page']))
+										<a class="pageActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@else
+									@if(isset($_GET['page']))
+										<a class="pageNotActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageNotActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@endif
+							@else
+								@if($i >$page_number-6)
+									@if(isset($_GET['page']))
+										<a class="pageActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@else
+									@if(isset($_GET['page']))
+										<a class="pageNotActive" href="{{url(str_replace('&page='.$_GET['page'],'&page='.$i,$URL))}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@else
+										<a class="pageNotActive" href="{{url($URL."&page=".$i)}}">
+											<span class="initSpan">{{$i}}</span>
+										</a>
+									@endif
+								@endif
+							@endif
+						@endif
+					@endfor
+					<a class="nextMore">...</a>
+					@if(isset($_GET['page']))
+						<a class="n" id="pageNavNext" href="{{$page!=$page_number?url(str_replace("&page=".$_GET['page'],"&page=".($page+1),$URL)):''}}">
+							下一页<img src="{{url('images/product/pageNavNext.jpg')}}">
+						</a>
+					@else
+						<a class="n" id="pageNavNext" href="{{$page!=$page_number?url($URL."&page=".($page+1)):''}}">
+							下一页<img src="{{url('images/product/pageNavNext.jpg')}}">
+						</a>
+					@endif
+					@if(isset($_GET['page']))
+						<a href="{{url(str_replace('&page='.$_GET['page'],'&page='.$page_number,$URL))}}" class="n pagefooter"><span>尾页<img src="{{url('images/product/pageNavNext.jpg')}}"><img src="{{url('images/product/pageNavNext.jpg')}}"></span></a>
+					@else
+						<a href="{{url($URL.'&page='.$page_number)}}" class="n pagefooter"><span>尾页<img src="{{url('images/product/pageNavNext.jpg')}}"><img src="{{url('images/product/pageNavNext.jpg')}}"></span></a>
+					@endif
+				</div>
+			</div>
+		</div>
+
+		<!-- 普通商品 -->
+		<div class="goodsTeme">
+			<div class="recomend">
+				<span class="hostGoods">臻享品质 源至澳洲</span>
+				<span class="spot">.</span>
+				<span class="purpose">我们只选对的不选贵的</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<!-- 推荐热门产品 -->
+		<div class="content contentButtom">
+			<ul class="goodsMode modeActive" id="goodsMode_2">
+
+				<li>
+					<div class="hotGoodsSign" >
+						<img  src="{{url('images/host.png')}}">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">aozhoasihis</div>
+						<div class="goodsKind">
+							<span>uiwe</span>
+							<span>ddddddd</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>32.5</span></span><span class="price">/<span>箱</span></span>
+
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>10.5</span></span>
+							<span class="proUnitPrice"><span>250</span><span>/斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="{{url('images/goodsIcon.png')}}">
+						<span class="company">上海给哦你公司</span>
+						<span class="address">哈哈哈 </span>
+					</div>
+				</li>
+				<li>
+					<div class="hotGoodsSign" >
+						<img  src="{{url('images/host.png')}}">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">aozhoasihis</div>
+						<div class="goodsKind">
+							<span>uiwe</span>
+							<span>ddddddd</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>32.5</span></span><span class="price">/<span>箱</span></span>
+
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>10.5</span></span>
+							<span class="proUnitPrice"><span>250</span><span>/斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="{{url('images/goodsIcon.png')}}">
+						<span class="company">上海给哦你公司</span>
+						<span class="address">哈哈哈 </span>
+					</div>
+				</li>
+				<li>
+					<div class="hotGoodsSign" >
+						<img  src="{{url('images/host.png')}}">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">aozhoasihis</div>
+						<div class="goodsKind">
+							<span>uiwe</span>
+							<span>ddddddd</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>32.5</span></span><span class="price">/<span>箱</span></span>
+
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>10.5</span></span>
+							<span class="proUnitPrice"><span>250</span><span>/斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="{{url('images/goodsIcon.png')}}">
+						<span class="company">上海给哦你公司</span>
+						<span class="address">哈哈哈 </span>
+					</div>
+				</li>
+				<li>
+					<div class="hotGoodsSign" >
+						<img  src="{{url('images/host.png')}}">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">aozhoasihis</div>
+						<div class="goodsKind">
+							<span>uiwe</span>
+							<span>ddddddd</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>32.5</span></span><span class="price">/<span>箱</span></span>
+
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>10.5</span></span>
+							<span class="proUnitPrice"><span>250</span><span>/斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="{{url('images/goodsIcon.png')}}">
+						<span class="company">上海给哦你公司</span>
+						<span class="address">哈哈哈 </span>
+					</div>
+				</li>
+				<li>
+					<div class="hotGoodsSign" >
+						<img  src="{{url('images/host.png')}}">
+					</div>
+					<div class="goodsImg">
+						<img src="{{url('images/product.png')}}">
+					</div>
+					<div class="goodsIntroduce">
+						<div class="goodsName">aozhoasihis</div>
+						<div class="goodsKind">
+							<span>uiwe</span>
+							<span>ddddddd</span>
+						</div>
+					</div>
+					<div class="goodsInfo">
+						<div class="priceNow">
+							<span class="now">￥<span>32.5</span></span><span class="price">/<span>箱</span></span>
+
+						</div>
+						<div class="regularPrice ">
+							<span class="oldPrice">￥<span>10.5</span></span>
+							<span class="proUnitPrice"><span>250</span><span>/斤</span></span>
+						</div>
+					</div>
+					<div class="belong">
+						<img class="icon" src="{{url('images/goodsIcon.png')}}">
+						<span class="company">上海给哦你公司</span>
+						<span class="address">哈哈哈 </span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+@endsection
+@section('javascript')
+	<script type="text/javascript" src="js/product/commercialTenant.js"></script>
+	<script type="text/javascript" src="{{url('js/product/productPageNav.js')}}"></script>
+	<script type="text/javascript">
+		$(function(){
+			var index = 0;
+			var t;
+			$(".image li").first().show();
+			$(".shu li").first().addClass("Imgactive");
+			timer();
+			$(".shu li").mouseover(function(){
+				$(this).addClass("Imgactive").siblings("li").removeClass("Imgactive");
+				index = $(this).index();
+				$(".image li").eq(index).fadeIn().siblings().fadeOut();
+			});
+			function timer(){
+				t = setInterval(function(){
+					$(".shu li").eq(index).addClass("Imgactive").siblings("li").removeClass("Imgactive");
+					$(".image li").eq(index).fadeIn().siblings().fadeOut();
+					if(index==4){
+						index=0;
+					}else{
+						index++;
+					}
+				},3000);
+			}
+			$(".banner").hover(function(){
+				clearInterval(t);
+			},function(){
+				timer();
+			})
+		})
+	</script>
+@endsection

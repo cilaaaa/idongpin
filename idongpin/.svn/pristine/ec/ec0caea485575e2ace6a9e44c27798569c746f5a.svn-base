@@ -1,0 +1,85 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/address.css')}}">
+@endsection
+
+@section('rightSideContent')
+    <div class="infoMain">
+        <div class="infoTags">
+            <span class="tagsName" >> 收货地址</span>
+            <div class="operationAll"><a class="adda">┼<span>新增收货地址</span></a></div>
+        </div>
+        <div class="infoDetails">
+            <div class="details">
+                <table class="orderTab">
+                    <thead>
+                        <tr>
+                            <td class="chooseAll aCheckbox "></td>
+                            <td class="aName">收货人姓名</td>
+                            <td class="aAddress">地址</td>
+                            <td class="aCount">电话</td>
+                            <td class="aStatus">是否默认</td>
+                            <td class="operation">操作</td>
+                        </tr>
+                    </thead>
+                   <tbody>
+                       <tr>
+                           <td class="aCheckbox"><input type="checkbox"></td>
+                           <td class="aName">王先生</td>
+                           <td class="aAddress">广中西路777弄江裕大厦1205室挨冻品公司</td>
+                           <td class="aCount">18217148408</td>
+                           <td class="aStatus"><input type="radio" checked ><span>默认</span></td>
+                           <td class="operation"><a class="edit">编辑</a><a class="delete">删除</a></td>
+                       </tr>
+                       <tr>
+                           <td class="aCheckbox"><input type="checkbox"></td>
+                           <td class="aName">陈先生</td>
+                           <td class="aAddress">广中西路777弄江裕大厦1205室挨冻品公司</td>
+                           <td class="aCount">18217148408</td>
+                           <td class="aStatus"><input type="radio" disabled ><span>不默认</span></td>
+                           <td class="operation"><span class="edit">编辑</span><span class="delete">删除</span></td>
+                       </tr>
+                   </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="addMode">
+        <div class="modeTable">
+            <div class="modeCell">
+                <div class="modeMain">
+                    <div class="modeHeader">
+                        新增收货地址 <img src="{{url('images/userCenter/close.png')}}">
+                    </div>
+                    <div class="modeContent">
+                        <form action="">
+                            <div class="modeItem">
+                                <span>收货人名：</span><input class="itemInput">
+                            </div>
+                            <div class="modeItem">
+                                <span>手机号码：</span><input class="itemInput">
+                            </div>
+                            <div class="modeItem">
+                                <span>收货地址：</span><input class="itemInput">
+                            </div >
+                            <div class="modeItem">
+                                <span>默认地址：</span><input type="checkbox" class="modeCheckbox">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modeFooter">
+                        <div class="btn_click">
+                            <button  class="btnCancel">取消</button> <button type="submit" class="btnSave" >保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url('js/userCenter/address.js')}}"></script>
+
+@endsection

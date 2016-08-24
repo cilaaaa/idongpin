@@ -1,0 +1,277 @@
+@bodyBgColor:#f5f5f5;
+@themeColor: #e02341;
+@baseColor: #4d4d4d;
+@contentColor: #ffffff;
+@textColor: #999999;
+@borderColor: #e8e8e8;
+@infoColor: #1a1a1a;
+.font-size(@font-size){
+	[data-dpr="1"] & {
+		font-size: @font-size;
+	}
+	[data-dpr="2"] & {
+		font-size:@font-size*2;
+	}
+	[data-dpr="3"] & {
+		font-size:@font-size*3;
+	}
+}
+.font-family{
+	font-family: "Microsoft YaHei";
+}
+
+body{
+	background: @bodyBgColor;
+}
+.header{
+	width: 100%;
+	height: 1.18rem;
+	line-height: 1.18rem;
+	text-align: center;
+	background: @themeColor;
+	position: relative;
+	.back{
+		position: absolute;
+	    left: 0.43rem;
+	    display: inline-block;
+	    width: 0.32rem;
+	    height: 0.56rem;
+	    margin-top: 0.31rem;
+		img{
+			width: 0.32rem;
+			height: 0.56rem;
+			float: left;
+		}
+	}
+	.page_ttl{
+		color: #ffffff;
+		.font-size(18px);
+		.font-family;
+	}
+}
+
+.content{
+	width: 100%;
+	.container{
+		width: 10rem;
+		margin: 0 auto;
+		.goods_picture{
+			width: 10rem;
+			img{
+				width: 10rem;
+			}
+		}
+		.goods_info{
+			width: 10rem;
+			margin-top: 0.02rem;
+			background: @contentColor;
+			.goods_name{
+				width: 10rem;
+				box-sizing: border-box;
+				padding: 0.26rem 0.43rem;
+				line-height: 0.62rem;
+				color: @baseColor;
+				.font-size(15px);
+				.font-family;
+			}
+			.goods_price{
+				width: 10rem;
+				height: 0.46rem;
+				line-height: 0.46rem;
+				box-sizing: border-box;
+				padding: 0 0.43rem;
+				color: @themeColor;
+				.font-size(17px);
+				font-weight: bold;
+				.font-family;
+			}
+			.goods_origin{
+				width: 10rem;
+				height: 0.65rem;
+				line-height: 0.62rem;
+				box-sizing: border-box;
+				padding: 0 0.43rem;
+				color: @textColor;
+				.font-size(11px);
+				.font-family;
+			}
+		}
+		.purcher_count{
+			width: 10rem;
+			height: 1.34rem;
+			line-height: 1.34rem;
+			background: @contentColor;
+			box-sizing: border-box;
+			padding: 0 0.43rem;
+			border-top: 0.02rem solid @borderColor;
+			border-bottom: 0.02rem solid @borderColor;
+			.count_container{
+				float: right;
+				.count_txt{
+					float: left;
+					color: #1a1a1a;
+					.font-size(15px);
+					.font-family;
+					margin-right: 0.2rem;
+				}
+				.count_machine{
+					margin-top: 0.34rem;
+					width: 2.34rem;
+					height: 0.66rem;
+					float: right;
+					border: 0.02rem solid @textColor;
+					border-radius: 0.07rem;
+					.subtract{
+						width: 0.65rem;
+						height: 0.66rem;
+						height: 0.66rem;
+						line-height: 0.66rem;
+						text-align: center;
+						float: left;
+						color: @baseColor;
+						.font-size(15px);
+						.font-family;
+					}
+					.count{
+						width: 1rem;
+						height: 0.66rem;
+						line-height: 0.66rem;
+						text-align: center;
+						border-right: 0.02rem solid @textColor;
+						border-left: 0.02rem solid @textColor;
+						float: left;
+						color: @themeColor;
+						.font-size(15px);
+						.font-family;
+					}
+					.add{
+						width: 0.65rem;
+						height: 0.66rem;
+						height: 0.66rem;
+						line-height: 0.66rem;
+						text-align: center;
+						float: left;
+						color: @baseColor;
+						.font-size(15px);
+						.font-family;
+					}
+					.clear{
+						clear: both;
+					}
+				}
+				.clear{
+					clear: both;
+				}
+			}
+		}
+		.present_info{
+			width: 10rem;
+			height: 1.64rem;
+			border-top: 0.02rem solid @borderColor;
+			border-bottom: 0.02rem solid @borderColor;
+			margin-top: 0.21rem;
+			box-sizing: border-box;
+			padding: 0.21rem 0.43rem;
+			background: @contentColor;
+			.send_txt{
+				width: 0.96rem;
+				height: 1.64rem;
+				line-height: 0.6rem;
+				float: left;
+				color: @textColor;
+				.font-size(11px);
+				.font-family;
+			}
+			.send_detail{
+				width: 7.92rem;
+				height: 1.64rem;
+				float: left;
+				.send_address{
+					width: 7.92rem;
+					height: 0.6rem;
+					line-height: 0.6rem;
+					.address_icon{
+						width: 0.48rem;
+						height: 0.6rem;
+						float: left;
+						img{
+							width: 0.48rem;
+							height: 0.6rem;
+						}
+					}
+					.address{
+						float: left;
+						margin-left: 0.12rem;
+						color: @infoColor;
+						.font-size(15px);
+						.font-family;
+					}
+					.stock{
+						float: left;
+						margin-left: 0.53rem;
+						color: @themeColor;
+						.font-size(15px);
+						.font-family;
+					}
+				}
+				.arrive_date{
+					width: 7.92rem;
+					height: 0.6rem;
+					line-height: 0.6rem;
+					box-sizing: border-box;
+					padding-left: 0.6rem;
+					color: @textColor;
+					.font-size(12px);
+					.font-family;
+				}
+			}
+			.send_more{
+				width: 0.26rem;
+				height: 1.64rem;
+				line-height:  1.64rem;
+				float: left;
+			}
+			.clear{
+				clear: both;
+			}
+		}
+		.goods_info{
+			width: 10rem;
+			background: @contentColor;
+			.ttl{
+				display: block;
+				width: 10rem;
+				height: 0.84rem;
+				line-height: 0.84rem;
+				border-right: 0.02rem solid @textColor;
+				border-left: 0.02rem solid @textColor;
+				box-sizing: border-box;
+				padding: 0 0.43rem;
+				color: @infoColor;
+				.font-size(15px);
+				.font-family;
+			}
+			.info{
+				display: block;
+				box-sizing: border-box;
+				padding-top: 0.12rem;
+				padding-bottom: 0.24rem;
+				li{
+					width: 9.14rem;
+					line-height: 0.58rem;
+					.info_topic{
+						width: 2.18rem;
+						float: left;
+					}
+					.info_content{
+						width: 6.96rem;
+						float: left;
+					}
+					.clear{
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+}

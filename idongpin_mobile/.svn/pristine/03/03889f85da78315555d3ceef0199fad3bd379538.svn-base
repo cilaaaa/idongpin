@@ -1,0 +1,126 @@
+.header {
+  height: 1.18rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e02341;
+}
+.header .header_content {
+  height: 100%;
+  width: 2rem;
+  margin: 0 auto;
+  line-height: 1.18rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .header .header_content {
+  font-size: 15px;
+}
+[data-dpr="2"] .header .header_content {
+  font-size: 30px;
+}
+[data-dpr="3"] .header .header_content {
+  font-size: 45px;
+}
+.header .back {
+  position: absolute;
+  left: 0.46rem;
+  top: 0.4rem;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.content .orderStatus {
+  width: 100%;
+  margin: 0 auto;
+  height: 1.13rem;
+  border-bottom: solid #e8e8e8 2px;
+}
+.content .orderStatus li#fourth {
+  color: #e02341;
+  border-bottom: solid #e02341 3px;
+}
+.content .orderStatus li {
+  float: left;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  width: 25%;
+  text-align: center;
+  color: #4d4d4d;
+  font-family: "Microsoft YaHei";
+}
+[data-dpr="1"] .content .orderStatus li {
+  font-size: 15px;
+}
+[data-dpr="2"] .content .orderStatus li {
+  font-size: 30px;
+}
+[data-dpr="3"] .content .orderStatus li {
+  font-size: 45px;
+}
+.content .orderDetail {
+  width: 100%;
+  margin: 0 auto;
+}
+.content .orderDetail li {
+  border-bottom: solid #e8e8e8 2px;
+}
+.content .orderDetail li#first_item {
+  width: 100%;
+  margin: 0 auto;
+  height: 1.13rem;
+  line-height: 1.13rem;
+}
+.content .orderDetail li#first_item .company {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+[data-dpr="1"] .content .orderDetail li#first_item .company {
+  font-size: 14px;
+}
+[data-dpr="2"] .content .orderDetail li#first_item .company {
+  font-size: 28px;
+}
+[data-dpr="3"] .content .orderDetail li#first_item .company {
+  font-size: 42px;
+}
+.content .orderDetail li#first_item .company span.conpanyName {
+  color: #4d4d4d;
+  margin-left: 0.3rem;
+}
+.content .orderDetail li#first_item .company span.status {
+  float: right;
+  color: #e02341;
+}
+.content .orderDetail li.orderItem {
+  width: 100%;
+  height: 3.33rem;
+}
+.content .orderDetail li.orderItem .orderBox {
+  height: 2.53rem;
+  padding: 0.4rem;
+}
+.content .orderDetail li.orderItem .orderBox .goodsImg {
+  width: 2.93rem;
+  height: 2.5rem;
+  float: left;
+}
+.content .orderDetail li.orderItem .orderBox .goodsExp {
+  height: 2.5rem;
+  width: 6rem;
+  float: left;
+  margin-left: 0.27rem;
+}
+.content .orderDetail li.orderItem .orderBox .goodsExp a {
+  color: #1a1a1a;
+  font-size: 28px;
+}
+.content .orderDetail li.orderItem .orderBox .goodsExp span {
+  display: block;
+}
+.content .orderDetail li.orderItem .orderBox .goodsExp span.ChanDi {
+  display: block;
+  margin-top: 0.1rem;
+  color: #999999;
+}

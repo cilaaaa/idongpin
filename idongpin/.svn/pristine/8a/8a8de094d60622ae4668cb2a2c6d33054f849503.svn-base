@@ -1,0 +1,46 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/acountSafe.css')}}">
+@endsection
+
+@section('rightSideContent')
+    <div class="infoMain">
+        <div class="infoTags">
+            <span class="tagsName" >账户安全级别：</span><span class="tagsText" >很低</span>
+        </div>
+        <div class="infoDetails">
+            <div class="head">
+                <div>
+                    <img>
+                </div>
+                <span>上传头像</span>
+            </div>
+            <div class="details">
+                <div class="Certification">
+                    <span class="a">IDP</span>（<span class="b">未认证</span>）
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">账　　户：</span><span class="detailsItemText">18625654856</span><a class="detailsItemA" >去认证</a>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">实名认证：</span><span class="detailsItemText"></span><a class="detailsItemA">去认证</a>
+                </div>
+                <div class="detailsItem" >
+                    <span class="detailsItemName">手机认证：</span><span class="detailsItemText"></span><a class="detailsItemA">去认证</a>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">邮箱认证：</span><span class="detailsItemText"></span><a class="detailsItemA">去认证</a>
+                </div>
+                <div class="detailsItem">
+                    <span class="detailsItemName">登录密码：</span><span class="detailsItemText">**********</span><a class="detailsItemA">修　改</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url('js/userCenter/acountSafe.js')}}"></script>
+
+@endsection

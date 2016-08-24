@@ -1,0 +1,12 @@
+@extends('layouts.app')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{url('css/order/order.css')}}">
+@endsection
+
+@section('content')
+@endsection
+
+@section('javascript')
+    <script type="text/javascript" src="{{url('js/PublicDomain.js')}}"></script>
+	<script type="text/javascript" src="{{url('js/order/order.js')}}"></script>
+@endsection

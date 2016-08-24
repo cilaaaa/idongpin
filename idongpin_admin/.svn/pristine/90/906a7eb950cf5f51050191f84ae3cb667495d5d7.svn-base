@@ -1,0 +1,132 @@
+
+<?php $__env->startSection('css'); ?>
+    <link href="<?php echo e(url('css/company_manage.css')); ?>" rel="stylesheet">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('navigation'); ?>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="<?php echo e(route('company::index')); ?>" class="navbar-brand">
+                    <i class="fa fa-fw fa-book"></i> 商铺管理
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="<?php echo e(Route::is('company::index') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('company::index')); ?>">
+                        <i class="fa fa-dashboard"></i> 商铺管理
+                    </a>
+                </li>
+                <li class="<?php echo e(Route::is('company::list') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('company::list')); ?>">
+                        <i class="fa fa-archive"></i> 商铺列表
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div class="container-fluid">
+        <div class='text-right' style="width: 100%;height: 50px; ">
+            <button class="btn btn-info add text-center">添加商户</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-condensed table-hover table-stats" id="company">
+                <thead>
+                <tr>
+                    <td>企业ID</td>
+                    <td>企业类型</td>
+                    <td>名称</td>
+                    <td>别名</td>
+                    <td>地址</td>
+                    <td>行业</td>
+                    <td>品牌</td>
+                    <td>金牌企业</td>
+                    <td>推荐指数</td>
+                    <td>描述</td>
+                    <td>成立时间</td>
+                    <td>注册资本</td>
+                    <td>联系人</td>
+                    <td>手机</td>
+                    <td>座机</td>
+                    <td>联系人拓展</td>
+                    <td>主页</td>
+                    <td>邮编</td>
+                    <td class="text-center"><i class="fa fa-search"></i></td>
+                    <td class="text-center"><i class="fa fa-pencil"></i></td>
+                    <td class="text-center"><i class="fa fa-trash-o"></i></td>
+
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($companies as $key=>$value): ?>
+                    <tr>
+                        <td><?php echo e(isset($value->company_id)?$value->company_id:""); ?></td>
+                        <td><?php echo e(isset($value->company_type)?$value->company_type:""); ?></td>
+                        <td><?php echo e(isset($value->company_name)?$value->company_name:""); ?></td>
+                        <td><?php echo e(isset($value->company_aliase)?$value->company_aliase:""); ?></td>
+                        <td><?php echo e(isset($value->company_address)?$value->company_address:""); ?></td>
+                        <td><?php echo e(isset($value->company_major)?$value->company_major:""); ?></td>
+                        <td><?php echo e(isset($value->company_brand)?$value->company_brand:""); ?></td>
+                        <td><?php echo e(isset($value->advanced)?$value->advanced:""); ?></td>
+                        <td><?php echo e(isset($value->recommendation)?$value->recommendation:""); ?></td>
+                        <td><?php echo e(isset($value->company_desc)?$value->company_desc:""); ?></td>
+                        <td><?php echo e(isset($value->establishment_date)?$value->establishment_date:""); ?></td>
+                        <td><?php echo e(isset($value->registered_capital)?$value->registered_capital:""); ?></td>
+                        <td><?php echo e(isset($value->company_linkman)?$value->company_linkman:""); ?></td>
+                        <td><?php echo e(isset($value->company_mobile)?$value->company_mobile:""); ?></td>
+                        <td><?php echo e(isset($value->company_phone)?$value->company_phone:""); ?></td>
+                        <td><?php echo e(isset($value->company_linkman_extend)?$value->company_linkman_extend:""); ?></td>
+                        <td><?php echo e(isset($value->company_website)?$value->company_website:""); ?></td>
+                        <td><?php echo e(isset($value->company_zipcode)?$value->company_zipcode:""); ?></td>
+                        <td>
+                            <a href="" class="btn btn-xs btn-info">
+                                <i class="fa fa-search">查看</i>
+                            </a>
+                        <td>
+                            <a href="" class="btn btn-xs btn-success">
+                                <i class="fa fa-pencil">修改</i>
+                            </a></td>
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-xs btn-danger" data-log-date="">
+                                <i class="fa fa-trash-o">删除</i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php echo e($companies->links()); ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+    <?php /*<script>*/ ?>
+        <?php /*$("#company").dataTable({*/ ?>
+            <?php /*"bPaginate": true, //翻页功能*/ ?>
+            <?php /*"bLengthChange": true, //改变每页显示数据数量*/ ?>
+            <?php /*"bFilter": true, //过滤功能*/ ?>
+            <?php /*"bSort": false, //排序功能*/ ?>
+            <?php /*"bInfo": true,//页脚信息*/ ?>
+            <?php /*"bAutoWidth": true,//自动宽度*/ ?>
+            <?php /*"oLanguage": {*/ ?>
+                <?php /*"sLengthMenu": "每页显示 _MENU_ 条记录",*/ ?>
+                <?php /*"sZeroRecords": "抱歉， 没有找到",*/ ?>
+                <?php /*"sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",*/ ?>
+                <?php /*"sInfoEmpty": "没有数据",*/ ?>
+                <?php /*"sInfoFiltered": "(从 _MAX_ 条数据中检索)",*/ ?>
+                <?php /*"oPaginate": {*/ ?>
+                    <?php /*"sFirst": "首页",*/ ?>
+                    <?php /*"sPrevious": "前一页",*/ ?>
+                    <?php /*"sNext": "后一页",*/ ?>
+                    <?php /*"sLast": "尾页"*/ ?>
+                <?php /*},*/ ?>
+                <?php /*"sZeroRecords": "没有检索到数据",*/ ?>
+            <?php /*},*/ ?>
+
+        <?php /*});*/ ?>
+    <?php /*</script>*/ ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.company.layouts.companylayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

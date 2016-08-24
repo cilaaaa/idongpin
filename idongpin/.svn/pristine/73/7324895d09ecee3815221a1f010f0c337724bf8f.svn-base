@@ -1,0 +1,70 @@
+/**
+ * 此文件是图片轮播的模块的样式表
+ * @author chenqin
+ * @date 2016/6/27
+ */
+  .banner{
+    position: relative;
+    width: 100%;
+    height: 372px;
+    z-index: 50;
+    margin: 0 auto;
+  }
+
+  ul,li{
+    list-style: none;
+  }
+
+  .image li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .shu{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    z-index: 999;
+  }
+  .shu ul{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.5);
+    /*width: 120px*/;
+    height: 18px;
+    margin: 0 auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: absolute;
+    right: 220px;
+    bottom: 10px;
+  }
+  .shu li{
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.4);
+    /*color: #fff;*/
+    text-align: center;;
+    line-height: 20px;
+    font-size: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .shu li.Imgactive{
+    background: #ffffff;
+    cursor: pointer;
+  }

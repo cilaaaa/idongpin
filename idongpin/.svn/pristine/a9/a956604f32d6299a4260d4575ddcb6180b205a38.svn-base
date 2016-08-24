@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+.groupContent{
+    width: 980px;
+    padding: 0 10px;
+    padding-top: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px #f2f6f7;
+    -webkit-box-shadow: 0 -20px 40px #f2f6f7;
+    -moz-box-shadow: 0 -20px 40px #f2f6f7;
+    -ms-box-shadow: 0 -20px 40px #f2f6f7;
+    -o-box-shadow: 0 -20px 40px #f2f6f7;
+}
+.groupContent ul li{
+    float: left;
+    list-style: none;
+    width: 480px;
+    height: 270px;
+    box-sizing: border-box;
+    padding: 10px 5px;
+}
+.goodsTop{
+    height: 190px;
+}
+.goodsImg{
+    width: 190px;
+    height: 190px;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color:#f8f8f8 ;
+}
+.goodsImg img{
+    width: 150px;
+    height: 150px;
+}
+.goodsImg .goodsImgText{
+    display: none;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0,0,0,0.5);
+}
+.goodsImgText .goodsImgTextTop{
+    height: 20px;
+    line-height: 20px;
+    padding-top: 45px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #ffffff;
+}
+.goodsImgText .goodsImgTextBottom{
+    text-align: center;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+   color: #ffffff;
+}
+.goodsImgRight{
+    float: left;
+    padding-left: 20px;
+}
+
+.goodsName{
+    height: 55px;
+    box-sizing: border-box;
+    padding-top: 15px;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    color: #4a4a4a;
+}
+
+.goodsDetails{
+    height: 30px;
+    line-height: 30px;
+}
+.goodsDetails .goodsDetailsName{
+    /*width: 70px;*/
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #a1a1a1;
+    width: 4em;
+}
+
+.goodsDetails .goodsDetailsText{
+    margin-left: 0.5em;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #4a4a4a ;
+}
+
+.goodsBottom{
+    height: 60px;
+    background-color: #e02341;
+}
+.goodsBottom .goodsPrice{
+    float: left;
+    box-sizing: border-box;
+    padding-left: 15px;
+    font-size: 32px;
+    font-family: "Microsoft YaHei";
+    color: #ffffff ;
+    width: 167px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.goodsBottom .goodsPs{
+    float: left;
+    width:153px ;
+}
+.goodsPs .goodsOriginalPrice{
+    height: 33px;
+    box-sizing: border-box;
+    padding-top: 14px;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #ffffff ;
+}
+.goodsPs .goodsSales{
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #ffffff ;
+}
+.goodsBottom img{
+    float: left;
+    height: 60px;
+    width: 150px;
+}
+
+.w2{
+    letter-spacing:2em; /*如果需要y个字两端对齐，则为(x-y)/(y-1),这里是（4-2）/(2-1)=2em */
+    margin-right:-2em; /*同上*/
+}
+.w3{
+    letter-spacing:0.5em; /*如果需要y个字两端对齐，则为(x-y)/(y-1),这里是（4-3）/(3-1)=0.5em */
+    /*margin-right:-0.5em; !*同上*!*/
+}
+.w4{
+    margin-right: 0.5em;
+}
+
+

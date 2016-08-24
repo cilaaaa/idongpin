@@ -1,0 +1,93 @@
+@extends('layouts.user_center')
+@section('csssheet')
+    <link rel="stylesheet" type="text/css" href="{{url('css/userCenter/acountSafe.css')}}">
+@endsection
+
+@section('rightSideContent')
+    <div class="infoMain">
+        <div class="infoTags">
+            <div class="infoTagsName">> 账户安全</div>
+            <div class="infoLevel">
+                <div class="tagsName" >账户安全级别：</div>
+                <div class="tagsText">
+                    <div class="tagsTextT">很低</div>
+                    <div class="tagsTextB">
+                        <div class="tagsTextBDiv tagsTextBDivRed"></div>
+                        <div class="tagsTextBDiv"></div>
+                        <div class="tagsTextBDiv"></div>
+                        <div class="tagsTextBDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoDetails">
+            <div class="head">
+                <div class="headImg">
+                    <img src="{{url('images/userCenter/headPhoto.png')}}">
+                </div>
+                <div class="Certification">
+                    <div class="CertificationIDP">
+                        <span class="a">IDP</span><span class="b">（未认证）</span>
+                    </div>
+                    <div >
+                        <span  class="CertificationName">账户：</span><span class="CertificationText">18625654856</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="details">
+                <div class="detailsItem">
+                    <div class="detailsItemImg">
+                        <img src="{{url('images/userCenter/CertificationFalse.png')}}">
+                    </div>
+                    <div class="detailsItemContent">
+                        <div class="contentTop">实名认证：</div>
+                        <div class="contentBottom">
+                            <span>您尚未实名认证，请认证</span><a >未认证</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailsItem">
+                    <div class="detailsItemImg">
+                        <img src="{{url('images/userCenter/CertificationFalse.png')}}">
+                    </div>
+                    <div class="detailsItemContent">
+                        <div class="contentTop">手机认证：</div>
+                        <div class="contentBottom">
+                            <span>您尚未绑定手机认证，请绑定手机</span><a >未认证</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailsItem">
+                    <div class="detailsItemImg">
+                        <img src="{{url('images/userCenter/CertificationFalse.png')}}">
+                    </div>
+                    <div class="detailsItemContent">
+                        <div class="contentTop">邮箱认证：</div>
+                        <div class="contentBottom">
+                            <span>您尚未绑定邮箱，请绑定邮箱</span><a >未认证</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailsItem">
+                    <div class="detailsItemImg">
+                        <img src="{{url('images/userCenter/CertificationTrue.png')}}">
+                    </div>
+                    <div class="detailsItemContent">
+                        <div class="contentTop">登录密码：</div>
+                        <div class="contentBottom">
+                            <span>您的登录密码已设定，密码为1*******9</span><a>修　改</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript" src="{{url('js/PublicDomain.js')}}"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url('js/userCenter/acountSafe.js')}}"></script>
+
+@endsection

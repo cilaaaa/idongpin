@@ -1,0 +1,54 @@
+.font-size(@font-size){
+    [data-dpr="1"] & {
+        font-size: @font-size;
+    }
+    [data-dpr="2"] & {
+        font-size:@font-size*2;
+    }  
+    [data-dpr="3"] & {
+        font-size:@font-size*3;
+    }
+}
+
+.header{
+    height: 1.18rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #e02341;
+    .header_content {
+        height: 100%;
+        width: 2rem;
+        margin: 0 auto;
+        line-height: 1.18rem;
+        text-align: center;
+        .font-size(15px);
+        color: #ffffff;
+        font-family: "Microsoft YaHei";
+    }
+    .back {
+        position: absolute;
+        left: 0.46rem;
+        top: 0.4rem;
+    }
+}
+
+.content{
+    width: 100%;
+    margin: 0 auto;
+    .orderStatus {
+        width: 100%;
+        margin: 0 auto;
+        height: 1.18rem;
+        border-bottom: solid #e8e8e8 2px;
+        li {
+            float: left;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            width: 25%;
+            text-align: center;
+            .font-size(15px);
+            color: #4d4d4d;
+            font-family: "Microsoft YaHei";
+        }
+    }
+}

@@ -1,0 +1,299 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\PCModels\Company;
+use Illuminate\Http\Request;
+use App\PCModels\User;
+use Validator;
+use App\Http\Models\PhoneMessage;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
+class AuthController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Registration & Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
+    |
+    */
+
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins,PhoneMessage;
+
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    protected $username = 'user_phone';
+    protected $redirectTo;
+    protected $redirectAfterLogout = '/';
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->redirectTo = session('referer')?session('referer'):'/';
+    }
+
+    //发送注册验证码
+    public function getCode(Request $request){
+        $validator = $this->validatorPhone($request->all());
+        if ($validator->fails()) {
+            $errors['msg'] = '手机号不符合规则';
+            return new JsonResponse($errors, 422);
+        }
+        if(User::where('user_phone',$request->phone)->count()==0){
+            $code = rand(100000,999999);
+            User::create([
+                'user_phone' => $request->phone,
+                'code' => $code,
+                'code_create_time' => date("Y-m-d H:i:s"),
+                'code_type'  => '注册'
+            ]);
+        }else{
+            $user = User::where('user_phone',$request->phone)->first();
+            if ($user->code ==""&&$user->code_type==""){
+                $errors['msg'] = '该用户名已注册';
+                return new JsonResponse($errors, 422);
+            }else{
+                if(time()<(strtotime($user->code_create_time)+60)){
+                    $time = strtotime($user->code_create_time)-time()+60;
+                    $errors['msg'] = '请在'.$time.'秒后重新获取验证码';
+                    return new JsonResponse($errors, 422);
+                }else{
+                    $code = rand(100000,999999);
+                    User::where('user_phone',$request->phone)->update([
+                        'code' => $code,
+                        'code_create_time' => date("Y-m-d H:i:s"),
+                        'code_type'  => '注册'
+                    ]);
+                }
+            }
+        }
+
+        $result = $this->sendPhoneMessageByModule($request->phone,1449757,$code);
+        if($result['code']==0){
+            $success['status'] = 200;
+            return new JsonResponse($success, 200);
+        }else{
+            $errors['msg'] = $result['msg'];
+            return new JsonResponse($errors, 422);
+        }
+
+    }
+    
+    //验证手机号
+    protected function validatorPhone(array $data)
+    {
+        return Validator::make($data, [
+            'phone' => array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$/'),
+        ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        $company = Company::selectRaw('company_id,company_name')->get();
+        return view('auth.register',['company'=>$company]);
+    }
+
+    public function getCompanyInfo(Request $request){
+        $companyinfo = Company::where('company_id',$request->companyid)->first();
+        return new JsonResponse($companyinfo,200);
+    }
+
+    //重写注册逻辑
+    public function register(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        if(User::where('user_phone',$request->phone)->count()==1){
+            $user = User::where('user_phone',$request->phone)->first();
+            if(time()<(strtotime($user->code_create_time)+1800)){
+                if($user->code==$request->code && $user->code_type=='注册'){
+                    Auth::guard($this->getGuard())->login($this->update($request->all()));
+
+                    return redirect($this->redirectPath());
+                }
+            }
+        }
+        return redirect()->back()
+            ->withInput($request->input())
+            ->withErrors([
+                'code' => "验证码错误",
+            ]);
+    }
+
+    //重写登录逻辑
+    public function showLoginForm()
+    {
+        if(isset($_SERVER['HTTP_REFERER'])){
+            if(starts_with($_SERVER['HTTP_REFERER'],'http://www.idongpin.com.cn')){
+                session(['referer'=>$_SERVER['HTTP_REFERER']]);
+            }
+        }
+        return view('auth.login');
+    }
+
+    protected function sendLockoutResponse(Request $request)
+    {
+        $seconds = $this->secondsRemainingOnLockout($request);
+
+        return redirect()->back()
+            ->withInput($request->only('phone', 'remember'))
+            ->withErrors([
+                'phone' => $this->getLockoutErrorMessage($seconds),
+            ]);
+    }
+
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        // If the class is using the ThrottlesLogins trait, we can automatically throttle
+        // the login attempts for this application. We'll key this by the username and
+        // the IP address of the client making these requests into this application.
+        $throttles = $this->isUsingThrottlesLoginsTrait();
+
+        if ($throttles && $lockedOut = $this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
+
+        if (Auth::guard($this->getGuard())->attempt(['user_phone'=>$request->phone,'password'=>$request->password,'status'=>1], $request->has('remember'))) {
+            return $this->handleUserWasAuthenticated($request, $throttles);
+        }
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        if ($throttles && ! $lockedOut) {
+            $this->incrementLoginAttempts($request);
+        }
+
+        if(User::where('user_phone',$request->phone)->count()!=0){
+            if(User::where('user_phone',$request->phone)->first()->status=="0"){
+                return $this->mysendFailedLoginResponse($request);
+            }else{
+                return $this->sendFailedLoginResponse($request);
+            }
+        }else{
+            return $this->sendFailedLoginResponse($request);
+        }
+    }
+
+    protected function mysendFailedLoginResponse(Request $request){
+        return redirect()->back()
+            ->withInput($request->only('phone', 'remember'))
+            ->withErrors([
+                'phone' => "该账户已被禁用，请联系管理员",
+            ]);
+    }
+
+    //重写登陆验证
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            'phone' => 'required',
+            'password' => 'required',
+        ]);
+    }
+
+    //发送登陆错误信息
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->back()
+            ->withInput($request->only('phone', 'remember'))
+            ->withErrors([
+                'phone' => $this->getFailedLoginMessage(),
+            ]);
+    }
+
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+
+    //注册二次验证
+    protected function validator(array $data)
+    {
+        if($data['register_type']=="person"){
+            return Validator::make($data, [
+                'username' => 'required|max:255',
+                'phone' => array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$/'),
+                'password' => 'required|min:6|confirmed',
+                'code' => 'required|min:6',
+            ]);
+        }else{
+            return Validator::make($data, [
+                'username' => 'required|max:255',
+                'phone' => array( 'required','min:11','regex:/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$/'),
+                'password' => 'required|min:6|confirmed',
+                'code' => 'required|min:6',
+                'company_type' => 'required',
+                'company_name' => 'required',
+                'company_address' => 'required',
+                'company_major' => 'required',
+                'company_product' => 'required'
+            ]);
+        }
+    }
+
+    /**
+     * Update user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    //注册成功创建用户实例
+    protected function update(array $data)
+    {
+        if($data['register_type'] == "person"){
+            User::where('user_phone',$data['phone'])->update([
+                'user_name' => $data['username'],
+                'password' => bcrypt($data['password']),
+                'user_type' => 'user',
+                'code' => '',
+                'code_type' => '',
+                'groupid' => 'user',
+                'status' => 1,
+            ]);
+            return User::where('user_phone',$data['phone'])->first();
+        }else{
+            User::where('user_phone',$data['phone'])->update([
+                'user_name' => $data['username'],
+                'password' => bcrypt($data['password']),
+                'user_type' => 'company',
+                'company_id' => $data['company_id'],
+                'code' => '',
+                'code_type' => '',
+                'groupid' => 'admin',
+                'status' => 1,
+            ]);
+            $user = User::where('user_phone',$data['phone'])->first();
+            return $user;
+        }
+    }
+}

@@ -1,0 +1,193 @@
+@extends('layouts.product_header')
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{url('css/product/aboutCompany.css')}}">
+@endsection
+@section('content')
+<!-- 工商注册信息弹窗 -->
+<div class="bookkeepingInfo">
+	<div class="bookkeepingWindow">
+		<div class="topBookkeepingTtl">工商注册信息</div>
+		<div class="bottomBookkeepingInfo">
+			<div class="leftBookkeepingInfo">
+				<div class="companyName">
+					<div class="bookkeepingInfoTheme">公司名称：</div>
+					<div class="bookkeepingInfoValue">{{isset($company->company_name)?$company->company_name:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="registeredCapital">
+					<div class="bookkeepingInfoTheme">注册资本：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->registered_capital)?$license->registered_capital:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="RegistrationID">
+					<div class="bookkeepingInfoTheme">注册号：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->license_id)?$license->license_id:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="registerOffice">
+					<div class="bookkeepingInfoTheme">登记机关：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->registration_authority)?$license->registration_authority:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="busnissLimit">
+					<div class="bookkeepingInfoTheme">营业期限：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->business_term)?$license->business_term:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="businessScope">
+					<div class="bookkeepingInfoTheme">营业范围：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->business_scope)?$license->business_scope:""}}</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="rightBookkeepingInfo">
+				<div class="registeredAddress">
+					<div class="bookkeepingInfoTheme">注册地址：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->registered_address)?$license->registered_address:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="registerDate">
+					<div class="bookkeepingInfoTheme">成立日期：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->founded_date)?$license->founded_date:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="legalPerson">
+					<div class="bookkeepingInfoTheme">法定代表人：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->legal_representative)?$license->legal_representative:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="companyType">
+					<div class="bookkeepingInfoTheme">企业类型：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->scope_of_business)?$license->scope_of_business:""}}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="annualInspectionTime">
+					<div class="bookkeepingInfoTheme">年检时间：</div>
+					<div class="bookkeepingInfoValue">{{isset($license->annual_inspection)&&$license->annual_inspection!=null ? $license->annual_inspection:"现国家无年检"}}</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="company">
+		<div class="companyName">{{$company['attributes']['company_name']}}</div>
+		<div class="property">{{$company['attributes']['company_aliase']}}</div>
+		<div class="brand"><span>经营品牌：</span><span>{{$company['attributes']['company_brand']}}</span></div>
+		<div class="contactPerson"><span>联系人：</span><span>{{$company['attributes']['company_linkman']}}</span><img src="{{url('images/phone.png')}}"></div>
+	</div>
+	<div class="companyInfo">
+		<div class="companyIntroduce">
+			<div>
+				<span>{{$company['attributes']['company_desc']}}</span><a href="#">(详细)</a>
+				{{--<span>双汇集团是以肉类加工为主的大型食品集团，在全国18个省市建设了加工基地，集团旗下子公司有：肉制品加工、生物工程、化工包装、双汇物流、双汇养殖、双汇药业、双汇软件等，总资产约200多居大陆企业榜首。</span><a href="#">(详细)</a>--}}
+			</div>
+			<a href="#">进入黄页→</a>
+		</div>
+		<div class="info">
+			<div class="infoItem">
+				<div class="infoTtl">成立时间：</div>
+				<div class="infoContent">{{isset($company->establishment_date)&&$company->establishment_date!="0000-00-00"?$company->establishment_date:$license->founded_date}}</div>
+				<div class="check">[已认证]</div>
+				<div class="clear"></div>
+			</div>
+			<div class="infoItem">
+				<div class="infoTtl">注册资本：</div>
+				<div class="infoContent">>无需验资</div>
+				<div class="check">[已认证]</div>
+				<div class="clear"></div>
+			</div>
+			<div class="infoItem">
+				<div class="infoTtl">经营范围：</div>
+				<div class="infoContent">>{{$company['attributes']['company_major']}}</div>
+				<div class="check">[已认证]</div>
+				<div class="clear"></div>
+			</div>
+			<div class="infoItem">
+				<div class="infoTtl">经营地址：</div>
+				<div class="infoContent">>{{$company['attributes']['company_address']}}</div>
+				<div class="check">[已认证]</div>
+				<div class="clear"></div>
+			</div>
+			<span id="bookkeeping">查看工商注册信息→</span>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="service">
+		<div class="tradeCredit">
+			<div class="creditRecord">交易信用记录</div>
+			<div class="trade">
+				<div class="transaction">
+					<div class="top">累计成交数（笔）</div>
+					<div class="middle"><span>12512</span><span>笔</span></div>
+					<div class="bottom">比同行均值<span>+</span><span>60%</span></div>
+				</div>
+				<div class="purchaser">
+					<div class="top">累计买家数（个）</div>
+					<div class="middle"><span>4251</span><span>人</span></div>
+					<div class="bottom">比同行均值<span>+</span><span>60%</span></div>
+				</div>
+				<div class="purchAgain">
+					<div class="top">重复购买率（笔）</div>
+					<div class="middle">60%</div>
+					<div class="bottom">比同行均值<span>+</span><span>60%</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="qualityAssurance">
+			<div class="assuranceServices">保障服务</div>
+			<div class="assurance">
+				<div class="quality">
+					<img src="{{url('images/product/QA.png')}}">
+					<div class="QA">质量保障</div>
+					<div class="own">实力商家专属</div>
+				</div>
+				<div class="sipping">
+					<img src="{{url('images/product/DA.png')}}">
+					<div class="DA">发货保障</div>
+					<div class="own">实力商家专属</div>
+				</div>
+				<div class="exchange">
+					<img src="{{url('images/product/RA.png')}}">
+					<div class="RA">换货保障</div>
+					<div class="own">实力商家专属</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	 @if(count($company['certificates']) > 0)
+		<div class="certificates">
+			<div class="certificateAbout">相关证书</div>
+			<div class="allCertificates">
+					@for($i = 0 ; $i < count($company['certificates']);$i++)
+						<div class="certificate">
+							<img src="{{url($company['certificates'][$i])}}">
+						</div>
+					@endfor
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	@endif
+	{{--<div class="certificates">--}}
+		{{--<div class="certificateAbout">相关证书</div>--}}
+		{{--<div class="allCertificates">--}}
+			{{--<div class="certificate">--}}
+				{{--<img src="{{url('images/product/certificate_1.png')}}">--}}
+			{{--</div>--}}
+			{{--<div class="certificate">--}}
+				{{--<img src="{{url('images/product/certificate_2.png')}}">--}}
+			{{--</div>--}}
+			{{--<div class="certificate">--}}
+				{{--<img src="{{url('images/product/certificate_3.png')}}">--}}
+			{{--</div>--}}
+		{{--</div>--}}
+	{{--</div>--}}
+</div>
+@endsection
+@section('javascript')
+	<script type="text/javascript" src="{{url('js/product/aboutCompany.js')}}"></script>
+@endsection

@@ -1,0 +1,42 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/27
+ * Time: 11:23
+ * Instruction: 用户表
+ */
+namespace App;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    protected $table = 'idp_user';
+    protected $primaryKey = 'user_id';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+    protected $fillable = [
+        'user_id' ,'password', 'user_name', 'user_phone', 'user_avatar', 'user_type', 'groupid','code', 'code_create_time'
+        ,'code_type','deleted_at','login_at'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token', 'code', 'code_create_time', 'code_type'
+    ];
+
+    public function company(){
+        return $this->hasOne('App\Company','company_id','user_id');
+    }
+
+}

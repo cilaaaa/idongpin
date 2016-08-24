@@ -1,0 +1,40 @@
+
+
+.footer{
+	width: 980px;
+	height: 120px;
+	background-color: #f2f6f7;
+	box-sizing: border-box;
+	position: absolute;
+	bottom:-140px;
+	margin-left: 50%;
+	left: -490px;
+	padding-top: 20px;
+	box-shadow: 0 0 20px #f2f6f7;
+	-webkit-box-shadow: 0 0 40px #f2f6f7;
+	-moz-box-shadow: 0 0 40px #f2f6f7;
+	-ms-box-shadow: 0 0 40px #f2f6f7;
+	-o-box-shadow: 0 0 40px #f2f6f7;
+	border-top:3px solid #C02341;
+}
+
+.otherLink{
+	width: 430px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.otherLink a,.otherLink span{
+	color: #a1a1a1;
+}
+
+.copyright{
+	width: 430px;
+	margin: 0 auto;
+	margin-top: 14px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}

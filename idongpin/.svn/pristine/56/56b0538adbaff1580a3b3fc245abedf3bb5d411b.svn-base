@@ -1,0 +1,44 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * Author: Cila
+ * Date: 2016/6/29
+ * Time: 10:06
+ */
+
+namespace App\Http\Controllers\Findorder;
+
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Validator;
+
+class FindorderController extends Controller
+{
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        return view('findorder/index');
+    }
+
+    private function validateInventory(array $data){
+        return Validator::make($data,[
+            'wholesale_price' => 'required',
+            'wholesale_unit' => 'required',
+        ]);
+    }
+
+    public function launchOrder(Request $request){
+        $validator = $this->validateInventory($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+    }
+}

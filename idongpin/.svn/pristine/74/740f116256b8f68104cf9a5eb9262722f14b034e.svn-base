@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.clear{
+    clear: both;
+}
+.displayNone{
+    display: none;
+}
+.displayBlock{
+
+}
+
+.infoMain{
+    box-sizing: border-box;
+    margin-left: 28px;
+    margin-right: 15px;
+}
+.infoTags{
+    background: #FFFFFF;
+    height: 76px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.tagsName{
+    color: #3a3b3b;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+
+.infoDetails{
+    background: #FFFFFF;
+}
+
+
+.details{
+}
+.orderTab{
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+}
+.orderTab td{
+    vertical-align: middle;
+}
+.orderTab thead{
+    background-color: #f7f7f7;
+}
+.chooseAll{
+    cursor: pointer;
+}
+.aCount{
+    width: 170px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+    padding-left: 45px;
+}
+.aName{
+    width: 91px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.aAddress{
+    width: 249px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+.aCheckbox{
+    width: 29px;
+    color: #3a3b3b;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    text-align: center;
+}
+.aStatus{
+    width: 121px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+.aStatus >div{
+    height: 19px;
+    line-height: 19px;
+}
+.aStatus >div span{
+    float: left;
+}
+.aStatus input{
+    float: left;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+.aStatus img{
+    cursor: pointer;
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+.aCheckbox img{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+.operationAll{
+    padding-left: 640px;
+    color: #ff6c00;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+
+.operation{
+    width: 100px;
+    color: #3a3b3b;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "Microsoft YaHei";
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.edit,.delete{
+    display: inline-block;
+    height: 24px;
+    color: #3a3b3b;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 15px;
+}
+.operationAll .adda{
+    display: inline-block;
+    height: 24px;
+    color: #ff6c00;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+.adda span{
+    float: left;
+    margin-left: 5px;
+    border-bottom: 1px solid #ff6c00;
+    display: inline-block;
+    height: 18px;
+}
+.adda img{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+}
+
+.displayF{
+    display: none;
+}
+.displayF input{
+    border: 0;
+}
+.displayF .inputName{
+     width: 80px;
+    height: 24px;
+    border: 1px solid #9e9e9e;
+ }
+.displayF .inputAddress{
+    width: 247px;
+    height: 24px;
+    border: 1px solid #9e9e9e;
+}
+.displayF .inputCount{
+    width: 113px;
+    height: 24px;
+    border: 1px solid #9e9e9e;
+}
+.displayFConfirm,.displayFCancel{
+    display: inline-block;
+    height: 24px;
+    color: #3a3b3b;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 15px;
+}
+
+.displayNone .infoTags span{
+    color: #3a3b3b;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    margin-right: 5px;
+}
+.displayNone .infoTags .addAddress{
+    cursor: pointer;
+    color: #3a3b3b;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    margin-right: 5px;
+}
+
+.noneItem{
+    height: 47px;
+}
+.noneItem .Required{
+    float: left;
+    display: inline-block;
+    width: 18px;
+    height: 47px;
+    line-height: 47px;
+    color:#e31e3c ;
+}
+.noneItem .ItemName{
+    display: inline-block;
+    width: 90px;
+    height: 47px;
+    line-height: 47px;
+    float: left;
+    font-size: 14px;
+    color: #3a3b3b;
+    font-family: "Microsoft Yahei";
+}
+.default{
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    color: #585858;
+    font-family: "Microsoft Yahei";
+    height: 19px;
+    line-height: 19px;
+    margin: 14px 0;
+    margin-left: 3px;
+}
+.defaultImg{
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 17px 0;
+}
+
+.opera{
+    box-sizing: border-box;
+    height: 47px;
+    line-height: 47px;
+    margin-top: 33px;
+    padding-left: 397px;
+
+}
+.opera span{
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color:#ff6c00;
+    border: 2px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: #FFFFFF;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+}
+.displayNone input[type="text"]{
+    box-shadow: 4px 4px 14px #f6f6f6 inset;
+    -webkit-box-shadow: 4px 4px 14px #f6f6f6 inset;
+    -moz-box-shadow: 4px 4px 14px #f6f6f6 inset;
+    -ms-box-shadow: 4px 4px 14px #f6f6f6 inset;
+    -o-box-shadow: 4px 4px 14px #f6f6f6 inset;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #4a4a4a;
+    font-family: "Microsoft YaHei";
+    border: 1px solid #e8e8e8;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    float: left;
+    margin: 8.5px 0;
+
+}
+input[type="text"]::-ms-clear { display: none; }
+.inputAddress{
+    width: 407px;
+}
+.inputName{
+    width: 169px;
+}
+.inputPhone{
+    width: 183px;
+}
+.sexSelect{
+    font-size: 14px;
+    color: #585858;
+    font-family: "Microsoft YaHei";
+    display: inline-block;
+    height: 47px;
+    margin-left: 10px;
+}
+.sexSelect input{
+    float: left;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    margin: 17px 0;
+    margin-right: 10px;
+}
+.sexSelect span{
+    display: inline-block;
+    height: 47px;
+    line-height: 47px;
+    float: left;
+}
+.city_china_val{
+    float: left;
+    height: 25px;
+    margin: 11px 0;
+}
+
+.city_china_val div select{
+    height: 25px;
+    padding: 3px 0;
+    padding-right: 20px;
+    line-height: 17px;
+    box-sizing: border-box;
+    border: 1px solid #e9ebe9;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-size: 14px;
+    color: #585858;
+    font-family: "Microsoft YaHei";
+}
+select{
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #e9ebe9;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("http://www.idongpin.com.cn/images/userCenter/arrow.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }

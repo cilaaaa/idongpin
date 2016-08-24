@@ -1,0 +1,89 @@
+$(document).ready(function(){
+
+//为左右两边模块设置高度
+    var windowHeight = $(window).height();
+    var loginInfoHeight = $(".loginInfo").height();
+    var searchToolHeight = $(".searchTool").height();
+    var infoTagsH=$(".infoTags").height();
+    var minHeight = windowHeight - loginInfoHeight -searchToolHeight-infoTagsH ;
+
+    // $(".rightSide").css("minHeight",minHeight);
+    $(".infoDetails").css("minHeight",minHeight-3);
+    //设置表格条纹
+    $(".orderTab tr").each(function(index){
+        if((index % 2) == 1){
+            $(this).css("background","rgba(242, 242, 242, 1)");
+        }
+    });
+
+    // 全选按钮
+    var status=0;
+    $(".chooseAll").click(function () {
+        if(status==0){
+            status=1;
+            $(".orderTab tr .aCheckbox input").each(function () {
+                $(this).prop("checked",true);
+            });
+        }
+        else{
+            status=0;
+            $(".orderTab  tr .aCheckbox input").each(function () {
+                $(this).prop("checked",false);
+            });
+        }
+    });
+
+    //新增事件
+    $(".adda").click(function () {
+        $(".addMode").css("display","block");
+    });
+    $(".modeHeader img").click(function () {
+        $(".addMode").css("display","none");
+    });
+
+    $(".btnCancel").click(function () {
+        $(".addMode").css("display","none");
+    });
+    //删除事件
+    $(".deletea").click(function () {
+        $(".orderTab tr .aCheckbox input").each(function () {
+           if($(this).prop("checked")==true){
+               $(this).parent().parent().remove();
+           }
+        });
+    });
+
+    //单个地址删除事件
+    $(".orderTab tr td ").on('click ','.delete',function(){
+       $(this).parent().parent().remove();
+    });
+    
+    //单个地址编辑事件
+    $(".orderTab tr td ").on('click ','.edit',function(){
+        $(".addMode").css("display","block");
+        var name= $(this).parent().parent().children("td").eq(1).text();
+        var address=$(this).parent().parent().children("td").eq(2).text();
+        var phone=$(this).parent().parent().children("td").eq(3).text();
+        var setStadus=$(this).parent().parent().children("td").eq(4).text();
+        $(".addMode .modeMain  .modeContent ").children(".modeItem").eq(0).val(name);
+        $(".addMode .modeMain  .modeContent ").children(".modeItem").eq(1).val(address);
+        $(".addMode .modeMain  .modeContent ").children(".modeItem").eq(2).val(phone);
+        if(setStadus=="是"){
+            $(".addMode .modeMain  .modeContent ").children(".modeItem").eq(3).prop("checked",true);
+        }
+
+
+    });
+
+    //默认地址选中取消
+    // $(".aStatus input ").click(function () {
+    //     if($(this).prop("checked")==true){
+    //         $(this).prop("checked",false);
+    //     }
+    //     else {
+    //         $(this).prop("checked",true);
+    //     }
+    // });
+
+
+});

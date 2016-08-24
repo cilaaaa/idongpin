@@ -1,0 +1,233 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: chendongnan
+ * Date: 16/8/10
+ * Time: 上午10:19
+ */
+
+namespace App\Http\Controllers\User;
+
+use App\User;
+use App\Madein;
+use App\Quote;
+use App\Company;
+use App\LaunchOrder;
+use App\Order;
+use App\ProProperty;
+use Mockery\CountValidator\Exception;
+use Validator;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
+class UserAjax extends Controller{
+    //获取询价单对应报价信息
+    public function getQuote(Request $request){
+        if(isset($request->launch_order_id)){
+            $userid = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first()->user_id;
+            if($userid == $request->user()->user_id){
+                $quotes = Quote::where('quote_launch_order_id',$request->launch_order_id)->get();
+                foreach($quotes as $k => $v){
+                    $quotes[$k]['company_name'] = Company::where('company_id',$v->quote_user_id)->first()->company_name;
+                    if($v->quote_freight == 0){
+                        $quotes[$k]['quote_freight'] = '免运费';
+                    }
+                }
+                return new JsonResponse(array('msg'=>'success','quotes'=>json_encode($quotes)), 200);
+            }else{
+                return new JsonResponse(array('msg'=>'你没有权限查看该笔订单'), 422);
+            }
+        }else{
+            return new JsonResponse(array('msg'=>'缺少参数'), 422);
+        }
+    }
+
+    //获取询价单详情
+    public function getLaunchOrderDetail(Request $request){
+        if(isset($request->launch_order_id)){
+            $userid = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first()->user_id;
+            if($userid == $request->user()->user_id){
+                $order = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first();
+                $order['madein'] = Madein::where('madein_name',$order->madein)->first()->madein_text;
+                $order['user_id'] = User::where('user_id',$order->user_id)->first()->user_name;
+                $quotes = Quote::where('quote_launch_order_id',$request->launch_order_id)->get();
+                foreach($quotes as $k => $v){
+                    $quotes[$k]['company_name'] = Company::where('company_id',$v->quote_user_id)->first()->company_name;
+                    if($v->quote_freight == 0){
+                        $quotes[$k]['quote_freight'] = '免运费';
+                    }
+                }
+                $order['quotes'] = $quotes;
+                return new JsonResponse(array('msg'=>'success','launchOrder'=>json_encode($order)), 200);
+            }else{
+                return new JsonResponse(array('msg'=>'你没有权限查看该笔订单'), 422);
+            }
+        }else{
+            return new JsonResponse(array('msg'=>'缺少参数'), 422);
+        }
+    }
+
+    private function validateLaunchOrder(array $data)
+    {
+        return Validator::make($data, [
+            'launch_order_name' => 'required',
+            'amount' => 'required',
+            'limit_time_from' => 'required',
+            'limit_time_to' => 'required',
+            'shelf_life' => 'required',
+        ]);
+    }
+
+    //询价单状态更新
+    public function launchOrder_update(Request $request)
+    {
+        if (isset($request->do_method)) {
+            if ($request->do_method == 'update') {
+                $validator = $this->validateLaunchOrder($request->all());
+                if ($validator->fails()) {
+                    $this->throwValidationException(
+                        $request, $validator
+                    );
+                }
+                $userid = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first()->user_id;
+                if($userid == $request->user()->user_id){
+                    $infoArr = array_except($request->all(), ['launch_order_id', 'do_method', '_token']);
+                    LaunchOrder::where('launch_order_id', $request->launch_order_id)->update($infoArr);
+                    $order = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first();
+                    $order['madein'] = Madein::where('madein_name',$order->madein)->first()->madein_text;
+                    return new JsonResponse(array('msg'=>'success','launchOrder'=>json_encode($order)), 200);
+                }else{
+                    return new JsonResponse(array('msg'=>'你没有权限查看该笔订单'), 422);
+                }
+            }else if($request->do_method == 'cancel'){
+                try{
+                    LaunchOrder::where('launch_order_id',$request->launch_order_id)->update([
+                        'canceled_at' => date("Y-m-d H:m:s")
+                    ]);
+                }catch(Exception $e){
+                    return new JsonResponse($e->getMessage(), 422);
+                }
+                return new JsonResponse(array('msg' => 'success'), 200);
+            }
+        } else {
+            if (($request->ajax() && !$request->pjax()) || $request->wantsJson()) {
+                return new JsonResponse(array('msg' => '缺少参数'), 422);
+            }
+
+            return redirect()->to($this->getRedirectUrl())
+                ->withInput($request->input())
+                ->withErrors(array('msg' => '缺少参数'), $this->errorBag());
+        }
+    }
+
+    private function checkOrderid($orderid){
+        if(Order::where('order_id',$orderid)->count()!=0){
+            $orderid = date("YmdHms").rand(10,99);
+        }
+        return $orderid;
+    }
+
+
+    //创建订单
+    public function makeOrder(Request $request){
+        if(isset($request->launch_order_id)&&isset($request->quote_id)){
+            $orderid = date("YmdHms").rand(10,99);
+            $orderid = $this->checkOrderid($orderid);
+            $quoteinfo = Quote::where('quote_id',$request->quote_id)->first();
+            $launchOrderInfo = LaunchOrder::where('launch_order_id',$request->launch_order_id)->first();
+            $create_time = date("Y-m-d H:m:s");
+            Order::create([
+                'order_id' => $orderid,
+                'launch_order_id' => $request->launch_order_id,
+                'order_user_id' => $request->user()->user_id,
+                'company_id' => $quoteinfo->quote_user_id,
+                'order_time' => $create_time,
+                'order_status' => '已下单',
+                'amount' => $quoteinfo->quote_price+$quoteinfo->quote_freight,
+                'freight' => $quoteinfo->quote_freight,
+                'qty' => $launchOrderInfo->amount,
+            ]);
+            LaunchOrder::where('launch_order_id',$request->launch_order_id)->delete();
+            return new JsonResponse(array('msg' => 'success'), 200);
+        }else{
+            return new JsonResponse(array('msg' => '缺少参数'), 422);
+        }
+    }
+
+    //订单状态更新
+    public function order_update(Request $request){
+        if (isset($request->do_method)) {
+            if ($request->do_method == 'cancel') {
+                Order::where('order_id', $request->orderid)->update([
+                    'order_status' => '已取消',
+                    'canceled_at' => date("Y-m-d H:m:s")
+                ]);
+                return new JsonResponse(array('msg' => 'success'), 200);
+            } else if ($request->do_method == 'finish') {
+                Order::where('order_id', $request->orderid)->update([
+                    'order_status' => '已完成',
+                    'finish_time' => date("Y-m-d H:m:s")
+                ]);
+                return new JsonResponse(array('msg' => 'success'), 200);
+            } else if ($request->do_method == 'confirm') {
+                $order = Order::where('order_id', $request->orderid)->first();
+                if($order->unit_price=='0'){
+                    return new JsonResponse(array('msg' => '等待商家报价,请与商家进行电讯','companyid' => $order->company_id), 422);
+                }else{
+                    Order::where('order_id', $request->orderid)->update([
+                        'order_status' => '已确认',
+                        'confirm_time' => date("Y-m-d H:m:s")
+                    ]);
+                    return new JsonResponse(array('msg' => 'success'), 200);
+                }
+            }
+        } else {
+            if (($request->ajax() && !$request->pjax()) || $request->wantsJson()) {
+                return new JsonResponse(array('msg' => '缺少参数'), 422);
+            }
+            return redirect()->to($this->getRedirectUrl())
+                ->withInput($request->input())
+                ->withErrors(array('msg' => '缺少参数'), $this->errorBag());
+        }
+    }
+
+    //获取订单详情
+    public function getOrder(Request $request){
+        if (isset($request->orderid)) {
+            $order = Order::where('order_id',$request->orderid)->first();
+            if($order->launch_order_id!=""){
+                $orderinfoArr = LaunchOrder::where('launch_order_id',$order->launch_order_id)->onlyTrashed()->first();
+                $orderinfo['pro_name'] = $orderinfoArr->launch_order_name;
+                $orderinfo['pro_price'] = $order->amount;
+                $orderinfo['pro_qty'] = $orderinfoArr->amount;
+                $orderinfo['pro_freight'] = $order->freight;
+                $order['pro_info'] = $orderinfo;
+            }else if ($order->pro_id!="") {
+                $proinfoArr = ProProperty::selectRaw('property_name,property_value')
+                    ->where('pro_id', $order->pro_id)
+                    ->get();
+                $proinfo = array();
+                foreach ($proinfoArr as $v) {
+                    $proinfo[$v->property_name] = $v->property_value;
+                }
+                $orderinfo['pro_name'] = $proinfo['pro_name'];
+                $orderinfo['pro_price'] = $order->amount;
+                $orderinfo['pro_qty'] = $order->qty;
+                $orderinfo['pro_freight'] = $order->freight;
+                $order['pro_info'] = $orderinfo;
+            }
+            $company = Company::where('company_id',$order->company_id)->first();
+            $order->company_id = $company->company_name;
+            $order->company_phone = $company->company_mobile;
+            $order->order_user_id = User::where('user_id',$order->order_user_id)->first()->user_name;
+            return new JsonResponse($order, 200);
+        } else {
+            return new JsonResponse(array('msg' => '缺少参数'), 422);
+        }
+    }
+
+    public function address_add(Request $request){
+
+    }
+}

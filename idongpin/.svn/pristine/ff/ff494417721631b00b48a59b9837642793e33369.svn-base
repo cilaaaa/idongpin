@@ -1,0 +1,111 @@
+@extends('layouts.app')
+@section('css')
+<link rel="stylesheet" type="text/css" href="css/product/oviStore.css">
+<link rel="stylesheet" type="text/css" href="{{url('css/product/productPageNav.css')}}">
+@endsection
+@section('content')
+{{--<div class="content">--}}
+	{{--<div class="dongpinNav">--}}
+		{{--<span class="navTopic">冻品导航</span>--}}
+		{{--<span>></span>--}}
+		{{--<span>牛</span>--}}
+		{{--<span>></span>--}}
+		{{--<span>牛肚</span>--}}
+	{{--</div>--}}
+{{--</div>--}}
+<div class="oviStores">
+	<ul>
+		@if(count($companies)>0)
+			@foreach($companies as $key => $value)
+				<li class="oviStore">
+					<div class="leftSide">
+						<div class="companyName"><a href="{{url('company?companyid='.$value['company_id'])}}">{{$value['company_name']}}</a></div>
+						<div class="major">
+							<div class="itemTtl">主营产品：</div>
+							<div class="itemContent">{{$value['company_product']}}</div>
+						</div>
+						<div class="address">
+							<div class="itemTtl">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</div>
+							<div class="itemContent">{{$value['company_address']}}</div>
+						</div>
+						<div class="contact">
+							<div class="itemTtl">联系方式：</div>
+							@if(Auth::guest())
+								<div class="itemContent">登陆后可见</div>
+							@else
+								<div class="itemContent">{{$value['company_phone']}}</div>
+							@endif
+						</div>
+					</div>
+					<div class="rightSide">
+						<div>
+							@foreach($value['products'] as $k => $v)
+								<div class="goods" onclick="window.location.href='{{url('product/item?companyid='.$value['company_id'].'&proid='.$v['pro_id'])}}'">
+									<img src="{{$v['pro_img']}}">
+									<div class="shadow">
+										<div class="introduce">{{$v['pro_name']}}</div>
+										<div class="standard">{{$v['pro_packing']}}</div>
+										<div class="origin">产地:{{$v['pro_place']}}</div>
+									</div>
+									<div class="price"><span>￥</span><span>{{$v['pro_price']}}</span></div>
+								</div>
+							@endforeach
+						</div>
+					</div>
+				</li>
+			@endforeach
+		@else
+			<div style="margin-top: 50px;color:#C02341;font-size: 22px;font-family: '微软雅黑';width: 100%;text-align: center">对不起，暂时没有符合您搜索条件的商铺！</div>
+		@endif
+	</ul>
+	<!-- 分页 -->
+	<div  class="pageNav">
+		<div class="pageNavRight">
+                <a href="" class="n pageHeader"><span><img src="{{url('images/product/pageNavBefore.jpg')}}"><img src="{{url('images/product/pageNavBefore.jpg')}}">首页</span></a>
+                <a class="n" id="pageNavBefore">
+                    <img src="{{url('images/product/pageNavBefore.jpg')}}">上一页
+                </a>
+                <a class="preMore">...</a>
+                <a>
+                    <span class="initSpan pc"  >1</span>
+                </a>
+                <a>
+                    <span class="initSpan">2</span>
+                </a>
+                <a>
+                    <span class="initSpan">3</span>
+                </a>
+                <a>
+                    <span class="initSpan">4</span>
+                </a>
+                <a>
+                    <span class="initSpan">5</span>
+                </a>
+                <a>
+                    <span class="initSpan">6</span>
+                </a>
+                <a>
+                    <span class="initSpan">7</span>
+                </a>
+                <a>
+                    <span class="initSpan">8</span>
+                </a>
+                <a>
+                    <span class="initSpan">9</span>
+                </a>
+                <a>
+                    <span class="initSpan">10</span>
+                </a>
+                <a class="nextMore">...</a>
+                <a class="n" id="pageNavNext">
+                    下一页<img src="{{url('images/product/pageNavNext.jpg')}}">
+                </a>
+                <a href="" class="n pagefooter"><span>尾页<img src="{{url('images/product/pageNavNext.jpg')}}"><img src="{{url('images/product/pageNavNext.jpg')}}"></span></a>
+            </div>
+	</div>
+</div>
+@endsection
+@section('javascript')
+<script type="text/javascript" src="js/product/oviStore.js"></script>
+<script type="text/javascript" src="{{url('js/product/productPageNav.js')}}"></script>
+@endsection

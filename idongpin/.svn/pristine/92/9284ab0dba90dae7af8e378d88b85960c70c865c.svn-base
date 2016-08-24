@@ -1,0 +1,896 @@
+/**
+ * 此文件为分类页面的样式表
+ * @author chenqin
+ * @date 2016/6/30
+ */
+.carte {
+	height: 0px;
+}
+
+.secondCarte,.firstCarte{
+	display: none;
+}
+
+#showMenu{
+	transform : rotate(180deg);
+	-webkit-transform : rotate(180deg);
+	-moz-transform : rotate(180deg);
+	-ms-transform : rotate(180deg);
+	-o-transform : rotate(180deg);
+}
+
+.ad{
+	display: none;
+}
+
+.content{
+	width: 980px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px #f2f6f7;
+	-webkit-box-shadow: 0 0 40px #f2f6f7;
+	-moz-box-shadow: 0 0 40px #f2f6f7;
+	-ms-box-shadow: 0 0 40px #f2f6f7;
+	-o-box-shadow: 0 0 40px #f2f6f7;
+	box-sizing: border-box;
+	padding: 14px 15px;
+}
+
+.filter{
+	width: 950px;
+}
+
+.filterNav{
+	width: 950px;
+	height: 42px;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+	line-height: 42px;
+	box-sizing: border-box;
+	padding: 0 20px;
+}
+
+.startNav{
+	color: #ff6c00;
+}
+
+.filterNav a{
+	padding: 0 5px;
+}
+
+.filterNav a:hover{
+	color: #ff6c00;
+}
+
+.filterCondition{
+	width: 948px;
+	border: 1px solid #cccccc;
+}
+
+.confirm a{
+	display: block;
+}
+
+.showCondition{
+	width: 948px;
+	border-bottom: 1px solid #cccccc;
+	zoom: 1;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.showCondition:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.conditionTopic{
+	width: 122px;
+	height: 33px;
+	line-height: 33px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+}
+
+.conditionContent{
+	width: 826px;
+	float: left;
+}
+
+.selectedCondition{
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin: 5px 10px;
+}
+
+.conditionKind{
+	float: left;
+	height: 22px;
+	line-height: 24px;
+	padding-left: 18px;
+	padding-right: 8px;
+}
+
+.condition{
+	float: left;
+	height: 22px;
+	line-height: 22px;
+}
+
+.close{
+	float: left;
+	width: 32px;
+	height: 22px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.brands{
+	width: 948px;
+	border-bottom: 1px solid #cccccc;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.brandTopic{
+	width: 102px;
+	height: 33px;
+	line-height: 33px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+}
+
+.brandContent{
+	width: 704px;
+	float: left;
+	height: 33px;
+	overflow: hidden;
+}
+
+.brands .otherHandle{
+	width: 142px;
+	float: left;
+}
+
+.brand{
+	width: 117px;
+	height: 24px;
+	line-height: 24px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	float: left;
+	margin: 5px 0px;
+}
+
+.brand:hover{
+	cursor: pointer;
+	color: #ff6c00;
+}
+
+.brand img{
+	visibility: hidden;
+	width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	float: left;
+	margin-right: 8px;
+}
+
+.otherHandle{
+	float: right;
+}
+
+.brands .otherHandle .more{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.brands .otherHandle .selectMore{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.brands .otherHandle .more img,.brands .otherHandle .selectMore img{
+	width: 7px;
+	height: 8px;
+	margin-left: 2px;
+}
+
+.brands .otherHandle .cancel img{
+	width: 4px;
+	height: 2px;
+	margin-left: 2px;
+	margin-bottom: 4px;
+}
+
+.origins{
+	width: 948px;
+	border-bottom: 1px solid #cccccc;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.originTopic{
+	width: 102px;
+	height: 33px;
+	line-height: 33px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+}
+
+.originContent{
+	width: 704px;
+	float: left;
+	height: 33px;
+	overflow: hidden;
+}
+
+.origins .otherHandle{
+	width: 142px;
+	float: left;
+}
+
+.origin{
+	width: 114px;
+	height: 24px;
+	line-height: 24px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	float: left;
+	margin: 5px 0px;
+}
+
+.origin:hover{
+	cursor: pointer;
+	color: #ff6c00;
+}
+
+.origin img{
+	visibility: hidden;
+	width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	float: left;
+	margin-right: 8px;
+}
+
+
+.origins .otherHandle .more{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.origins .otherHandle .selectMore{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.origins .otherHandle .more img,.origins .otherHandle .selectMore img{
+	width: 7px;
+	height: 8px;
+	margin-left: 2px;
+}
+
+.origins .otherHandle .cancel img{
+	width: 4px;
+	height: 2px;
+	margin-left: 2px;
+	margin-bottom: 4px;
+}
+
+.varieties,.types{
+	width: 948px;
+	border-bottom: 1px solid #cccccc;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.varietieTopic{
+	width: 102px;
+	height: 33px;
+	line-height: 33px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+}
+
+.varietieContent{
+	width: 704px;
+	float: left;
+	height: 33px;
+	overflow: hidden;
+}
+
+.varieties .otherHandle{
+	width: 142px;
+	float: left;
+}
+
+.varietie{
+	width: 114px;
+	height: 24px;
+	line-height: 24px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	float: left;
+	margin: 5px 0px;
+}
+
+.varietie:hover{
+	cursor: pointer;
+	color: #ff6c00;
+}
+
+.varietie img{
+	visibility: hidden;
+	width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	float: left;
+	margin-right: 8px;
+}
+
+.varieties .otherHandle .more{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.varieties .otherHandle .selectMore{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.varieties .otherHandle .more img,.varieties .otherHandle .selectMore img{
+	width: 7px;
+	height: 8px;
+	margin-left: 2px;
+}
+
+.varieties .otherHandle .cancel img{
+	width: 4px;
+	height: 2px;
+	margin-left: 2px;
+	margin-bottom: 4px;
+}
+
+.prices{
+	width: 948px;
+	border-bottom: 1px solid #cccccc;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.priceTopic{
+	width: 102px;
+	height: 33px;
+	line-height: 33px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+}
+
+.priceContent{
+	width: 704px;
+	float: left;
+
+}
+
+.prices .otherHandle{
+	width: 142px;
+	float: left;
+}
+
+.price{
+	width: 114px;
+	height: 24px;
+	line-height: 24px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	float: left;
+	margin: 5px 0px;
+}
+
+.price:hover{
+	cursor: pointer;
+	color: #ff6c00;
+}
+
+.price img{
+	visibility: hidden;
+	width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	float: left;
+	margin-right: 8px;
+}
+
+.prices .otherHandle div{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.types .otherHandle{
+	width: 142px;
+	float: left;
+}
+
+.types .otherHandle .more{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.types .otherHandle .selectMore{
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.filterCondition .otherHandle .confirm{
+	color: #ff6c00;
+	border: 1px solid #ff6c00;
+}
+
+.prices .otherHandle .more img,.prices .otherHandle .selectMore img,.types .otherHandle .selectMore img{
+	width: 7px;
+	height: 8px;
+	margin-left: 2px;
+}
+
+.prices .otherHandle .cancel img{
+	width: 4px;
+	height: 2px;
+	margin-left: 2px;
+	margin-bottom: 4px;
+}
+
+.miscellaneous{
+	width: 948px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+
+.miscellaneousTopic{
+	width: 122px;
+	height: 34px;
+	line-height: 34px;
+	box-sizing: border-box;
+	padding-left: 20px;
+	float: left;
+}
+
+.miscellaneousContent{
+	width: 826px;
+	float: left;
+}
+
+.miscellaneoue{
+	height: 14px;
+	line-height: 14px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	float: left;
+	margin: 10px 0px;
+	border-right: 1px solid #cccccc;
+}
+
+.miscellaneoue a{
+	color: #a1a1a1;
+}
+
+.miscellaneoue a:hover{
+	color: #ff6c00;
+}
+
+.more:hover,.selectMore:hover{
+	cursor: pointer;
+}
+
+
+.confirm,.cancel{
+	display: none;
+	width: 54px;
+	height: 22px;
+	border: 1px solid #cccccc;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	line-height: 22px;
+	text-align: center;
+}
+
+.confirm:hover,.cancel:hover{
+	cursor: pointer;
+}
+
+.orderBar{
+	width: 950px;
+	height: 32px;
+	margin-top: 10px;
+	border: 1px solid #cccccc;
+	background-color: #efefef;
+}
+
+.orderOptions{
+	height: 24px;
+	margin: 4px 20px;
+}
+
+.option{
+	float: left;
+	border: 1px solid #cccccc;
+	padding:  3px 16px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+	background-color: #ffffff;
+	position: relative;
+}
+
+.option:hover{
+	cursor: pointer;
+}
+
+.optionActive{
+	background-color: #c02341;
+	color: #ffffff;
+	border: 1px solid #c02341;
+}
+
+.option img{
+	width: 6px;
+	height: 12px;
+	position: absolute;
+	top: 5px;
+}
+
+.goods{
+	width: 950px;
+	margin: 0 auto;
+	
+}
+
+/*.goodsMode{
+	width: 950px;
+	margin: 0 auto;
+	border-top: none;
+	overflow: auto;
+	zoom: 1;
+}
+
+
+.goods li{
+	width: 190px;
+	height: 324px;
+	float: left;
+	border: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.goodsImg{
+	width: 148px;
+	height: 148px;
+}
+
+.goodsImg img{
+	width: 100%;
+	height: 100%;
+}
+
+.goodsIntroduce{
+	width: 148px;
+	height: 33px;
+	margin-top: 20px;
+}
+
+.goodsName{
+	width: 148px;
+	height: 15px;
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.goodsKind{
+	width: 148px;
+	height: 13px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	margin-top: 5px;
+}
+
+.goodsInfo{
+	width: 148px;
+	height: 39px;
+	margin-top: 20px;
+}
+
+.priceNow{
+	width: 148px;
+	height: 21px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.now{
+	color: #ff6c00;
+	font-size: 22px;
+	font-family: "Microsoft YaHei";
+}
+
+.cost{
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.regularPrice{
+	width: 148px;
+	height: 12px;
+	margin-top: 6px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.belong{
+	width: 148px;
+	height: 12px;
+	margin-top: 10px;
+}
+
+.belong img{
+	float: left;
+	width: 13px;
+	height: 13px;
+	margin-top: -1px;
+}
+
+.company{
+	float: left;
+	margin-left: 10px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.address{
+	float: right;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}*/
+
+.goodsMode{
+	width: 950px;
+	margin: 0 auto;
+	overflow: auto;
+	zoom: 1;
+	box-sizing: border-box;
+	/*border-top: 1px solid #e8e8e8;*/
+	border-left: 1px solid #e8e8e8;
+}
+
+.modeActive{
+	display: block;
+}
+
+.goods li{
+	position: relative;
+	width: 188.8px;
+	height: 333.2px;
+	float: left;
+	cursor: pointer;
+	border-bottom: 1px solid #e8e8e8;
+	border-right: 1px solid #e8e8e8;
+}
+
+.border{
+	width: 188.8px;
+	height: 333.2px;
+	box-sizing: border-box;
+	padding: 8px;
+	border: 2px solid #ffffff;
+}
+
+.border:hover{
+	border: 2px solid #ff6c00;
+}
+
+.hotGoodsSign{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+.hotGoodsSign img{
+	width: 38px;
+	height: 24px;
+	right: 0;
+}
+.goodsImg{
+	width: 168px;
+	height: 168px;
+	overflow: hidden;
+}
+
+.goodsImg img{
+	width: 100%;
+	height: 100%;
+}
+
+.goodsIntroduce{
+	width: 168px;
+	height: 33px;
+	margin-top: 20px;
+}
+
+.goodsName{
+	width: 168px;
+	height: 16px;
+	line-height: 16px;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.goodsKind{
+	width: 168px;
+	height: 14px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin-top: 5px;
+}
+
+.goodsInfo{
+	width: 168px;
+	/*height: 39px;*/
+	margin-top: 5px;
+}
+
+.goodsInfo .guidePrice{
+	color: #4a4a4a;
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+}
+
+.priceNow{
+	width: 168px;
+	height: 22px;
+	color: #a1a1a1;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+}
+
+.now{
+	color: #e42430;
+	font-size: 20px;
+	font-family: "Microsoft YaHei";
+}
+
+.cost{
+	color: #555555;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.regularPrice{
+	width: 168px;
+	height: 12px;
+	line-height: 12px;
+	margin-top: 9px;
+	color: #9d6e18;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+}
+
+.proUnitPrice{
+	float: left;
+	font-size: 12px;
+}
+
+.belong{
+	width: 168px;
+	height: 12px;
+	margin-top: 10px;
+	line-height: 12px;
+}
+
+.belong img{
+	float: left;
+	width: 12px;
+	height: 12px;
+}
+
+.company{
+	float: left;
+	margin-left: 18px;
+	color: #555555;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.address{
+	float: right;
+	display: block;
+	width: 55px;
+	text-align: right;
+	color: #555555;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

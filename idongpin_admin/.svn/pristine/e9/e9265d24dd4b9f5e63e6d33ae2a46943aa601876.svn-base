@@ -1,0 +1,126 @@
+.formHeader{
+    height: 50px;
+    border-bottom: 1px solid #a1a1a1;
+    margin-bottom: 10px;
+}
+.formHeader .goback,.updating,.canceling,.saving{
+    font-size: 16px;
+    font-family: '微软雅黑';
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    display: none;
+}
+.formHeader .goback,.updating{
+    display: block;
+}
+.formHeader .formTitle{
+    font-size: 20px;
+    font-family: '微软雅黑';
+    display: inline-block;
+    float: left;
+    margin-left: 15px;
+}
+.form-group{
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+.add_price .form-group{
+    width: 100%;
+}
+.update_price .form-group{
+    width: 100%;
+}
+.givePrice .give_head{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #a1a1a1;
+    border-top:1px solid #a1a1a1;
+}
+.givePrice .give_head .title{
+    display: inline-block;
+    float: left;
+    font-family: '微软雅黑';
+    font-size: 20px;
+    margin-left: 15px;
+}
+.givePrice .give_head .quotedPrice{
+    display: inline-block;
+    float: right;
+    font-family: '微软雅黑';
+    font-size: 16px;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.add_price,.update_price{
+    width: 450px;
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -200px;
+    border:1px solid #a1a1a1;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+.add_price .head{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #a1a1a1;
+    margin-bottom: 10px;
+}
+.update_price .head{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #a1a1a1;
+    margin-bottom: 10px;
+}
+.add_price .head .title{
+    font-size: 18px;
+    font-family: '微软雅黑';
+    color:#333333;
+    display: inline-block;
+    float: left;
+    margin-left: 15px;
+}
+.update_price .head .title{
+    font-size: 18px;
+    font-family: '微软雅黑';
+    color:#333333;
+    display: inline-block;
+    float: left;
+    margin-left: 15px;
+}
+.add_price .head .close{
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    font-size: 18px;
+    margin-right: 15px;
+}
+.update_price .head .close{
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    font-size: 18px;
+    margin-right: 15px;
+}
+.add_price .head .close:hover{
+    font-size: 22px;
+}
+.update_price .head .close:hover{
+    font-size: 22px;
+}
+.tag{
+    font-size: 18px;
+    color:#efefef;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}

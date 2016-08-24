@@ -1,0 +1,119 @@
+@extends('layouts.app')
+@section('title')用户中心@stop
+@section('css')
+	<link rel="stylesheet" type="text/css" href="{{url('css/public/common.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('css/public/footer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('css/usercenter/index.css')}}">
+@stop
+@section('content')
+
+	<header class="header">
+		<div class="header_ttl">
+			<span class="page_ttl">我的</span>
+				<span class="setting">
+				<img src="{{url('images/usercenter/setting.png')}}">
+			</span>
+		</div>
+		<div class="user_info">
+				<div class="user_avatar">
+					<img src="{{url('images/usercenter/header_photo.png')}}">
+				</div>
+				<div class="user_about">
+					<div class="user_name">
+						<span class="name">黄焖鸡米饭</span>
+						<span class="user_kind">（个人用户）</span>
+					</div>
+					<div class="approve">未认证<img src="{{url('images/usercenter/approve.png')}}"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+	</header>
+	<div class="content">
+		<div class="container">
+			<div class="my_order">
+				<img class="icon" src="{{url('images/usercenter/order.png')}}">
+				<span class="text">我的订单</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="order_status">
+				<ul>
+					<li class="not_pay">
+						<a href="">
+							<div class="order_icon">
+								<img src="{{url('images/usercenter/notPay.png')}}">
+								<div class="order_count">1</div>
+							</div>
+							<div class="status">未付款</div>
+						</a>
+					</li>
+					<li class="paied">
+						<a href="">
+							<div class="order_icon">
+								<img src="{{url('images/usercenter/paied.png')}}">
+								<div class="order_count">2</div>
+							</div>
+							<div class="status">已付款</div>
+						</a>
+					</li>
+					<li class="finish">
+						<a href="">
+							<div class="order_icon">
+								<img src="{{url('images/usercenter/finish.png')}}">
+								<div class="order_count">3</div>
+							</div>
+							<div class="status">已完成</div>
+						</a>
+					</li>
+					<li class="clear"></li>
+				</ul>
+			</div>
+			<div class="customer_services">
+				<img class="icon" src="{{url('images/usercenter/service.png')}}">
+				<span class="text">我的客服</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="receive_address">
+				<img class="icon" src="{{url('images/usercenter/address.png')}}">
+				<span class="text">收货地址管理</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+			<div class="after_sale">
+				<img class="icon" src="{{url('images/usercenter/afterSale.png')}}">
+				<span class="text">售后规则</span>
+				<img class="more" src="{{url('images/public/more.png')}}">
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<ul>
+			<li class="modeMenu">
+				<a href="{{url('/')}}">
+					<img src="{{url('images/index/homePage.png')}}">
+					<span class="spanActive">首页</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="{{url('/product')}}">
+					<img src="{{url('images/index/kind.png')}}">
+					<span>分类</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="{{url('/cart')}}">
+					<img src="{{url('images/index/purcherCar.png')}}">
+					<span>购物车</span>
+				</a>
+			</li>
+			<li class="modeMenu">
+				<a href="{{url('/user')}}">
+					<img src="{{url('images/index/userCenter.png')}}">
+					<span>我的</span>
+				</a>
+			</li>
+			<li class="clear"></li>
+		</ul>
+	</footer>
+@stop
+@section('js')
+	<script type="text/javascript" src="{{url('js/usercenter/index.js')}}"></script>
+@stop
